@@ -1,0 +1,23 @@
+{
+    "name": "webignition/website-sitemap-finder",
+    "description": "Finds the sitemap(.xml) for a given website",
+    "keywords": ["sitemap"],
+    "homepage": "https://github.com/webignition/website-sitemap-finder",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jon Cram",
+            "email": "jon@webignition.net"
+        }
+    ],
+    "autoload": {
+        "psr-0": { "": "src/" }
+    },    
+    "require": {
+        "php": ">=5.3.0",
+        "webignition/http-client":"dev-master",
+        "webignition/robots-txt-parser":"dev-master",
+        "webignition/url":"1.0"
+    }
+}
