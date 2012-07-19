@@ -33,18 +33,24 @@ class WebsiteSitemapFinder {
      */
     private $rootUrl = null;
     
-    /**
-     *
-     * @var string
-     */
-    private $sitemapContent = null;
-    
     
     /**
      *
-     * @var string
+     * @var \webignition\WebsiteSitemapFinder\XmlSitemapIdentifier
      */
-    private $sitemapContentType = null;
+    private $sitemapIdentifier = null;
+    
+    
+    private $sitemapTypesAndRespectiveContentTypes = array(
+        'xml' => array(
+            'application/xml',
+            'text/xml'
+        ),
+        'txt' => array(
+            'text/plain'
+        )
+    );
+
     
     
     /**
@@ -93,12 +99,18 @@ class WebsiteSitemapFinder {
      *
      * @return string
      */
-    public function getSitemapContent() {
-        if (is_null($this->sitemapContent)) {
-            $this->findSitemapContent();
+    public function getSitemapUrl() {
+        $possibleSitemapUrls = $this->getPossibleSitemapUrls();
+        foreach ($possibleSitemapUrls as $possibleSitemapUrl) {
+            $extension = pathinfo($possibleSitemapUrl, PATHINFO_EXTENSION);
+            $this->sitemapIdentifier()->setPossibleSitemapUrl($possibleSitemapUrl);            
+            $this->sitemapIdentifier()->setValidContentTypes($this->sitemapTypesAndRespectiveContentTypes[$extension]);
+            if ($this->sitemapIdentifier()->isSitemapUrl()) {
+                return $possibleSitemapUrl;
+            }
         }
         
-        return $this->sitemapContent;
+        return false;
     }
     
     
@@ -112,48 +124,7 @@ class WebsiteSitemapFinder {
         $rootUrl->setPath('/'.self::ROBOTS_TXT_FILE_NAME);
         
         return (string)$rootUrl;
-    }
-    
-    
-    /**
-     *
-     * @return string
-     */
-    private function findSitemapContent() {
-        $possibleSitemapUrls = $this->getPossibleSitemapUrls();
-        foreach ($possibleSitemapUrls as $url) {
-            $possibleSitemapContent = $this->getSitemapContentFromUrl($url);
-            if ($possibleSitemapContent !== false) {
-                $this->sitemapContent = $possibleSitemapContent['body'];
-                $this->sitemapContentType = $possibleSitemapContent['content-type'];
-            }
-        }
-        
-        return false;
-    }
-    
-    /**
-     *
-     * @param string $url
-     * @return array 
-     */
-    private function getSitemapContentFromUrl($url) {
-       $request = new \HttpRequest($url);
-       $response = $this->getHttpClient()->getResponse($request);
-       
-        if (!$response->getResponseCode() == 200) {
-            return false;
-        }
-        
-        if ($response->getHeader('content-type') != 'text/plain' && $response->getHeader('content-type') != 'application/xml') {
-            return false;
-        }
-        
-        return array(
-            'body' => $response->getBody(),
-            'content-type' => $response->getHeader('content-type')
-        );     
-    }
+    }  
     
     
     private function getPossibleSitemapUrls() {
@@ -194,33 +165,7 @@ class WebsiteSitemapFinder {
         );
         
         return (string)$absoluteUrlDeriver->getAbsoluteUrl();
-    }
-    
-    
-    private function findSitemapContentFromRobotsTxt() {        
-       $sitemapUrlFromRobotsTxt = $this->findSitemapUrlFromRobotsTxt();
-       if ($sitemapUrlFromRobotsTxt === false) {
-           return false;
-       }       
-       
-       $absoluteUrlDeriver = new \webignition\AbsoluteUrlDeriver\AbsoluteUrlDeriver(
-               $sitemapUrlFromRobotsTxt,
-               $this->getRootUrl()
-       );
-       
-       $request = new \HttpRequest((string)$absoluteUrlDeriver->getAbsoluteUrl());
-       $response = $this->getHttpClient()->getResponse($request);
-       
-        if (!$response->getResponseCode() == 200) {
-            return false;
-        }
-        
-        if ($response->getHeader('content-type') != 'text/plain' && $response->getHeader('content-type') != 'application/xml') {
-            return false;
-        }
-        
-        return $response->getBody();
-    }    
+    } 
     
     
     private function findSitemapUrlFromRobotsTxt() {
@@ -253,6 +198,20 @@ class WebsiteSitemapFinder {
         }
         
         return $response->getBody();
+    }
+    
+    
+    /**
+     *
+     * @return \webignition\WebsiteSitemapFinder\SitemapIdentifier
+     */
+    private function sitemapIdentifier() {
+        if (is_null($this->sitemapIdentifier)) {
+            $this->sitemapIdentifier = new \webignition\WebsiteSitemapFinder\SitemapIdentifier();
+            $this->sitemapIdentifier->setHttpClient($this->getHttpClient());
+        }
+        
+        return $this->sitemapIdentifier;
     }
     
 }
