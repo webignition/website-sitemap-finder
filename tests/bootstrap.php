@@ -17,5 +17,3 @@ function autoload( $rootDir ) {
 
 autoload( '/usr/share/php' );
 autoload( __DIR__ . '/');
-autoload( __DIR__ . '/unit/');
-autoload( __DIR__ . '/functional/');
