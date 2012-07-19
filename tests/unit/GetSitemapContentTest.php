@@ -3,6 +3,11 @@ ini_set('display_errors', 'On');
 
 class GetSitemapContentTest extends PHPUnit_Framework_TestCase {
 
+    /**
+     * Test retrieving sitemap URL, and the sitemap content itself,
+     * via the sitemap URL being referenced in robots.txt
+     *  
+     */
     public function testGetSitemapViaRobotsTxt() {
         $finder = new webignition\WebsiteSitemapFinder\WebsiteSitemapFinder();        
         $finder->setRootUrl('http://webignition.net');
@@ -19,6 +24,22 @@ class GetSitemapContentTest extends PHPUnit_Framework_TestCase {
         $sitemapContent = $finder->getSitemapContent();
         
         $this->assertEquals($this->getMockSitemapXmlRawResponseBody(), $sitemapContent);
+    }
+    
+    public function testGetSitemapViaSiteRoot() {
+        $finder = new webignition\WebsiteSitemapFinder\WebsiteSitemapFinder();        
+        $finder->setRootUrl('http://webignition.net');
+
+        $mockSitemapXmlResponse = new \HttpMessage($this->getMockSitemapXmlRawResponse());
+        
+        $httpClient = new \webignition\Http\Mock\Client\Client();
+        $httpClient->setResponseForCommand('GET http://webignition.net/sitemap.xml', $mockSitemapXmlResponse);
+       
+        $finder->setHttpClient($httpClient);        
+        
+        $sitemapContent = $finder->getSitemapContent();
+        
+        $this->assertEquals($this->getMockSitemapXmlRawResponseBody(), $sitemapContent);        
     }
     
     private function getMockRobotsTxtRawResponse() {

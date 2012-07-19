@@ -17,6 +17,8 @@ use webignition\NormalisedUrl\NormalisedUrl;
 class WebsiteSitemapFinder {
     
     const ROBOTS_TXT_FILE_NAME = 'robots.txt';
+    const DEFAULT_SITEMAP_XML_FILE_NAME = 'sitemap.xml';
+    const DEFAULT_SITEMAP_TXT_FILE_NAME = 'sitemap.txt';
     
     /**
      *
@@ -36,6 +38,13 @@ class WebsiteSitemapFinder {
      * @var string
      */
     private $sitemapContent = null;
+    
+    
+    /**
+     *
+     * @var string
+     */
+    private $sitemapContentType = null;
     
     
     /**
@@ -86,7 +95,7 @@ class WebsiteSitemapFinder {
      */
     public function getSitemapContent() {
         if (is_null($this->sitemapContent)) {
-            $this->sitemapContent = $this->findSitemapContent();
+            $this->findSitemapContent();
         }
         
         return $this->sitemapContent;
@@ -105,11 +114,86 @@ class WebsiteSitemapFinder {
         return (string)$rootUrl;
     }
     
+    
+    /**
+     *
+     * @return string
+     */
     private function findSitemapContent() {
-        $sitemapContentFromRobotsTxtResult = $this->findSitemapContentFromRobotsTxt();
-        if ($sitemapContentFromRobotsTxtResult !== false) {
-            return $sitemapContentFromRobotsTxtResult;
+        $possibleSitemapUrls = $this->getPossibleSitemapUrls();
+        foreach ($possibleSitemapUrls as $url) {
+            $possibleSitemapContent = $this->getSitemapContentFromUrl($url);
+            if ($possibleSitemapContent !== false) {
+                $this->sitemapContent = $possibleSitemapContent['body'];
+                $this->sitemapContentType = $possibleSitemapContent['content-type'];
+            }
         }
+        
+        return false;
+    }
+    
+    /**
+     *
+     * @param string $url
+     * @return array 
+     */
+    private function getSitemapContentFromUrl($url) {
+       $request = new \HttpRequest($url);
+       $response = $this->getHttpClient()->getResponse($request);
+       
+        if (!$response->getResponseCode() == 200) {
+            return false;
+        }
+        
+        if ($response->getHeader('content-type') != 'text/plain' && $response->getHeader('content-type') != 'application/xml') {
+            return false;
+        }
+        
+        return array(
+            'body' => $response->getBody(),
+            'content-type' => $response->getHeader('content-type')
+        );     
+    }
+    
+    
+    private function getPossibleSitemapUrls() {
+       $sitemapUrlFromRobotsTxt = $this->findSitemapUrlFromRobotsTxt();
+       if ($sitemapUrlFromRobotsTxt === false) {
+           return array(
+               $this->getDefaultSitemapXmlUrl(),
+               $this->getDefaultSitemapTxtUrl()
+           );
+       }
+       
+       return array($sitemapUrlFromRobotsTxt);
+    }
+    
+    
+    /**
+     *
+     * @return string
+     */
+    private function getDefaultSitemapXmlUrl() {
+        $absoluteUrlDeriver = new \webignition\AbsoluteUrlDeriver\AbsoluteUrlDeriver(
+               '/' . self::DEFAULT_SITEMAP_XML_FILE_NAME,
+               $this->getRootUrl()
+        );
+        
+        return (string)$absoluteUrlDeriver->getAbsoluteUrl();
+    }
+    
+    
+    /**
+     *
+     * @return string
+     */
+    private function getDefaultSitemapTxtUrl() {
+        $absoluteUrlDeriver = new \webignition\AbsoluteUrlDeriver\AbsoluteUrlDeriver(
+               '/' . self::DEFAULT_SITEMAP_TXT_FILE_NAME,
+               $this->getRootUrl()
+        );
+        
+        return (string)$absoluteUrlDeriver->getAbsoluteUrl();
     }
     
     
