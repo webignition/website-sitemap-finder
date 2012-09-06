@@ -1,5 +1,4 @@
 <?php
-ini_set('display_errors', 'On');
 
 class GetSitemapContentTest extends PHPUnit_Framework_TestCase {
 
@@ -16,14 +15,22 @@ class GetSitemapContentTest extends PHPUnit_Framework_TestCase {
         $mockSitemapApplicationXmlHeadResponse = new \HttpMessage($this->getMockSitemapApplicationXmlRawResponseHeader());
         
         $httpClient = new \webignition\Http\Mock\Client\Client();
-        $httpClient->setResponseForCommand('GET http://webignition.net/robots.txt', $mockRobotsTxtResponse);        
-        $httpClient->setResponseForCommand('HEAD http://webignition.net/sitemap.xml', $mockSitemapApplicationXmlHeadResponse);
+        $httpClient->getCommandResponseList()->set(
+                'GET http://webignition.net/robots.txt',
+                $mockRobotsTxtResponse
+        );       
+        
+        $httpClient->getCommandResponseList()->set(
+                'HEAD http://webignition.net/sitemap.xml',
+                $mockSitemapApplicationXmlHeadResponse
+        );              
+        
        
         $finder->setHttpClient($httpClient);        
         
         $sitemapUrl = $finder->getSitemapUrl();
         
-        $this->assertEquals($sitemapUrl, 'http://webignition.net/sitemap.xml');
+        $this->assertEquals($sitemapUrl, 'http://webignition.net/sitemap.xml');       
     }
     
     
@@ -40,8 +47,16 @@ class GetSitemapContentTest extends PHPUnit_Framework_TestCase {
         $mockSitemapXmlHeadResponse = new \HttpMessage($this->getMockSitemapTextXmlRawResponseHeader());
         
         $httpClient = new \webignition\Http\Mock\Client\Client();
-        $httpClient->setResponseForCommand('GET http://webignition.net/robots.txt', $mockRobotsTxtResponse);        
-        $httpClient->setResponseForCommand('HEAD http://webignition.net/sitemap.xml', $mockSitemapXmlHeadResponse);
+        
+        $httpClient->getCommandResponseList()->set(
+                'GET http://webignition.net/robots.txt',
+                $mockRobotsTxtResponse
+        ); 
+        
+        $httpClient->getCommandResponseList()->set(
+                'HEAD http://webignition.net/sitemap.xml',
+                $mockSitemapXmlHeadResponse
+        );
        
         $finder->setHttpClient($httpClient);        
         
@@ -64,8 +79,16 @@ class GetSitemapContentTest extends PHPUnit_Framework_TestCase {
         $mockSitemapTxtHeadResponse = new \HttpMessage($this->getMockSitemapTxtRawResponseHeader());
         
         $httpClient = new \webignition\Http\Mock\Client\Client();
-        $httpClient->setResponseForCommand('GET http://webignition.net/robots.txt', $mockRobotsTxtResponse);        
-        $httpClient->setResponseForCommand('HEAD http://webignition.net/sitemap.txt', $mockSitemapTxtHeadResponse);
+        
+        $httpClient->getCommandResponseList()->set(
+                'GET http://webignition.net/robots.txt',
+                $mockRobotsTxtResponse
+        );
+        
+        $httpClient->getCommandResponseList()->set(
+                'HEAD http://webignition.net/sitemap.txt',
+                $mockSitemapTxtHeadResponse
+        );        
        
         $finder->setHttpClient($httpClient);        
         
@@ -85,8 +108,11 @@ class GetSitemapContentTest extends PHPUnit_Framework_TestCase {
 
         $mockSitemapApplicationXmlHeadResponse = new \HttpMessage($this->getMockSitemapApplicationXmlRawResponseHeader());
         
-        $httpClient = new \webignition\Http\Mock\Client\Client();        
-        $httpClient->setResponseForCommand('HEAD http://webignition.net/sitemap.xml', $mockSitemapApplicationXmlHeadResponse);
+        $httpClient = new \webignition\Http\Mock\Client\Client();                
+        $httpClient->getCommandResponseList()->set(
+                'HEAD http://webignition.net/sitemap.xml',
+                $mockSitemapApplicationXmlHeadResponse
+        );        
        
         $finder->setHttpClient($httpClient);        
         
@@ -106,8 +132,11 @@ class GetSitemapContentTest extends PHPUnit_Framework_TestCase {
 
         $mockSitemapXmlHeadResponse = new \HttpMessage($this->getMockSitemapTextXmlRawResponseHeader());
         
-        $httpClient = new \webignition\Http\Mock\Client\Client();      
-        $httpClient->setResponseForCommand('HEAD http://webignition.net/sitemap.xml', $mockSitemapXmlHeadResponse);
+        $httpClient = new \webignition\Http\Mock\Client\Client();              
+        $httpClient->getCommandResponseList()->set(
+                'HEAD http://webignition.net/sitemap.xml',
+                $mockSitemapXmlHeadResponse
+        );        
        
         $finder->setHttpClient($httpClient);        
         
@@ -127,8 +156,11 @@ class GetSitemapContentTest extends PHPUnit_Framework_TestCase {
         
         $mockSitemapTxtHeadResponse = new \HttpMessage($this->getMockSitemapTxtRawResponseHeader());
         
-        $httpClient = new \webignition\Http\Mock\Client\Client();      
-        $httpClient->setResponseForCommand('HEAD http://webignition.net/sitemap.txt', $mockSitemapTxtHeadResponse);
+        $httpClient = new \webignition\Http\Mock\Client\Client();              
+        $httpClient->getCommandResponseList()->set(
+                'HEAD http://webignition.net/sitemap.txt',
+                $mockSitemapTxtHeadResponse
+        );        
        
         $finder->setHttpClient($httpClient);        
         

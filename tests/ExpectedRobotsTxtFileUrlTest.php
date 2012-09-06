@@ -1,6 +1,4 @@
 <?php
-ini_set('display_errors', 'On');
-
 class ExpectedRobotsTxtFileTest extends PHPUnit_Framework_TestCase {
 
     public function testGetExpectedRobotsTxtFileUrlTest() {
