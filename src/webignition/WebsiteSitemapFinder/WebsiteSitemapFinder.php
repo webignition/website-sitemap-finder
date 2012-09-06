@@ -89,6 +89,7 @@ class WebsiteSitemapFinder {
     private function getHttpClient() {
         if (is_null($this->httpClient)) {
             $this->httpClient = new \webignition\Http\Client\Client();
+            $this->httpClient->redirectHandler()->enable();
         }
         
         return $this->httpClient;
@@ -100,11 +101,12 @@ class WebsiteSitemapFinder {
      * @return string
      */
     public function getSitemapUrl() {
-        $possibleSitemapUrls = $this->getPossibleSitemapUrls();
+        $possibleSitemapUrls = $this->getPossibleSitemapUrls();        
         foreach ($possibleSitemapUrls as $possibleSitemapUrl) {
             $extension = pathinfo($possibleSitemapUrl, PATHINFO_EXTENSION);
             $this->sitemapIdentifier()->setPossibleSitemapUrl($possibleSitemapUrl);            
             $this->sitemapIdentifier()->setValidContentTypes($this->sitemapTypesAndRespectiveContentTypes[$extension]);
+            
             if ($this->sitemapIdentifier()->isSitemapUrl()) {
                 return $possibleSitemapUrl;
             }
