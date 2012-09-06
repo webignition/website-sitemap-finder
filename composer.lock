@@ -1,0 +1,62 @@
+{
+    "hash": "7060b8b906d8a2cb159017cef8ad3d5a",
+    "packages": [
+        {
+            "package": "webignition/absolute-url-deriver",
+            "version": "dev-master",
+            "source-reference": "d84d6f74fe55429d4e19f7ede4d81fd3090738cc",
+            "commit-date": "1343344065"
+        },
+        {
+            "package": "webignition/disallowed-character-terminated-string",
+            "version": "dev-master",
+            "source-reference": "b147af621f872a7c24156d5353454ff71fe650d3",
+            "commit-date": "1342614766"
+        },
+        {
+            "package": "webignition/http-client",
+            "version": "dev-master",
+            "source-reference": "17d70c76703029ea0b318c727e930b3c772a32a5",
+            "commit-date": "1344029348"
+        },
+        {
+            "package": "webignition/internet-media-type",
+            "version": "0.4"
+        },
+        {
+            "package": "webignition/quoted-string",
+            "version": "0.2"
+        },
+        {
+            "package": "webignition/robots-txt-file",
+            "version": "dev-master",
+            "source-reference": "7be8456bd61b98c6811683b86e84d41ef30c0f2a",
+            "commit-date": "1342614568"
+        },
+        {
+            "package": "webignition/robots-txt-parser",
+            "version": "dev-master",
+            "source-reference": "7c80d513033e0db934879043011e8ddf22d2c463",
+            "commit-date": "1342700692"
+        },
+        {
+            "package": "webignition/string-parser",
+            "version": "0.1"
+        },
+        {
+            "package": "webignition/url",
+            "version": "dev-master",
+            "source-reference": "c5adb2d25bc3ced3fede8a9835dc1d2b80c793b6",
+            "commit-date": "1345673270"
+        }
+    ],
+    "packages-dev": null,
+    "aliases": [
+
+    ],
+    "minimum-stability": "dev",
+    "stability-flags": {
+        "webignition/http-client": 20,
+        "webignition/robots-txt-parser": 20
+    }
+}
