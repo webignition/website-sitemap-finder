@@ -69,7 +69,14 @@ class SitemapIdentifier {
             $request->setMethod(HTTP_METH_HEAD);
             $response = $this->getHttpClient()->getResponse($request);
             
-            $this->isSitemapUrl = $response->getResponseCode() == 200 && in_array($response->getHeader('content-type'), $this->getValidContentTypes());
+            if ($response->getResponseCode() == 200) {
+                $mediaTypeParser = new \webignition\InternetMediaType\Parser\Parser();
+                $contentType = $mediaTypeParser->parse($response->getHeader('content-type'));
+                
+                $this->isSitemapUrl = in_array($contentType->getTypeSubtypeString(), $this->getValidContentTypes());
+            } else {
+                $this->isSitemapUrl = false;
+            }
         }
         
         return $this->isSitemapUrl;
