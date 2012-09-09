@@ -122,6 +122,10 @@ class WebsiteSitemapFinder {
      * @return string
      */
     public function getExpectedRobotsTxtFileUrl() {
+        if ($this->rootUrl->getRoot() == '') {            
+            return (string)$this->rootUrl . self::DEFAULT_SITEMAP_TXT_FILE_NAME;
+        }
+        
         $rootUrl = new NormalisedUrl($this->rootUrl->getRoot());        
         $rootUrl->setPath('/'.self::ROBOTS_TXT_FILE_NAME);
         
@@ -188,8 +192,8 @@ class WebsiteSitemapFinder {
      * @return string 
      */
     private function getRobotsTxtContent() {        
-        $request = new \HttpRequest($this->getExpectedRobotsTxtFileUrl());
-        $response = $this->getHttpClient()->getResponse($request);
+        $request = new \HttpRequest($this->getExpectedRobotsTxtFileUrl());        
+        $response = $this->getHttpClient()->getResponse($request);       
         
         if (!$response->getResponseCode() == 200) {
             return '';
