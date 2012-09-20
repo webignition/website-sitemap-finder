@@ -48,6 +48,9 @@ class WebsiteSitemapFinder {
         ),
         'txt' => array(
             'text/plain'
+        ),
+        'gz' => array(
+            'application/x-gzip'
         )
     );
 
@@ -178,7 +181,7 @@ class WebsiteSitemapFinder {
         $robotsTxtParser = new \webignition\RobotsTxt\File\Parser();
         $robotsTxtParser->setSource($this->getRobotsTxtContent());        
         $robotsTxtFile = $robotsTxtParser->getFile();
-        
+
         if ($robotsTxtFile->directiveList()->containsField('sitemap')) {
             return (string)$robotsTxtFile->directiveList()->filter(array('field', 'sitemap'))->first()->getValue();         
         }
@@ -191,7 +194,7 @@ class WebsiteSitemapFinder {
      *
      * @return string 
      */
-    private function getRobotsTxtContent() {        
+    private function getRobotsTxtContent() {                
         $request = new \HttpRequest($this->getExpectedRobotsTxtFileUrl());        
         $response = $this->getHttpClient()->getResponse($request);       
         
@@ -199,7 +202,10 @@ class WebsiteSitemapFinder {
             return '';
         }
         
-        if ($response->getHeader('content-type') != 'text/plain') {
+        $mediaTypeParser = new \webignition\InternetMediaType\Parser\Parser();
+        $contentType = $mediaTypeParser->parse($response->getHeader('content-type'));
+        
+        if ($contentType->getTypeSubtypeString() != 'text/plain') {
             return '';
         }
         

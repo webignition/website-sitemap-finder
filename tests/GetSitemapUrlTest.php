@@ -98,6 +98,30 @@ class GetSitemapContentTest extends PHPUnit_Framework_TestCase {
     }  
     
     
+    public function testGetSitemapXmlGzAsApplicationXGzipViaRobotsTxt() {
+        $finder = new webignition\WebsiteSitemapFinder\WebsiteSitemapFinder();        
+        $finder->setRootUrl('http://webignition.net');
+
+        $robotsTxtResponse = new \HttpMessage($this->getMockRobotsTxtSitemapXmlGzRawResponse());        
+        $sitemapHeadResponse = new \HttpMessage($this->getMockSitemapApplicationXGzipRawResponseHeader());      
+        
+        $httpClient = new \webignition\Http\Mock\Client\Client();
+        $httpClient->getCommandResponseList()->set(
+                'GET http://webignition.net/robots.txt',
+                $robotsTxtResponse
+        );       
+        
+        $httpClient->getCommandResponseList()->set(
+                'HEAD http://webignition.net/sitemap.xml.gz',
+                $sitemapHeadResponse
+        );              
+        
+       
+        $finder->setHttpClient($httpClient);        
+        $this->assertEquals('http://webignition.net/sitemap.xml.gz', $finder->getSitemapUrl());         
+    }
+    
+    
     /**
      * Test finding the sitemap.xml URL via the site root and served as application/xml
      *  
@@ -167,29 +191,23 @@ class GetSitemapContentTest extends PHPUnit_Framework_TestCase {
         $sitemapUrl = $finder->getSitemapUrl();
         
         $this->assertEquals($sitemapUrl, 'http://webignition.net/sitemap.txt');
-    }    
-    
-    
-    private function getMockRobotsTxtSitemapXmlRawResponse() {
-        return $this->getMockRobotsTxtSitemapRawResponseHeader() . "\n\n" . $this->getMockRobotsTxtSitemapXmlRawResponseBody();
-    }    
-    
-    private function getMockRobotsTxtSitemapXmlRawResponseBody() {
-        return $this->getMockRobotsTxtSitemapRawResponseBody('xml');
+    }
+
+    private function getMockRobotsTxtSitemapXmlGzRawResponse() {
+        return $this->getMockRobotsTxtSitemapRawResponseHeader() . "\n\n" . $this->getMockRobotsTxtSitemapRawResponseBody('xml.gz');
     }
     
-    private function getMockRobotsTxtSitemapTxtRawResponse() {
-        return $this->getMockRobotsTxtSitemapRawResponseHeader() . "\n\n" . $this->getMockRobotsTxtSitemapTxtRawResponseBody();
+    private function getMockRobotsTxtSitemapXmlRawResponse() {
+        return $this->getMockRobotsTxtSitemapRawResponseHeader() . "\n\n" . $this->getMockRobotsTxtSitemapRawResponseBody('xml');
     }    
     
-    private function getMockRobotsTxtSitemapTxtRawResponseBody() {
-        return $this->getMockRobotsTxtSitemapRawResponseBody('txt');
+    private function getMockRobotsTxtSitemapTxtRawResponse() {
+        return $this->getMockRobotsTxtSitemapRawResponseHeader() . "\n\n" . $this->getMockRobotsTxtSitemapRawResponseBody('txt');
     }
     
     private function getMockRobotsTxtSitemapRawResponseHeader() {
 return 'HTTP/1.1 200 OK
 Date: Thu, 19 Jul 2012 14:38:47 GMT
-Content-Length: 73
 Content-Type: text/plain';        
     }
     
@@ -199,6 +217,10 @@ Sitemap: http://webignition.net/sitemap.'.$extension.'
 Disallow: /cms/';        
     }
     
+
+    private function getMockSitemapApplicationXGzipRawResponseHeader() {
+        return $this->getMockSitemapFileRawResponseHeader('application/x-gzip');
+    }    
     
     private function getMockSitemapApplicationXmlRawResponseHeader() {
         return $this->getMockSitemapFileRawResponseHeader('application/xml');
