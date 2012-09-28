@@ -19,6 +19,7 @@ class WebsiteSitemapFinder {
     const ROBOTS_TXT_FILE_NAME = 'robots.txt';
     const DEFAULT_SITEMAP_XML_FILE_NAME = 'sitemap.xml';
     const DEFAULT_SITEMAP_TXT_FILE_NAME = 'sitemap.txt';
+    const DEFAULT_CONTENT_TYPE_KEY = 'xml';
     
     /**
      *
@@ -108,7 +109,7 @@ class WebsiteSitemapFinder {
         foreach ($possibleSitemapUrls as $possibleSitemapUrl) {
             $extension = pathinfo($possibleSitemapUrl, PATHINFO_EXTENSION);
             $this->sitemapIdentifier()->setPossibleSitemapUrl($possibleSitemapUrl);            
-            $this->sitemapIdentifier()->setValidContentTypes($this->sitemapTypesAndRespectiveContentTypes[$extension]);
+            $this->sitemapIdentifier()->setValidContentTypes($this->getValidContentTypesForFileExtension($extension));
             
             if ($this->sitemapIdentifier()->isSitemapUrl()) {
                 return $possibleSitemapUrl;
@@ -116,6 +117,19 @@ class WebsiteSitemapFinder {
         }
         
         return false;
+    }
+    
+    /**
+     * 
+     * @param string $extension
+     * @return array
+     */
+    private function getValidContentTypesForFileExtension($extension) {
+        if (isset($this->sitemapTypesAndRespectiveContentTypes[$extension])) {
+            $this->sitemapTypesAndRespectiveContentTypes[$extension]; 
+        }
+        
+        return $this->sitemapTypesAndRespectiveContentTypes[self::DEFAULT_CONTENT_TYPE_KEY];
     }
     
     
