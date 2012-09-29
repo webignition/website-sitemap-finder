@@ -210,8 +210,13 @@ class WebsiteSitemapFinder {
      * @return string 
      */
     private function getRobotsTxtContent() {                
-        $request = new \HttpRequest($this->getExpectedRobotsTxtFileUrl());        
-        $response = $this->getHttpClient()->getResponse($request);       
+        $request = new \HttpRequest($this->getExpectedRobotsTxtFileUrl());
+        
+        try {
+            $response = $this->getHttpClient()->getResponse($request); 
+        } catch (\webignition\Http\Client\Exception $httpClientException) {
+            return '';
+        }              
         
         if (!$response->getResponseCode() == 200) {
             return '';
@@ -235,7 +240,7 @@ class WebsiteSitemapFinder {
     private function sitemapIdentifier() {
         if (is_null($this->sitemapIdentifier)) {
             $this->sitemapIdentifier = new \webignition\WebsiteSitemapFinder\SitemapIdentifier();
-            $this->sitemapIdentifier->setHttpClient($this->getHttpClient());
+            $this->sitemapIdentifier->setHttpClient($this->getHttpClient());            
         }
         
         return $this->sitemapIdentifier;
