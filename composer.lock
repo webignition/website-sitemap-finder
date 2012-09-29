@@ -2,52 +2,313 @@
     "hash": "7060b8b906d8a2cb159017cef8ad3d5a",
     "packages": [
         {
-            "package": "webignition/absolute-url-deriver",
+            "name": "webignition/absolute-url-deriver",
             "version": "dev-master",
-            "source-reference": "d84d6f74fe55429d4e19f7ede4d81fd3090738cc",
-            "commit-date": "1343344065"
+            "source": {
+                "type": "git",
+                "url": "https://github.com/webignition/absolute-url-deriver",
+                "reference": "d84d6f74fe55429d4e19f7ede4d81fd3090738cc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/webignition/absolute-url-deriver/zipball/d84d6f74fe55429d4e19f7ede4d81fd3090738cc",
+                "reference": "d84d6f74fe55429d4e19f7ede4d81fd3090738cc",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0",
+                "webignition/url": ">=1.1"
+            },
+            "time": "1343344065",
+            "type": "library",
+            "installation-source": "source",
+            "autoload": {
+                "psr-0": {
+                    "": "src/"
+                }
+            }
         },
         {
-            "package": "webignition/disallowed-character-terminated-string",
+            "name": "webignition/disallowed-character-terminated-string",
             "version": "dev-master",
-            "source-reference": "b147af621f872a7c24156d5353454ff71fe650d3",
-            "commit-date": "1342614766"
+            "source": {
+                "type": "git",
+                "url": "https://github.com/webignition/disallowed-character-terminated-string",
+                "reference": "b147af621f872a7c24156d5353454ff71fe650d3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/webignition/disallowed-character-terminated-string/zipball/b147af621f872a7c24156d5353454ff71fe650d3",
+                "reference": "b147af621f872a7c24156d5353454ff71fe650d3",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "time": "1342614766",
+            "type": "library",
+            "installation-source": "source",
+            "autoload": {
+                "psr-0": {
+                    "": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jon Cram",
+                    "email": "jon@webignition.net",
+                    "homepage": null,
+                    "role": null
+                }
+            ],
+            "description": "A string terminated by one or more disallowed characters",
+            "homepage": "https://github.com/webignition/disallowed-character-terminated-string",
+            "keywords": [
+                "string",
+                "terminated"
+            ]
         },
         {
-            "package": "webignition/http-client",
+            "name": "webignition/http-client",
             "version": "dev-master",
-            "source-reference": "17d70c76703029ea0b318c727e930b3c772a32a5",
-            "commit-date": "1344029348"
+            "source": {
+                "type": "git",
+                "url": "https://github.com/webignition/http-client",
+                "reference": "c99807e0e74559c9ddf77e526ae1f28a7301baf6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/webignition/http-client/zipball/c99807e0e74559c9ddf77e526ae1f28a7301baf6",
+                "reference": "c99807e0e74559c9ddf77e526ae1f28a7301baf6",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0",
+                "ext-http": "*",
+                "webignition/absolute-url-deriver": ">=1.1",
+                "webignition/url": ">1.0"
+            },
+            "time": "1348147907",
+            "type": "library",
+            "installation-source": "source",
+            "autoload": {
+                "psr-0": {
+                    "": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jon Cram",
+                    "email": "jon@webignition.net"
+                }
+            ],
+            "description": "HTTP Client with additional reliability over regular HTTP request sending to compensate for timeouts and redirects",
+            "homepage": "https://github.com/webignition/http-client",
+            "keywords": [
+                "http",
+                "client"
+            ]
         },
         {
-            "package": "webignition/internet-media-type",
-            "version": "0.4"
+            "name": "webignition/internet-media-type",
+            "version": "0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/webignition/internet-media-type.git",
+                "reference": "0.4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/webignition/internet-media-type/zipball/0.4",
+                "reference": "0.4",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0",
+                "webignition/quoted-string": ">=0.1,<2.0",
+                "webignition/string-parser": ">=0.1, <2.0"
+            },
+            "time": "2012-08-16 15:14:02",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-0": {
+                    "": "src/"
+                }
+            }
         },
         {
-            "package": "webignition/quoted-string",
-            "version": "0.2"
+            "name": "webignition/quoted-string",
+            "version": "0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/webignition/quoted-string.git",
+                "reference": "0.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/webignition/quoted-string/zipball/0.2",
+                "reference": "0.2",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0",
+                "webignition/string-parser": "0.1"
+            },
+            "time": "2012-08-15 19:44:56",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-0": {
+                    "": "src/"
+                }
+            }
         },
         {
-            "package": "webignition/robots-txt-file",
+            "name": "webignition/robots-txt-file",
             "version": "dev-master",
-            "source-reference": "7be8456bd61b98c6811683b86e84d41ef30c0f2a",
-            "commit-date": "1342614568"
+            "source": {
+                "type": "git",
+                "url": "https://github.com/webignition/robots-txt-file",
+                "reference": "7be8456bd61b98c6811683b86e84d41ef30c0f2a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/webignition/robots-txt-file/zipball/7be8456bd61b98c6811683b86e84d41ef30c0f2a",
+                "reference": "7be8456bd61b98c6811683b86e84d41ef30c0f2a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0",
+                "webignition/disallowed-character-terminated-string": ">=1.0"
+            },
+            "time": "1342614568",
+            "type": "library",
+            "installation-source": "source",
+            "autoload": {
+                "psr-0": {
+                    "": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jon Cram",
+                    "email": "jon@webignition.net",
+                    "homepage": null,
+                    "role": null
+                }
+            ],
+            "description": "Models a robots.txt file",
+            "homepage": "https://github.com/webignition/robots-txt-file",
+            "keywords": [
+                "parser",
+                "robots.txt"
+            ]
         },
         {
-            "package": "webignition/robots-txt-parser",
+            "name": "webignition/robots-txt-parser",
             "version": "dev-master",
-            "source-reference": "7c80d513033e0db934879043011e8ddf22d2c463",
-            "commit-date": "1342700692"
+            "source": {
+                "type": "git",
+                "url": "https://github.com/webignition/robots-txt-parser",
+                "reference": "7c80d513033e0db934879043011e8ddf22d2c463"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/webignition/robots-txt-parser/zipball/7c80d513033e0db934879043011e8ddf22d2c463",
+                "reference": "7c80d513033e0db934879043011e8ddf22d2c463",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0",
+                "webignition/robots-txt-file": "dev-master"
+            },
+            "time": "1342700692",
+            "type": "library",
+            "installation-source": "source",
+            "autoload": {
+                "psr-0": {
+                    "": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jon Cram",
+                    "email": "jon@webignition.net",
+                    "homepage": null,
+                    "role": null
+                }
+            ],
+            "description": "Parser for robots.txt files",
+            "homepage": "https://github.com/webignition/robots-txt-parser",
+            "keywords": [
+                "parser",
+                "robots.txt"
+            ]
         },
         {
-            "package": "webignition/string-parser",
-            "version": "0.1"
+            "name": "webignition/string-parser",
+            "version": "0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/webignition/string-parser.git",
+                "reference": "0.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/webignition/string-parser/zipball/0.1",
+                "reference": "0.1",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "time": "2012-08-15 19:36:12",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-0": {
+                    "": "src/"
+                }
+            }
         },
         {
-            "package": "webignition/url",
+            "name": "webignition/url",
             "version": "dev-master",
-            "source-reference": "c5adb2d25bc3ced3fede8a9835dc1d2b80c793b6",
-            "commit-date": "1345673270"
+            "source": {
+                "type": "git",
+                "url": "https://github.com/webignition/url",
+                "reference": "c5adb2d25bc3ced3fede8a9835dc1d2b80c793b6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/webignition/url/zipball/c5adb2d25bc3ced3fede8a9835dc1d2b80c793b6",
+                "reference": "c5adb2d25bc3ced3fede8a9835dc1d2b80c793b6",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "time": "1345673270",
+            "type": "library",
+            "installation-source": "source",
+            "autoload": {
+                "psr-0": {
+                    "": "src/"
+                }
+            }
         }
     ],
     "packages-dev": null,
