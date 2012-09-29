@@ -97,9 +97,14 @@ class SitemapIdentifier {
      * @param int $requestMethod
      * @return boolean 
      */
-    private function isSitemapUrlForGivenRequestMethod($requestMethod) {
+    private function isSitemapUrlForGivenRequestMethod($requestMethod) {        
         $request = new \HttpRequest($this->possibleSitemapUrl, $requestMethod);
-        $response = $this->getHttpClient()->getResponse($request);
+        
+        try {
+            $response = $this->getHttpClient()->getResponse($request);             
+        } catch (\webignition\Http\Client\Exception $httpClientException) {            
+            return false;
+        }
         
         if ($response->getResponseCode() != 200) {
             return false;
