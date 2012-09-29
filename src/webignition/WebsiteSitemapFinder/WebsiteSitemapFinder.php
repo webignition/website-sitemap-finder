@@ -106,6 +106,7 @@ class WebsiteSitemapFinder {
      */
     public function getSitemapUrl() {
         $possibleSitemapUrls = $this->getPossibleSitemapUrls();        
+        
         foreach ($possibleSitemapUrls as $possibleSitemapUrl) {
             $extension = pathinfo($possibleSitemapUrl, PATHINFO_EXTENSION);
             $this->sitemapIdentifier()->setPossibleSitemapUrl($possibleSitemapUrl);            
@@ -124,9 +125,9 @@ class WebsiteSitemapFinder {
      * @param string $extension
      * @return array
      */
-    private function getValidContentTypesForFileExtension($extension) {
+    private function getValidContentTypesForFileExtension($extension) {        
         if (isset($this->sitemapTypesAndRespectiveContentTypes[$extension])) {
-            $this->sitemapTypesAndRespectiveContentTypes[$extension]; 
+            return $this->sitemapTypesAndRespectiveContentTypes[$extension]; 
         }
         
         return $this->sitemapTypesAndRespectiveContentTypes[self::DEFAULT_CONTENT_TYPE_KEY];
