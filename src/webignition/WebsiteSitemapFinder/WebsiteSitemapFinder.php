@@ -42,21 +42,6 @@ class WebsiteSitemapFinder {
     private $sitemapIdentifier = null;
     
     
-    private $sitemapTypesAndRespectiveContentTypes = array(
-        'xml' => array(
-            'application/xml',
-            'text/xml'
-        ),
-        'txt' => array(
-            'text/plain'
-        ),
-        'gz' => array(
-            'application/x-gzip'
-        )
-    );
-
-    
-    
     /**
      *
      * @param string $rootUrl
@@ -105,12 +90,10 @@ class WebsiteSitemapFinder {
      * @return string
      */
     public function getSitemapUrl() {
-        $possibleSitemapUrls = $this->getPossibleSitemapUrls();        
-        
+        $possibleSitemapUrls = $this->getPossibleSitemapUrls();
+
         foreach ($possibleSitemapUrls as $possibleSitemapUrl) {
-            $extension = pathinfo($possibleSitemapUrl, PATHINFO_EXTENSION);
-            $this->sitemapIdentifier()->setPossibleSitemapUrl($possibleSitemapUrl);            
-            $this->sitemapIdentifier()->setValidContentTypes($this->getValidContentTypesForFileExtension($extension));
+            $this->sitemapIdentifier()->setPossibleSitemapUrl($possibleSitemapUrl);              
             
             if ($this->sitemapIdentifier()->isSitemapUrl()) {
                 return $possibleSitemapUrl;
@@ -118,19 +101,6 @@ class WebsiteSitemapFinder {
         }
         
         return false;
-    }
-    
-    /**
-     * 
-     * @param string $extension
-     * @return array
-     */
-    private function getValidContentTypesForFileExtension($extension) {        
-        if (isset($this->sitemapTypesAndRespectiveContentTypes[$extension])) {
-            return $this->sitemapTypesAndRespectiveContentTypes[$extension]; 
-        }
-        
-        return $this->sitemapTypesAndRespectiveContentTypes[self::DEFAULT_CONTENT_TYPE_KEY];
     }
     
     
@@ -192,7 +162,7 @@ class WebsiteSitemapFinder {
     } 
     
     
-    private function findSitemapUrlFromRobotsTxt() {
+    private function findSitemapUrlFromRobotsTxt() {        
         $robotsTxtParser = new \webignition\RobotsTxt\File\Parser();
         $robotsTxtParser->setSource($this->getRobotsTxtContent());        
         $robotsTxtFile = $robotsTxtParser->getFile();
@@ -210,13 +180,13 @@ class WebsiteSitemapFinder {
      * @return string 
      */
     private function getRobotsTxtContent() {                
-        $request = new \HttpRequest($this->getExpectedRobotsTxtFileUrl());
+        $request = new \HttpRequest($this->getExpectedRobotsTxtFileUrl());        
         
         try {
             $response = $this->getHttpClient()->getResponse($request); 
         } catch (\webignition\Http\Client\Exception $httpClientException) {
             return '';
-        }              
+        }
         
         if (!$response->getResponseCode() == 200) {
             return '';
@@ -240,7 +210,27 @@ class WebsiteSitemapFinder {
     private function sitemapIdentifier() {
         if (is_null($this->sitemapIdentifier)) {
             $this->sitemapIdentifier = new \webignition\WebsiteSitemapFinder\SitemapIdentifier();
-            $this->sitemapIdentifier->setHttpClient($this->getHttpClient());            
+            $this->sitemapIdentifier->setHttpClient($this->getHttpClient());        
+            
+            $sitemapsOrgXmlMatcher = new \webignition\WebsiteSitemapFinder\SitemapMatcher\SitemapsOrgXml();
+            $sitemapsOrgXmlMatcher->setType('sitemaps.org.xml');            
+            $this->sitemapIdentifier->addMatcher($sitemapsOrgXmlMatcher);
+            
+            $sitemapsOrgTxtMatcher = new \webignition\WebsiteSitemapFinder\SitemapMatcher\SitemapsOrgTxt();
+            $sitemapsOrgTxtMatcher->setType('sitemaps.org.txt');            
+            $this->sitemapIdentifier->addMatcher($sitemapsOrgTxtMatcher);            
+            
+            $rssFeedMatcher = new \webignition\WebsiteSitemapFinder\SitemapMatcher\RssFeed();
+            $rssFeedMatcher->setType('application/rss+xml');            
+            $this->sitemapIdentifier->addMatcher($rssFeedMatcher);   
+            
+            $atomFeedMatcher = new \webignition\WebsiteSitemapFinder\SitemapMatcher\AtomFeed();
+            $atomFeedMatcher->setType('application/atom+xml');                        
+            $this->sitemapIdentifier->addMatcher($atomFeedMatcher);            
+            
+            $applicationXGzipMatcher = new \webignition\WebsiteSitemapFinder\SitemapMatcher\ApplicationXGzip();
+            $applicationXGzipMatcher->setType('application/x-gzip');                        
+            $this->sitemapIdentifier->addMatcher($applicationXGzipMatcher);                
         }
         
         return $this->sitemapIdentifier;
