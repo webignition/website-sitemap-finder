@@ -26,7 +26,22 @@
                 "psr-0": {
                     "": "src/"
                 }
-            }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jon Cram",
+                    "email": "jon@webignition.net"
+                }
+            ],
+            "description": "Derives an absolute URL from relative and source URLs",
+            "homepage": "https://github.com/webignition/absolute-url-deriver",
+            "keywords": [
+                "url",
+                "absolute"
+            ]
         },
         {
             "name": "webignition/disallowed-character-terminated-string",
@@ -59,9 +74,7 @@
             "authors": [
                 {
                     "name": "Jon Cram",
-                    "email": "jon@webignition.net",
-                    "homepage": null,
-                    "role": null
+                    "email": "jon@webignition.net"
                 }
             ],
             "description": "A string terminated by one or more disallowed characters",
@@ -141,7 +154,25 @@
                 "psr-0": {
                     "": "src/"
                 }
-            }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jon Cram",
+                    "email": "jon@webignition.net"
+                }
+            ],
+            "description": "PHP model of an http://en.wikipedia.org/wiki/Internet_media_type",
+            "homepage": "https://github.com/webignition/internet-media-type",
+            "keywords": [
+                "internet media type",
+                "media type",
+                "media-type",
+                "content type",
+                "content-type"
+            ]
         },
         {
             "name": "webignition/quoted-string",
@@ -168,7 +199,22 @@
                 "psr-0": {
                     "": "src/"
                 }
-            }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jon Cram",
+                    "email": "jon@webignition.net"
+                }
+            ],
+            "description": "A parser for string values that are encapsulated in double quotes (ASCII 34)",
+            "homepage": "https://github.com/webignition/quoted-string",
+            "keywords": [
+                "parser",
+                "quoted-string"
+            ]
         },
         {
             "name": "webignition/robots-txt-file",
@@ -202,16 +248,13 @@
             "authors": [
                 {
                     "name": "Jon Cram",
-                    "email": "jon@webignition.net",
-                    "homepage": null,
-                    "role": null
+                    "email": "jon@webignition.net"
                 }
             ],
             "description": "Models a robots.txt file",
             "homepage": "https://github.com/webignition/robots-txt-file",
             "keywords": [
-                "parser",
-                "robots.txt"
+                "parser"
             ]
         },
         {
@@ -246,16 +289,13 @@
             "authors": [
                 {
                     "name": "Jon Cram",
-                    "email": "jon@webignition.net",
-                    "homepage": null,
-                    "role": null
+                    "email": "jon@webignition.net"
                 }
             ],
             "description": "Parser for robots.txt files",
             "homepage": "https://github.com/webignition/robots-txt-parser",
             "keywords": [
-                "parser",
-                "robots.txt"
+                "parser"
             ]
         },
         {
@@ -282,11 +322,26 @@
                 "psr-0": {
                     "": "src/"
                 }
-            }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jon Cram",
+                    "email": "jon@webignition.net"
+                }
+            ],
+            "description": "Abstract state-based string parser",
+            "homepage": "https://github.com/webignition/string-parser",
+            "keywords": [
+                "parser",
+                "string"
+            ]
         },
         {
             "name": "webignition/url",
-            "version": "dev-master",
+            "version": "1.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webignition/url",
@@ -301,9 +356,9 @@
             "require": {
                 "php": ">=5.3.0"
             },
-            "time": "1349127059",
+            "time": "2012-10-01 21:30:59",
             "type": "library",
-            "installation-source": "source",
+            "installation-source": "dist",
             "autoload": {
                 "psr-0": {
                     "": "src/"
