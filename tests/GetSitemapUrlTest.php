@@ -96,7 +96,7 @@ class GetSitemapUrlTest extends BaseTest {
      * Test finding sitemap URL that is an ATOM feed via robots.txt
      * 
      */
-    public function testGetSitemapRssFeedAsApplicationAtomPlusXmlViaRobotsTxt() {
+    public function testGetSitemapAtomFeedAsApplicationAtomPlusXmlViaRobotsTxt() {
         $this->setTestFixturePath(__CLASS__, __FUNCTION__);         
         
         $this->getSitemapFinder()->setRootUrl('http://blogsofnote.blogspot.co.uk');        

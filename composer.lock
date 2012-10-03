@@ -1,5 +1,5 @@
 {
-    "hash": "7060b8b906d8a2cb159017cef8ad3d5a",
+    "hash": "ffd4b99623602e008de41cc302284390",
     "packages": [
         {
             "name": "webignition/absolute-url-deriver",
@@ -290,25 +290,122 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/webignition/url",
-                "reference": "c5adb2d25bc3ced3fede8a9835dc1d2b80c793b6"
+                "reference": "1.2.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/webignition/url/zipball/c5adb2d25bc3ced3fede8a9835dc1d2b80c793b6",
-                "reference": "c5adb2d25bc3ced3fede8a9835dc1d2b80c793b6",
+                "url": "https://github.com/webignition/url/zipball/1.2.2",
+                "reference": "1.2.2",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.0"
             },
-            "time": "1345673270",
+            "time": "1349127059",
             "type": "library",
             "installation-source": "source",
             "autoload": {
                 "psr-0": {
                     "": "src/"
                 }
-            }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jon Cram",
+                    "email": "jon@webignition.net"
+                }
+            ],
+            "description": "Represents a URL, a library to be used in many other places. Applies semantically-lossless normalisation for comparisons.",
+            "homepage": "https://github.com/webignition/url",
+            "keywords": [
+                "url"
+            ]
+        },
+        {
+            "name": "webignition/web-resource-model",
+            "version": "0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/webignition/web-resource-model.git",
+                "reference": "0.4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/webignition/web-resource-model/zipball/0.4",
+                "reference": "0.4",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0",
+                "webignition/internet-media-type": ">=0.1,<2.0"
+            },
+            "time": "2012-08-16 15:16:06",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-0": {
+                    "": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jon Cram",
+                    "email": "jon@webignition.net"
+                }
+            ],
+            "description": "Model of a web-based resource",
+            "homepage": "https://github.com/webignition/web-resource-model",
+            "keywords": [
+                "web",
+                "modem"
+            ]
+        },
+        {
+            "name": "webignition/website-sitemap-identifier",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/webignition/website-sitemap-identifier.git",
+                "reference": "2bc4ac1191d9d3dcd910eaf9a483c2850a4c6e47"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/webignition/website-sitemap-identifier/zipball/2bc4ac1191d9d3dcd910eaf9a483c2850a4c6e47",
+                "reference": "2bc4ac1191d9d3dcd910eaf9a483c2850a4c6e47",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0",
+                "webignition/internet-media-type": ">=0.1,<2.0"
+            },
+            "time": "1349266009",
+            "type": "library",
+            "installation-source": "source",
+            "autoload": {
+                "psr-0": {
+                    "": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jon Cram",
+                    "email": "jon@webignition.net"
+                }
+            ],
+            "description": "Identify the type of website sitemap given the content",
+            "homepage": "https://github.com/webignition/website-sitemap-identifier",
+            "keywords": [
+                "Sitemap"
+            ]
         }
     ],
     "packages-dev": null,
@@ -318,6 +415,7 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "webignition/http-client": 20,
-        "webignition/robots-txt-parser": 20
+        "webignition/robots-txt-parser": 20,
+        "webignition/website-sitemap-identifier": 20
     }
 }

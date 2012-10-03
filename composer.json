@@ -19,7 +19,9 @@
         "webignition/http-client":"dev-master",
         "webignition/robots-txt-parser":"dev-master",
         "webignition/absolute-url-deriver":">=1.2",
-        "webignition/internet-media-type":">=0.1,<2.0"
+        "webignition/internet-media-type":">=0.1,<2.0",
+        "webignition/website-sitemap-identifier":"dev-master",
+        "webignition/web-resource-model":">=0.1,<2.0"
     },
     "minimum-stability":"dev"
 }
