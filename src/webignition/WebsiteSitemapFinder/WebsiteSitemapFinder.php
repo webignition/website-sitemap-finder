@@ -40,7 +40,7 @@ class WebsiteSitemapFinder {
     
     /**
      *
-     * @var \webignition\WebsiteSitemapFinder\XmlSitemapIdentifier
+     * @var WebsiteSitemapIdentifier
      */
     private $sitemapIdentifier = null;
     
