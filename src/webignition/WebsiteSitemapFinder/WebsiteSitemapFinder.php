@@ -104,7 +104,7 @@ class WebsiteSitemapFinder {
      */
     public function getSitemapUrl() {
         $possibleSitemapUrls = $this->getPossibleSitemapUrls();
-
+        
         foreach ($possibleSitemapUrls as $possibleSitemapUrl) {
             $possibleSitemapResource = $this->getSitemapResource($possibleSitemapUrl);
             if ($possibleSitemapResource instanceof WebResource) {
@@ -182,13 +182,26 @@ class WebsiteSitemapFinder {
     } 
     
     
+    /**
+     * 
+     * @return boolean|string
+     */
     private function findSitemapUrlFromRobotsTxt() {        
         $robotsTxtParser = new \webignition\RobotsTxt\File\Parser();
         $robotsTxtParser->setSource($this->getRobotsTxtContent());        
         $robotsTxtFile = $robotsTxtParser->getFile();
 
         if ($robotsTxtFile->directiveList()->containsField('sitemap')) {
-            return (string)$robotsTxtFile->directiveList()->filter(array('field', 'sitemap'))->first()->getValue();         
+            $firstSitemapUrl = (string)$robotsTxtFile->directiveList()->filter(array('field', 'sitemap'))->first()->getValue();
+            
+            $url = new \webignition\Url\Url($firstSitemapUrl);
+            
+            if ($url->isRelative()) {
+                $absoluteUrlDeriver = new \webignition\AbsoluteUrlDeriver\AbsoluteUrlDeriver($firstSitemapUrl, $this->getRootUrl());
+                return (string)$absoluteUrlDeriver->getAbsoluteUrl();
+            }
+            
+            return $firstSitemapUrl;     
         }
         
         return false;
