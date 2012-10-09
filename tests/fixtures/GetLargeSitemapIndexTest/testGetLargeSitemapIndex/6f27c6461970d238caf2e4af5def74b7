@@ -1,0 +1,152 @@
+HTTP/1.1 200 OK
+Date: Tue, 09 Oct 2012 21:04:21 GMT
+Server: Apache
+Set-Cookie: form_token=b85b83a2d3ef491a6409873029dd4f08; expires=Tue, 02-Oct-2096 07:06:40 GMT; path=/; domain=.io9.com
+P3P: CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM STA"
+GawkerApplicationHost: Ganja
+GawkerHost: GM28 - Request took D=75867 at t=1349816661544455 on site io9.com (live)
+GawkerApplication: ganja
+ntCoent-Length: 4777
+Content-Type: text/xml; charset=utf-8;
+Accept-Ranges: bytes
+Cache-Control: private, max-age=60
+Age: 0
+Expires: Tue, 09 Oct 2012 21:05:21 GMT
+x-cdn: Served by WebAcceleration
+x-cdn-ver: 2011.11.17.01
+Transfer-Encoding: chunked
+Connection: Keep-Alive
+
+78
+<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+	<url>
+		<loc><![CDAT
+1231
+A[http://io9.com]]></loc>
+		<lastmod>2012-10-09T14:04:21-07:00</lastmod>
+		<changefreq>hourly</changefreq>
+		<priority>1.0</priority>
+	</url>
+					<url>
+			<loc><![CDATA[http://io9.com/313228/the-internet-uses-5-of-global-electricity]]></loc>
+			<lastmod>2007-10-20T15:15:53-07:00</lastmod>
+			<changefreq>daily</changefreq>
+			<priority>0.7</priority>
+		</url>
+					<url>
+			<loc><![CDATA[http://io9.com/313066/dna-warlord-james-watson-finally-spanked-for-a-lifetime-of-racism-sexism]]></loc>
+			<lastmod>2007-10-19T12:40:25-07:00</lastmod>
+			<changefreq>daily</changefreq>
+			<priority>0.7</priority>
+		</url>
+					<url>
+			<loc><![CDATA[http://io9.com/313008/no-future-for-exubera-pfizers-insulin-bong]]></loc>
+			<lastmod>2007-10-19T10:55:38-07:00</lastmod>
+			<changefreq>daily</changefreq>
+			<priority>0.7</priority>
+		</url>
+					<url>
+			<loc><![CDATA[http://io9.com/312918/all-mongo-all-the-time]]></loc>
+			<lastmod>2007-10-19T09:21:04-07:00</lastmod>
+			<changefreq>daily</changefreq>
+			<priority>0.7</priority>
+		</url>
+					<url>
+			<loc><![CDATA[http://io9.com/312683/ants-know-when-they-will-die]]></loc>
+			<lastmod>2007-10-18T18:20:45-07:00</lastmod>
+			<changefreq>daily</changefreq>
+			<priority>0.7</priority>
+		</url>
+					<url>
+			<loc><![CDATA[http://io9.com/312633/hitherto-unseen-inside-mouth-cam-in-decoys-2]]></loc>
+			<lastmod>2007-10-18T13:31:42-07:00</lastmod>
+			<changefreq>daily</changefreq>
+			<priority>0.7</priority>
+		</url>
+					<url>
+			<loc><![CDATA[http://io9.com/312235/the-50-million-dollar-dame-episode-4]]></loc>
+			<lastmod>2007-10-17T22:51:03-07:00</lastmod>
+			<changefreq>daily</changefreq>
+			<priority>0.7</priority>
+		</url>
+					<url>
+			<loc><![CDATA[http://io9.com/312181/another-superheroine-bites-the-dust-in-the-kitchen]]></loc>
+			<lastmod>2007-10-17T17:55:32-07:00</lastmod>
+			<changefreq>daily</changefreq>
+			<priority>0.7</priority>
+		</url>
+					<url>
+			<loc><![CDATA[http://io9.com/311735/terminator-vs-chuck-on-monday-nights]]></loc>
+			<lastmod>2007-10-17T01:03:27-07:00</lastmod>
+			<changefreq>daily</changefreq>
+			<priority>0.7</priority>
+		</url>
+					<url>
+			<loc><![CDATA[http://io9.com/311730/spider+man-is-trapped-in-a-web-of-pitch-meetings]]></loc>
+			<lastmod>2007-10-17T00:22:43-07:00</lastmod>
+			<changefreq>daily</changefreq>
+			<priority>0.7</priority>
+		</url>
+					<url>
+			<loc><![CDATA[http://io9.com/311678/heroes-has-become-gay-mutant-version-of-mad-about-you]]></loc>
+			<lastmod>2007-10-16T17:46:55-07:00</lastmod>
+			<changefreq>daily</changefreq>
+			<priority>0.7</priority>
+		</url>
+					<url>
+			<loc><![CDATA[http://io9.com/311583/time-for-a-bionic-upgrade]]></loc>
+			<lastmod>2007-10-16T13:35:52-07:00</lastmod>
+			<changefreq>daily</changefreq>
+			<priority>0.7</priority>
+		</url>
+					<url>
+			<loc><![CDATA[http://io9.com/311216/pink-men-in-bubbles-float-into-boston]]></loc>
+			<lastmod>2007-10-15T21:09:07-07:00</lastmod>
+			<changefreq>daily</changefreq>
+			<priority>0.7</priority>
+		</url>
+					<url>
+			<loc><![CDATA[http://io9.com/311196/secret-inspiration-for-philip-k-dick-biopic-your-name-here]]></loc>
+			<lastmod>2007-10-15T18:49:20-07:00</lastmod>
+			<changefreq>daily</changefreq>
+			<priority>0.7</priority>
+		</url>
+					<url>
+			<loc><![CDATA[http://io9.com/311188/jupiters-explosive-moon-io-built-its-atmosphere-out-of-frozen-volcano-gas]]></loc>
+			<lastmod>2007-10-15T18:16:23-07:00</lastmod>
+			<changefreq>daily</changefreq>
+			<priority>0.7</priority>
+		</url>
+					<url>
+			<loc><![CDATA[http://io9.com/311178/after-the-terrorist-apocalypse-the-rich-will-eat-rotting-meat]]></loc>
+			<lastmod>2007-10-15T17:52:06-07:00</lastmod>
+			<changefreq>daily</changefreq>
+			<priority>0.7</priority>
+		</url>
+					<url>
+			<loc><![CDATA[http://io9.com/311165/new-york-city-aerial-walkways-that-could-have-been]]></loc>
+			<lastmod>2007-10-15T17:07:02-07:00</lastmod>
+			<changefreq>daily</changefreq>
+			<priority>0.7</priority>
+		</url>
+					<url>
+			<loc><![CDATA[http://io9.com/311142/step-into-my-wormhole-and-become-invisible]]></loc>
+			<lastmod>2007-10-15T16:23:41-07:00</lastmod>
+			<changefreq>daily</changefreq>
+			<priority>0.7</priority>
+		</url>
+					<url>
+			<loc><![CDATA[http://io9.com/310710/green-lantern-serves-up-equal-opportunity-exploitation]]></loc>
+			<lastmod>2007-10-14T23:10:01-07:00</lastmod>
+			<changefreq>daily</changefreq>
+			<priority>0.7</priority>
+		</url>
+					<url>
+			<loc><![CDATA[http://io9.com/310592/the-strange-and-perhaps-unintentional-art-of-phantasm]]></loc>
+			<lastmod>2007-10-13T18:04:12-07:00</lastmod>
+			<changefreq>daily</changefreq>
+			<priority>0.7</priority>
+		</url>
+	</urlset>
+0
+

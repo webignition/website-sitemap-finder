@@ -11,8 +11,10 @@ class GetSitemapUrlTest extends BaseTest {
     public function testGetSitemapXmlAsApplicationXmlViaRobotsTxt() {       
         $this->setTestFixturePath(__CLASS__, __FUNCTION__);                 
         
-        $this->getSitemapFinder()->setRootUrl('http://webignition.net');        
-        $this->assertEquals('http://webignition.net/sitemap.xml', $this->getSitemapFinder()->getSitemapUrl());       
+        $this->getSitemapFinder()->setRootUrl('http://webignition.net');
+        
+        $sitemaps = $this->getSitemapFinder()->getSitemaps();
+        $this->assertEquals('http://webignition.net/sitemap.xml', $sitemaps[0]->getUrl());       
     }
     
     
@@ -25,8 +27,8 @@ class GetSitemapUrlTest extends BaseTest {
         $this->setTestFixturePath(__CLASS__, __FUNCTION__);              
         
         $this->getSitemapFinder()->setRootUrl('http://webignition.net');        
-        $this->assertEquals('http://webignition.net/sitemap.xml', $this->getSitemapFinder()->getSitemapUrl());         
-
+        $sitemaps = $this->getSitemapFinder()->getSitemaps();
+        $this->assertEquals('http://webignition.net/sitemap.xml', $sitemaps[0]->getUrl());
     }   
     
     
@@ -39,7 +41,8 @@ class GetSitemapUrlTest extends BaseTest {
         $this->setTestFixturePath(__CLASS__, __FUNCTION__);                 
         
         $this->getSitemapFinder()->setRootUrl('http://webignition.net');        
-        $this->assertEquals('http://webignition.net/sitemap.txt', $this->getSitemapFinder()->getSitemapUrl()); 
+        $sitemaps = $this->getSitemapFinder()->getSitemaps();
+        $this->assertEquals('http://webignition.net/sitemap.txt', $sitemaps[0]->getUrl());  
     }  
     
     
@@ -52,7 +55,8 @@ class GetSitemapUrlTest extends BaseTest {
         $this->setTestFixturePath(__CLASS__, __FUNCTION__);         
         
         $this->getSitemapFinder()->setRootUrl('http://www.ominocity.com');        
-        $this->assertEquals('http://www.ominocity.com/sitemap.xml.gz', $this->getSitemapFinder()->getSitemapUrl());                 
+        $sitemaps = $this->getSitemapFinder()->getSitemaps();
+        $this->assertEquals('http://www.ominocity.com/sitemap.xml.gz', $sitemaps[0]->getUrl());          
     }
     
     
@@ -64,7 +68,8 @@ class GetSitemapUrlTest extends BaseTest {
         $this->setTestFixturePath(__CLASS__, __FUNCTION__);               
         
         $this->getSitemapFinder()->setRootUrl('http://webignition.net');        
-        $this->assertEquals('http://webignition.net/sitemap.xml', $this->getSitemapFinder()->getSitemapUrl());
+        $sitemaps = $this->getSitemapFinder()->getSitemaps();        
+        $this->assertEquals('http://webignition.net/sitemap.xml', $sitemaps[0]->getUrl());
     }    
     
     
@@ -76,7 +81,8 @@ class GetSitemapUrlTest extends BaseTest {
         $this->setTestFixturePath(__CLASS__, __FUNCTION__);                 
         
         $this->getSitemapFinder()->setRootUrl('http://webignition.net');        
-        $this->assertEquals('http://webignition.net/sitemap.xml', $this->getSitemapFinder()->getSitemapUrl());
+        $sitemaps = $this->getSitemapFinder()->getSitemaps();
+        $this->assertEquals('http://webignition.net/sitemap.xml', $sitemaps[0]->getUrl());
     }   
     
     
@@ -88,7 +94,8 @@ class GetSitemapUrlTest extends BaseTest {
         $this->setTestFixturePath(__CLASS__, __FUNCTION__);                 
         
         $this->getSitemapFinder()->setRootUrl('http://webignition.net');        
-        $this->assertEquals('http://webignition.net/sitemap.txt', $this->getSitemapFinder()->getSitemapUrl()); 
+        $sitemaps = $this->getSitemapFinder()->getSitemaps();
+        $this->assertEquals('http://webignition.net/sitemap.txt', $sitemaps[0]->getUrl());  
     }
     
     
@@ -100,7 +107,8 @@ class GetSitemapUrlTest extends BaseTest {
         $this->setTestFixturePath(__CLASS__, __FUNCTION__);         
         
         $this->getSitemapFinder()->setRootUrl('http://blogsofnote.blogspot.co.uk');        
-        $this->assertEquals('http://blogsofnote.blogspot.com/feeds/posts/default?orderby=UPDATED', $this->getSitemapFinder()->getSitemapUrl());         
-    }  
+        $sitemaps = $this->getSitemapFinder()->getSitemaps();
+        $this->assertEquals('http://blogsofnote.blogspot.com/feeds/posts/default?orderby=UPDATED', $sitemaps[0]->getUrl());          
+    }
     
 }

@@ -1,0 +1,196 @@
+HTTP/1.1 200 OK
+Date: Tue, 09 Oct 2012 20:50:08 GMT
+Server: Apache
+Set-Cookie: form_token=924b12156f7f0464ea69deb417fabeeb; expires=Tue, 02-Oct-2096 07:06:40 GMT; path=/; domain=.io9.com
+P3P: CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM STA"
+GawkerApplicationHost: Ganja
+GawkerHost: GM27 - Request took D=114329 at t=1349815808930206 on site io9.com (live)
+GawkerApplication: ganja
+Cteonnt-Length: 6927
+Content-Type: text/xml; charset=utf-8;
+Accept-Ranges: bytes
+Cache-Control: private, max-age=60
+Age: 0
+Expires: Tue, 09 Oct 2012 20:51:08 GMT
+x-cdn: Served by WebAcceleration
+x-cdn-ver: 2011.11.17.01
+Transfer-Encoding: chunked
+Connection: Keep-Alive
+
+76
+<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+	<url>
+		<loc><![CD
+97C
+ATA[http://io9.com]]></loc>
+		<lastmod>2012-10-09T13:50:09-07:00</lastmod>
+		<changefreq>hourly</changefreq>
+		<priority>1.0</priority>
+	</url>
+					<url>
+			<loc><![CDATA[http://io9.com/5950197/new-infographic-explains-loopers-convoluted-timelines]]></loc>
+			<lastmod>2012-10-09T12:53:41-07:00</lastmod>
+			<changefreq>hourly</changefreq>
+			<priority>0.7</priority>
+		</url>
+					<url>
+			<loc><![CDATA[http://io9.com/5950303/armie-hammer-could-be-the-next-batman--again]]></loc>
+			<lastmod>2012-10-09T12:33:30-07:00</lastmod>
+			<changefreq>hourly</changefreq>
+			<priority>0.7</priority>
+		</url>
+					<url>
+			<loc><![CDATA[http://io9.com/5950084/why-three-wheeled-cars-could-be-the-future-of-driving]]></loc>
+			<lastmod>2012-10-09T12:28:26-07:00</lastmod>
+			<changefreq>hourly</changefreq>
+			<priority>0.7</priority>
+		</url>
+					<url>
+			<loc><![CDATA[http://io9.com/5950304/submersible-rises-from-the-inky-depths-runs-into-a-bird-150-feet-underwater]]></loc>
+			<lastmod>2012-10-09T12:25:00-07:00</lastmod>
+			<changefreq>hourly</changefreq>
+			<priority>0.7</priority>
+		</url>
+					<url>
+			<loc><![CDATA[http://io9.com/5950301/do-these-game-of-thrones-set-pics-show-a-scene-thats-not-in-the-books]]></loc>
+			<lastmod>2012-10-09T12:21:58-07:00</lastmod>
+			<changefreq>hourly</changefreq>
+			<priority>0.7</priority>
+		</url>
+					<url>
+			<loc><![CDATA[http://io9.com/5950294/an-extremely-trippy-photo-of-the-old-disneyland-cafeteria]]></loc>
+			<lastmod>2012-10-09T12:05:00-07:00</lastmod>
+			<changefreq>hourly</changefreq>
+			<priority>0.7</priority>
+		</url>
+					<url>
+			<loc><![CDATA[http://io9.com/5950262/this-levitating-barbecue-is-the-coolest-thing-youll-see-today]]></loc>
+			<lastmod>2012-10-09T11:40:19-07:00</lastmod>
+			<changefreq>hourly</changefreq>
+			<priority>0.7</priority>
+		</url>
+					<url>
+			<loc><![CDATA[http://io9.com/5950192/a-fossilized-scene-of-a-spider-attacking-a-wasp-preserved-for-110-million-years]]></loc>
+			<lastmod>2012-10-09T11:15:00-07:00</lastmod>
+			<changefreq>hourly</changefreq>
+			<priority>0.7</priority>
+		</url>
+					<url>
+			<loc><![CDATA[http://io9.com/5950275/felix-baumgartners-supersonic-space-jump-has-been-aborted]]></loc>
+			<lastmod>2012-10-09T11:04:46-07:00</lastmod>
+			<changefreq>hourly</changefreq>
+			<priority>0.7</priority>
+		</url>
+					<url>
+			<loc><![CDATA[http://io9.com/5950224/three-life+on+mars-scenarios-as-described-by-nasa-curios
+111D
+ity-scientist-ashwin-vasavada]]></loc>
+			<lastmod>2012-10-09T10:40:00-07:00</lastmod>
+			<changefreq>hourly</changefreq>
+			<priority>0.7</priority>
+		</url>
+					<url>
+			<loc><![CDATA[http://io9.com/5950256/evolutionary-anthropology-to-ayn-rand-you-fail]]></loc>
+			<lastmod>2012-10-09T10:19:34-07:00</lastmod>
+			<changefreq>hourly</changefreq>
+			<priority>0.7</priority>
+		</url>
+					<url>
+			<loc><![CDATA[http://io9.com/5950104/10-tips-for-generating-killer-science-fiction-story-ideas]]></loc>
+			<lastmod>2012-10-09T10:15:34-07:00</lastmod>
+			<changefreq>hourly</changefreq>
+			<priority>0.7</priority>
+		</url>
+					<url>
+			<loc><![CDATA[http://io9.com/5950220/watch-shogun-tango-25-minutes-of-pure-science-fiction-vehicle-porn]]></loc>
+			<lastmod>2012-10-09T09:25:00-07:00</lastmod>
+			<changefreq>hourly</changefreq>
+			<priority>0.7</priority>
+		</url>
+					<url>
+			<loc><![CDATA[http://io9.com/5950113/on-revolution-everybody-always-abandons-charlie-except-us-were-stuck-with-her]]></loc>
+			<lastmod>2012-10-09T09:20:00-07:00</lastmod>
+			<changefreq>hourly</changefreq>
+			<priority>0.7</priority>
+		</url>
+					<url>
+			<loc><![CDATA[http://io9.com/5950204/would-you-rather-wear-500-star-wars-glasses-or-a-han-solo-bathing-suit]]></loc>
+			<lastmod>2012-10-09T08:55:00-07:00</lastmod>
+			<changefreq>hourly</changefreq>
+			<priority>0.7</priority>
+		</url>
+					<url>
+			<loc><![CDATA[http://io9.com/5950181/man-wins-live-cockroach+eating-contest-promptly-dies]]></loc>
+			<lastmod>2012-10-09T08:30:00-07:00</lastmod>
+			<changefreq>hourly</changefreq>
+			<priority>0.7</priority>
+		</url>
+					<url>
+			<loc><![CDATA[http://io9.com/5950150/mutant-family-portraits-combine-fathers-and-daughters-into-a-single-body]]></loc>
+			<lastmod>2012-10-09T08:00:00-07:00</lastmod>
+			<changefreq>hourly</changefreq>
+			<priority>0.7</priority>
+		</url>
+					<url>
+			<loc><![CDATA[http://io9.com/5950179/an-exclusive-first-look-at-the-new-poster-for-john-dies-at-the-end]]></loc>
+			<lastmod>2012-10-09T07:50:00-07:00</lastmod>
+			<changefreq>hourly</changefreq>
+			<priority>0.7</priority>
+		</url>
+					<url>
+			<loc><![CDATA[http://io9.com/5950138/did-polish-cryptographers-crack-the-nazi-enigma-code-before-alan-turing]]></loc>
+			<lastmod>2012-10-09T07:30:00-07:00</lastmod>
+			<changefreq>hourly</changefreq>
+			<priority>0.7</priority>
+		</url>
+					<url>
+			<loc><![CDATA[http://io9.com/5950158/felix-baumgartner-is-about-to-attempt-the-most-ambitious-skydive-in-history--watch-it-here-updated]]></loc>
+			<lastmod>2012-10-09T07:15:00-07:00</lastmod>
+			<changefreq>hourly</changefreq>
+			<priority>0.7</priority>
+		</url>
+					<url>
+			<loc><![CDATA[http://io9.com/5950134/curiosity-discovers-a-chunk-of-itself-on-the-martian-surface-sarcasticrover-jumps-all-over-it]]></loc>
+			<lastmod>2012-10-09T06:30:00-07:00</lastmod>
+			<changefreq>hourly</changefreq>
+			<priority>0.7</priority>
+		</url>
+					<url>
+			<loc><![CDATA[http://io9.com/5950105/which-iconic-doctor-who-companions-will-return-for-the-shows-50th-birthday]]></loc>
+			<lastmod>2012-10-09T06:00:00-07:00</lastmod>
+			<changefreq>hourly</changefreq>
+			<priority>0.7</priority>
+		</url>
+					<url>
+			<loc><![CDATA[http://io9.com/5950076/declassified-documents-reveal-air-forces-plan-to-build-a-ufo]]></loc>
+			<lastmod>2012-10-08T19:15:00-07:00</lastmod>
+			<changefreq>hourly</changefreq>
+			<priority>0.7</priority>
+		</url>
+					<url>
+			<loc><![CDATA[http://io9.com/5950070/once-upon-a-times-prince-charming-very-charming-but-not-so-great-at-anything-else]]></loc>
+			<lastmod>2012-10-08T18:57:35-07:00</lastmod>
+			<changefreq>hourly</changefreq>
+			<priority>0.7</priority>
+		</url>
+					<url>
+			<loc><![CDATA[http://io9.com/5950062/a-newspaper-profile-of-darth-vader-from-1977-when-he-was-a-nobody]]></loc>
+			<lastmod>2012-10-08T17:50:00-07:00</lastmod>
+			<changefreq>hourly</changefreq>
+			<priority>0.7</priority>
+		</url>
+					<url>
+			<loc><![CDATA[http://io9.com/5950043/picture-of-the-day-october-8-2012]]></loc>
+			<lastmod>2012-10-08T17:30:00-07:00</lastmod>
+			<changefreq>hourly</changefreq>
+			<priority>0.7</priority>
+		</url>
+					<url>
+			<loc><![CDATA[http://io9.com/5950052/behold-the-wild-campus-from-pixars-monsters-university]]></loc>
+			<lastmod>2012-10-08T17:22:25-07:00</lastmod>
+			<changefreq>hourly</changefreq>
+			<priority>0.7</priority>
+		</url>
+	</urlset>
+0
+

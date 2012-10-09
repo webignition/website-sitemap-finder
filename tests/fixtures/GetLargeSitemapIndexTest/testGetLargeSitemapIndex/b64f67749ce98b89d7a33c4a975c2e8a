@@ -1,0 +1,122 @@
+HTTP/1.1 200 OK
+Date: Tue, 09 Oct 2012 21:04:17 GMT
+Server: Apache
+Set-Cookie: form_token=08ca650a728c092092da38a35d00d2fb; expires=Tue, 02-Oct-2096 07:06:40 GMT; path=/; domain=.io9.com
+P3P: CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM STA"
+GawkerApplicationHost: Ganja
+GawkerHost: GM38 - Request took D=67740 at t=1349816657146654 on site io9.com (live)
+GawkerApplication: ganja
+ntCoent-Length: 3612
+Content-Type: text/xml; charset=utf-8;
+Accept-Ranges: bytes
+Cache-Control: private, max-age=60
+Age: 0
+Expires: Tue, 09 Oct 2012 21:05:17 GMT
+x-cdn: Served by WebAcceleration
+x-cdn-ver: 2011.11.17.01
+Transfer-Encoding: chunked
+Connection: Keep-Alive
+
+7A
+<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+	<url>
+		<loc><![CDATA[
+DA2
+http://io9.com]]></loc>
+		<lastmod>2012-10-09T14:04:17-07:00</lastmod>
+		<changefreq>hourly</changefreq>
+		<priority>1.0</priority>
+	</url>
+					<url>
+			<loc><![CDATA[http://io9.com/321198/psychedelic-dante-01-trailer-++-gorgeous-but-familiar]]></loc>
+			<lastmod>2007-11-09T16:10:51-08:00</lastmod>
+			<changefreq>daily</changefreq>
+			<priority>0.7</priority>
+		</url>
+					<url>
+			<loc><![CDATA[http://io9.com/321128/fahrenheit-451-is-the-most-relevant-piece-of-literature-ever-written]]></loc>
+			<lastmod>2007-11-09T12:59:03-08:00</lastmod>
+			<changefreq>daily</changefreq>
+			<priority>0.7</priority>
+		</url>
+					<url>
+			<loc><![CDATA[http://io9.com/321095/video-evidence-tells-you-not-to-walk-into-the-mist]]></loc>
+			<lastmod>2007-11-09T12:33:52-08:00</lastmod>
+			<changefreq>daily</changefreq>
+			<priority>0.7</priority>
+		</url>
+					<url>
+			<loc><![CDATA[http://io9.com/321032/tv-makes-you-kill-in-the-signal]]></loc>
+			<lastmod>2007-11-09T10:46:08-08:00</lastmod>
+			<changefreq>daily</changefreq>
+			<priority>0.7</priority>
+		</url>
+					<url>
+			<loc><![CDATA[http://io9.com/321046/winona-ryder-joins-trek-cast-please-just-make-the-damn-movie-now]]></loc>
+			<lastmod>2007-11-09T10:45:20-08:00</lastmod>
+			<changefreq>daily</changefreq>
+			<priority>0.7</priority>
+		</url>
+					<url>
+			<loc><![CDATA[http://io9.com/320112/weather-engineers-remove-co2-from-atmosphere-stop-global-warming]]></loc>
+			<lastmod>2007-11-09T10:43:03-08:00</lastmod>
+			<changefreq>daily</changefreq>
+			<priority>0.7</priority>
+		</url>
+					<url>
+			<loc><![CDATA[http://io9.com/320858/humans-to-reach-the-moon-+-of-mars-+-in-ten-years]]></loc>
+			<lastmod>2007-11-09T06:53:25-08:00</lastmod>
+			<changefreq>daily</changefreq>
+			<priority>0.7</priority>
+		</url>
+					<url>
+			<loc><![CDATA[http://io9.com/320854/in-the-future-of-star-trek-everyone-wears-trench-coats]]></loc>
+			<lastmod>2007-11-09T06:36:56-08:00</lastmod>
+			<changefreq>daily</changefreq>
+			<priority>0.7</priority>
+		</url>
+					<url>
+			<loc><![CDATA[http://io9.com/320773/guillermo-del-toro-tackles-telepathic-british-spies]]></loc>
+			<lastmod>2007-11-08T23:52:46-08:00</lastmod>
+			<changefreq>daily</changefreq>
+			<priority>0.7</priority>
+		</url>
+					<url>
+			<loc><![CDATA[http://io9.com/320767/]]></loc>
+			<lastmod>2007-11-08T20:51:02-08:00</lastmod>
+			<changefreq>daily</changefreq>
+			<priority>0.7</priority>
+		</url>
+					<url>
+			<loc><![CDATA[http://io9.com/320712/has-southland-tales-shaken-the-suck-factor]]></loc>
+			<lastmod>2007-11-08T16:40:25-08:00</lastmod>
+			<changefreq>daily</changefreq>
+			<priority>0.7</priority>
+		</url>
+					<url>
+			<loc><![CDATA[http://io9.com/320692/bionic-womans-greatest-enemy-is-apathy]]></loc>
+			<lastmod>2007-11-08T15:55:59-08:00</lastmod>
+			<changefreq>daily</changefreq>
+			<priority>0.7</priority>
+		</url>
+					<url>
+			<loc><![CDATA[http://io9.com/320688/doctor-whittles-washboard-abs-in-human-flesh]]></loc>
+			<lastmod>2007-11-08T14:55:32-08:00</lastmod>
+			<changefreq>daily</changefreq>
+			<priority>0.7</priority>
+		</url>
+					<url>
+			<loc><![CDATA[http://io9.com/320568/]]></loc>
+			<lastmod>2007-11-08T11:48:11-08:00</lastmod>
+			<changefreq>daily</changefreq>
+			<priority>0.7</priority>
+		</url>
+					<url>
+			<loc><![CDATA[http://io9.com/320281/the-50-million-dollar-dame-jaime-does-the-rules]]></loc>
+			<lastmod>2007-11-07T22:44:59-08:00</lastmod>
+			<changefreq>daily</changefreq>
+			<priority>0.7</priority>
+		</url>
+	</urlset>
+0
+

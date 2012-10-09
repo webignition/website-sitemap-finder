@@ -1,0 +1,1013 @@
+HTTP/1.1 200 OK
+Date: Tue, 09 Oct 2012 20:52:06 GMT
+Server: Apache
+P3P: CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM STA"
+GawkerApplicationHost: Ganja
+GawkerHost: GM38 - Request took D=126343 at t=1349815865930784 on site io9.com (live)
+GawkerApplication: ganja
+Content-Type: text/xml; charset=utf-8;
+Accept-Ranges: bytes
+Cache-Control: private, max-age=60
+Age: 0
+Expires: Tue, 09 Oct 2012 20:53:06 GMT
+x-cdn: Served by WebAcceleration
+x-cdn-ver: 2011.11.17.01
+Transfer-Encoding: chunked
+Connection: Keep-Alive
+
+B1
+<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
+	<url>
+		<loc><![C
+4A3D
+DATA[http://io9.com/5950197/new-infographic-explains-loopers-convoluted-timelines]]></loc>
+		<news:news>
+			<news:publication>	
+				<news:name><![CDATA[io9]]></news:name>
+				<news:language>en</news:language>
+			</news:publication>
+			<news:publication_date>2012-10-09T12:53:41-07:00</news:publication_date>
+			<news:title><![CDATA[New infographic explains &lt;em&gt;Looper&lt;/em&gt;'s convoluted timelines]]></news:title>
+			<news:keywords><![CDATA[Science, this is awesome, Looper, looper timeline, movies, tweet]]></news:keywords>
+		</news:news>
+	</url>
+	<url>
+		<loc><![CDATA[http://io9.com/5950303/armie-hammer-could-be-the-next-batman-++-again]]></loc>
+		<news:news>
+			<news:publication>	
+				<news:name><![CDATA[io9]]></news:name>
+				<news:language>en</news:language>
+			</news:publication>
+			<news:publication_date>2012-10-09T12:33:30-07:00</news:publication_date>
+			<news:title><![CDATA[Armie Hammer could be the next Batman &amp;mdash; again!]]></news:title>
+			<news:keywords><![CDATA[Science, justice league, batman, armie hammer, movies, comics]]></news:keywords>
+		</news:news>
+	</url>
+	<url>
+		<loc><![CDATA[http://io9.com/5950084/why-three+wheeled-cars-could-be-the-future-of-driving]]></loc>
+		<news:news>
+			<news:publication>	
+				<news:name><![CDATA[io9]]></news:name>
+				<news:language>en</news:language>
+			</news:publication>
+			<news:publication_date>2012-10-09T12:28:26-07:00</news:publication_date>
+			<news:title><![CDATA[Why three wheeled cars could be the future of driving]]></news:title>
+			<news:keywords><![CDATA[Science, secret history, engineering, three wheeled cars, science, sci, futurism, tweet, cars]]></news:keywords>
+		</news:news>
+	</url>
+	<url>
+		<loc><![CDATA[http://io9.com/5950304/submersible-rises-from-the-inky-depths-runs-into-a-bird-150-feet-underwater]]></loc>
+		<news:news>
+			<news:publication>	
+				<news:name><![CDATA[io9]]></news:name>
+				<news:language>en</news:language>
+			</news:publication>
+			<news:publication_date>2012-10-09T12:25:00-07:00</news:publication_date>
+			<news:title><![CDATA[Submersible rises from the inky depths, runs into a bird 150 feet underwater]]></news:title>
+			<news:keywords><![CDATA[Science, animal behavior, tweet, birds, marine biology, submersibles, video]]></news:keywords>
+		</news:news>
+	</url>
+	<url>
+		<loc><![CDATA[http://io9.com/5950301/do-these-game-of-thrones-set-pics-hint-at-a-scene-thats-not-in-the-books]]></loc>
+		<news:news>
+			<news:publication>	
+				<news:name><![CDATA[io9]]></news:name>
+				<news:language>en</news:language>
+			</news:publication>
+			<news:publication_date>2012-10-09T12:21:58-07:00</news:publication_date>
+			<news:title><![CDATA[Do these &lt;em&gt;Game of Thrones&lt;/em&gt; set pics show a scene that's not in the books?]]></news:title>
+			<news:keywords><![CDATA[Science, Game Of Thrones, television, george r.r. martin, Song of Ice and Fire, tweet, WENN photo]]></news:keywords>
+		</news:news>
+	</url>
+	<url>
+		<loc><![CDATA[http://io9.com/5950294/an-extremely-trippy-photo-of-the-old-disneyland-cafeteria]]></loc>
+		<news:news>
+			<news:publication>	
+				<news:name><![CDATA[io9]]></news:name>
+				<news:language>en</news:language>
+			</news:publication>
+			<news:publication_date>2012-10-09T12:05:00-07:00</news:publication_date>
+			<news:title><![CDATA[An extremely trippy photo of the old Disneyland cafeteria]]></news:title>
+			<news:keywords><![CDATA[Science, disney, disney princesses, photography, this is awesome, tweet]]></news:keywords>
+		</news:news>
+	</url>
+	<url>
+		<loc><![CDATA[http://io9.com/5950262/this-levitating-barbecue-is-the-coolest-thing-youll-see-today]]></loc>
+		<news:news>
+			<news:publication>	
+				<news:name><![CDATA[io9]]></news:name>
+				<news:language>en</news:language>
+			</news:publication>
+			<news:publication_date>2012-10-09T11:40:19-07:00</news:publication_date>
+			<news:title><![CDATA[This levitating barbecue is the coolest thing you'll see today]]></news:title>
+			<news:keywords><![CDATA[Science, this is awesome, physics, electromagnetism, electromagnetic induction, em, science, sci, veritasium, top, fb]]></news:keywords>
+		</news:news>
+	</url>
+	<url>
+		<loc><![CDATA[http://io9.com/5950192/a-fossilized-scene-of-a-spider-attacking-a-wasp-preserved-for-110-million-years]]></loc>
+		<news:news>
+			<news:publication>	
+				<news:name><![CDATA[io9]]></news:name>
+				<news:language>en</news:language>
+			</news:publication>
+			<news:publication_date>2012-10-09T11:15:00-07:00</news:publication_date>
+			<news:title><![CDATA[A Fossilized Scene of a Spider Attacking a Wasp, Preserved for 110 Million Years]]></news:title>
+			<news:keywords><![CDATA[Science, paleontology, this is awesome, biology, amber preservation, spiders, wasps, evolutionary biology, science, sci, top, fb]]></news:keywords>
+		</news:news>
+	</url>
+	<url>
+		<loc><![CDATA[http://io9.com/5950275/felix-baumgartners-supersonic-space-jump-has-been-aborted]]></loc>
+		<news:news>
+			<news:publication>	
+				<news:name><![CDATA[io9]]></news:name>
+				<news:language>en</news:language>
+			</news:publication>
+			<news:publication_date>2012-10-09T11:04:46-07:00</news:publication_date>
+			<news:title><![CDATA[Felix Baumgartner's Supersonic Space Jump Has Been Aborted]]></news:title>
+			<news:keywords><![CDATA[Science, space, science, space jump, space dive, nasa, lockheed, kittinger, baumgartner, thompson, stratos, red bull, jonathan, clark, tweet]]></news:keywords>
+		</news:news>
+	</url>
+	<url>
+		<loc><![CDATA[http://io9.com/5950224/three-life+on+mars-scenarios-as-described-by-nasa-curiosity-scientist-ashwin-vasavada]]></loc>
+		<news:news>
+			<news:publication>	
+				<news:name><![CDATA[io9]]></news:name>
+				<news:language>en</news:language>
+			</news:publication>
+			<news:publication_date>2012-10-09T10:40:00-07:00</news:publication_date>
+			<news:title><![CDATA[Three Life-On-Mars scenarios, as described by NASA Curiosity Scientist Ashwin Vasavada]]></news:title>
+			<news:keywords><![CDATA[Science, mars rover, space, curiosity, msl, Mars Science Laboratory, nasa, ashwin vasavada, sci, exobiology, astrobiology, panspermia]]></news:keywords>
+		</news:news>
+	</url>
+	<url>
+		<loc><![CDATA[http://io9.com/5950256/evolutionary-anthropology-to-ayn-rand-you-fail]]></loc>
+		<news:news>
+			<news:publication>	
+				<news:name><![CDATA[io9]]></news:name>
+				<news:language>en</news:language>
+			</news:publication>
+			<news:publication_date>2012-10-09T10:19:34-07:00</news:publication_date>
+			<news:title><![CDATA[Evolutionary Anthropology to Ayn Rand: You Fail]]></news:title>
+			<news:keywords><![CDATA[Science, afternoon reading, ayn rand, anthropology, evolution, science, eric michael johnson, tweet, fb]]></news:keywords>
+		</news:news>
+	</url>
+	<url>
+		<loc><![CDATA[http://io9.com/5950104/10-ways-to-generate-killer-science-fiction-story-ideas]]></loc>
+		<news:news>
+			<news:publication>	
+				<news:name><![CDATA[io9]]></news:name>
+				<news:language>en</news:language>
+			</news:publication>
+			<news:publication_date>2012-10-09T10:15:34-07:00</news:publication_date>
+			<news:title><![CDATA[10 Tips for Generating Killer Science Fiction Story Ideas]]></news:title>
+			<news:keywords><![CDATA[Science, superlist, writing advice, books, writing, publishing, top, fb]]></news:keywords>
+		</news:news>
+	</url>
+	<url>
+		<loc><![CDATA[http://io9.com/5950220/watch-shogun-tango-25-minutes-of-pure-science-fiction-vehicle-porn]]></loc>
+		<news:news>
+			<news:publication>	
+				<news:name><![CDATA[io9]]></news:name>
+				<news:language>en</news:language>
+			</news:publication>
+			<news:publication_date>2012-10-09T09:25:00-07:00</news:publication_date>
+			<news:title><![CDATA[Watch &lt;em&gt;Shogun Tango&lt;/em&gt;, 2.5 minutes of pure science fiction vehicle porn]]></news:title>
+			<news:keywords><![CDATA[Science, short films, top, fb, shogun tango, concept art]]></news:keywords>
+		</news:news>
+	</url>
+	<url>
+		<loc><![CDATA[http://io9.com/5950113/on-revolution-everybody-always-abandons-charlie-except-us-were-stuck-with-her]]></loc>
+		<news:news>
+			<news:publication>	
+				<news:name><![CDATA[io9]]></news:name>
+				<news:language>en</news:language>
+			</news:publication>
+			<news:publication_date>2012-10-09T09:20:00-07:00</news:publication_date>
+			<news:title><![CDATA[On Revolution, everybody always abandons Charlie. Except us. We're stuck with her.]]></news:title>
+			<news:keywords><![CDATA[Science, tv recap, revolution, television, tweet, fb]]></news:keywords>
+		</news:news>
+	</url>
+	<url>
+		<loc><![CDATA[http://io9.com/5950204/would-you-rather-wear-500-star-wars-glasses-or-a-han-solo-bathing-suit]]></loc>
+		<news:news>
+			<news:publication>	
+				<news:name><![CDATA[io9]]></news:name>
+				<news:language>en</news:language>
+			</news:publication>
+			<news:publication_date>2012-10-09T08:55:00-07:00</news:publication_date>
+			<news:title><![CDATA[Would you rather wear $500 &lt;em&gt;Star Wars&lt;/em&gt; glasses or a Han Solo bathing suit?]]></news:title>
+			<news:keywords><![CDATA[Science, sci fashion, star wars, glasses, han solo]]></news:keywords>
+		</news:news>
+	</url>
+	<url>
+		<loc><![CDATA[http://io9.com/5950181/man-wins-live-cockroach+eating-contest-promptly-dies]]></loc>
+		<news:news>
+			<news:publication>	
+				<news:name><![CDATA[io9]]></news:name>
+				<news:language>en</news:language>
+			</news:publication>
+			<news:publication_date>2012-10-09T08:30:00-07:00</news:publication_date>
+			<news:title><![CDATA[Man wins live cockroach-eating contest, promptly dies]]></news:title>
+			<news:keywords><![CDATA[Science, holy crap wtf, cockroaches, health, medicine, science, sci, biology, edward archibold, florida, insects, entomology, tweet, fb]]></news:keywords>
+		</news:news>
+	</url>
+	<url>
+		<loc><![CDATA[http://io9.com/5950150/mutant-family-portraits-combine-fathers-and-daughters-into-a-single-body]]></loc>
+		<news:news>
+			<news:publication>	
+				<news:name><![CDATA[io9]]></news:name>
+				<news:language>en</news:language>
+			</news:publication>
+			<news:publication_date>2012-10-09T08:00:00-07:00</news:publication_date>
+			<news:title><![CDATA[Mutant family portraits combine fathers and daughters into a single body]]></news:title>
+			<news:keywords><![CDATA[Science, photography, ulric collette, genetics, top, fb]]></news:keywords>
+		</news:news>
+	</url>
+	<url>
+		<loc><![CDATA[http://io9.com/5950179/an-exclusive-first-look-at-the-new-poster-for-john-dies-at-the-end]]></loc>
+		<news:news>
+			<news:publication>	
+				<news:name><![CDATA[io9]]></news:name>
+				<news:language>en</news:language>
+			</news:publication>
+			<news:publication_date>2012-10-09T07:50:00-07:00</news:publication_date>
+			<news:title><![CDATA[An exclusive first look at the new poster for &lt;em&gt;John Dies At The End&lt;/em&gt;]]></news:title>
+			<news:keywords><![CDATA[Science, john dies at the end, movies, exclusive, poster, don coscarelli, david wong, tweet]]></news:keywords>
+		</news:news>
+	</url>
+	<url>
+		<loc><![CDATA[http://io9.com/5950138/did-polish-cryptographers-crack-the-nazi-enigma-code-before-alan-turing]]></loc>
+		<news:news>
+			<news:publication>	
+				<news:name><![CDATA[io9]]></news:name>
+				<news:language>en</news:language>
+			</news:publication>
+			<news:publication_date>2012-10-09T07:30:00-07:00</news:publication_date>
+			<news:title><![CDATA[Did Polish cryptographers crack the Nazi Enigma code before Alan Turing?]]></news:title>
+			<news:keywords><![CDATA[Science, secret history, alan turing, code breakers, enigma code, world war ii, cryptography, tweet]]></news:keywords>
+		</news:news>
+	</url>
+	<url>
+		<loc><![CDATA[http://io9.com/5950158/felix-baumgartner-is-about-to-attempt-the-most-ambitious-skydive-in-history--watch-it-here]]></loc>
+		<news:news>
+			<news:publication>	
+				<news:name><![CDATA[io9]]></news:name>
+				<news:language>en</news:language>
+			</news:publication>
+			<news:publication_date>2012-10-09T07:15:00-07:00</news:publication_date>
+			<news:title><![CDATA[Felix Baumgartner is about to attempt the most ambitious skydive in history &amp;mdash; watch it here (UPDATED)]]></news:title>
+			<news:keywords><![CDATA[Science, this is awesome, space, science, space jump, space dive, nasa, lockheed, kittinger, baumgartner, thompson, stratos, red bull, jonathan, clark, tweet, fb]]></news:keywords>
+		</news:news>
+	</url>
+	<url>
+		<loc><![CDATA[http://io9.com/5950134/curiosity-discovers-a-chunk-of-itself-on-the-martian-surface-sarcasticrover-jumps-all-over-it]]></loc>
+		<news:news>
+			<news:publication>	
+				<news:name><![CDATA[io9]]></news:name>
+				<news:language>en</news:language>
+			</news:publication>
+			<news:publication_date>2012-10-09T06:30:00-07:00</news:publication_date>
+			<news:title><![CDATA[Curiosity discovers a chunk of itself on the Martian surface, SarcasticRover jumps all over it]]></news:title>
+			<news:keywords><![CDATA[Science, mars, curiosity, science, sci]]></news:keywords>
+		</news:news>
+	</url>
+	<url>
+		<loc><![CDATA[http://io9.com/5950105/which-iconic-doctor-who-companions-will-return-for-the-shows-50th-birthday]]></loc>
+		<news:news>
+			<news:publication>	
+				<news:name><![CDATA[io9]]></news:name>
+				<news:language>en</news:language>
+			</news:publication>
+			<news:publication_date>2012-10-09T06:00:00-07:00</news:publication_date>
+			<news:title><![CDATA[Which iconic &lt;em&gt;Doctor Who&lt;/em&gt; companions will return for the show's 50th birthday?]]></news:title>
+			<news:keywords><![CDATA[Science, morning spoilers, thor the dark world, Cloud Atlas, kick-ass 2, Wreck-It Ralph, doctor who, fringe, walking dead, revolution, once upon a time, 666 park avenue, dracula, american horror story, arrow, top, fb]]></news:keywords>
+		</news:news>
+	</url>
+	<url>
+		<loc><![CDATA[http://io9.com/5950076/declassified-documents-reveal-air-forces-plan-to-build-a-ufo]]></loc>
+		<news:news>
+			<news:publication>	
+				<news:name><![CDATA[io9]]></news:name>
+				<news:language>en</news:language>
+			</news:publication>
+			<news:publication_date>2012-10-08T19:15:00-07:00</news:publication_date>
+			<news:title><![CDATA[Declassified documents reveal Air Force's plan to build a UFO]]></news:title>
+			<news:keywords><![CDATA[Science, ufos, secret history, tweet, fb, military, defense]]></news:keywords>
+		</news:news>
+	</url>
+	<url>
+		<loc><![CDATA[http://io9.com/5950070/once-upon-a-times-prince-charming-very-charming-but-not-so-great-at-anything-else]]></loc>
+		<news:news>
+			<news:publication>	
+				<news:name><![CDATA[io9]]></news:name>
+				<news:language>en</news:language>
+			</news:publication>
+			<news:publication_date>2012-10-08T18:57:35-07:00</news:publication_date>
+			<news:title><![CDATA[&lt;em&gt;Once Upon A Time's&lt;/em&gt; Prince Charming: Very Charming, but Not so Great at Anything Else]]></news:title>
+			<news:keywords><![CDATA[Science, tv recap, once upon a time, television, once upon a time recap, tweet]]></news:keywords>
+		</news:news>
+	</url>
+	<url>
+		<loc><![CDATA[http://io9.com/5950062/a-newspaper-profile-of-darth-vader-from-1977-when-he-was-a-nobody]]></loc>
+		<news:news>
+			<news:publication>	
+				<news:name><![CDATA[io9]]></news:name>
+				<news:language>en</news:language>
+			</news:publication>
+			<news:publication_date>2012-10-08T17:50:00-07:00</news:publication_date>
+			<news:title><![CDATA[A newspaper profile of Darth Vader from 1977, when he was a nobody]]></news:title>
+			<news:keywords><![CDATA[Science, star wars, tweet, darth vader, movies, fb]]></news:keywords>
+		</news:news>
+	</url>
+	<url>
+		<loc><![CDATA[http://io9.com/5950043/picture-of-the-day-october-8-2012]]></loc>
+		<news:news>
+			<news:publication>	
+				<news:name><![CDATA[io9]]></news:name>
+				<news:language>en</news:language>
+			</news:publication>
+			<news:publication_date>2012-10-08T17:30:00-07:00</news:publication_date>
+			<news:title><![CDATA[Picture of the Day: October 8, 2012]]></news:title>
+			<news:keywords><![CDATA[Science, picture of the day, nasa, space porn]]></news:keywords>
+		</news:news>
+	</url>
+	<url>
+		<loc><![CDATA[http://io9.com/5950052/behold-the-wild-campus-from-pixars-monsters-university]]></loc>
+		<news:news>
+			<news:publication>	
+				<news:name><![CDATA[io9]]></news:name>
+				<news:language>en</news:language>
+			</news:publication>
+			<news:publication_date>2012-10-08T17:22:25-07:00</news:publication_date>
+			<news:title><![CDATA[Behold the wild campus from Pixar's &lt;em&gt;Monsters University&lt;/em&gt;]]></news:title>
+			<news:keywords><![CDATA[Science, monsters university, movies, disney, Monsters Inc., pixar, monsters, animation]]></news:keywords>
+		</news:news>
+	</url>
+	<url>
+		<loc><![CDATA[http://io9.com/5950042/nasa-finds-evidence-of-a-new-black-hole-in-our-galaxy]]></loc>
+		<news:news>
+			<news:publication>	
+				<news:name><![CDATA[io9]]></news:name>
+				<news:language>en</news:language>
+			</news:publication>
+			<news:publication_date>2012-10-08T16:22:33-07:00</news:publication_date>
+			<news:title><![CDATA[NASA finds evidence of a new black hole in our galaxy]]></news:title>
+			<news:keywords><![CDATA[Science, space, space porn, nasa, swift satellite, black holes]]></news:keywords>
+		</news:news>
+	</url>
+	<url>
+		<loc><![CDATA[http://io9.com/5950022/whats-more-thrilling-than-a-fantasy-about-the-chosen-one-how-about-the-cursed-one]]></loc>
+		<news:news>
+			<news:publication>	
+				<news:name><![CDATA[io9]]></news:name>
+				<news:language>en</news:language>
+			</news:publication>
+			<news:publication_date>2012-10-08T16:00:00-07:00</news:publication_date>
+			<news:title><![CDATA[What's more thrilling than a fantasy about the Chosen One? How about the Cursed One?]]></news:title>
+			<news:keywords><![CDATA[Science, book review, blackwood, young adult novels, ya fiction, Gwenda Bond, fantasy, books, tweet, fb]]></news:keywords>
+		</news:news>
+	</url>
+	<url>
+		<loc><![CDATA[http://io9.com/5950038/first-trailer-for-room-237-the-documentary-that-decodes-the-shining]]></loc>
+		<news:news>
+			<news:publication>	
+				<news:name><![CDATA[io9]]></news:name>
+				<news:language>en</news:language>
+			</news:publication>
+			<news:publication_date>2012-10-08T15:58:49-07:00</news:publication_date>
+			<news:title><![CDATA[First Trailer for &lt;em&gt;Room 237&lt;/em&gt;, the Documentary That Decodes &lt;em&gt;The Shining&lt;/em&gt;]]></news:title>
+			<news:keywords><![CDATA[Science, trailer frenzy, Room 237, stanley kubrick, Rodney Ascher]]></news:keywords>
+		</news:news>
+	</url>
+	<url>
+		<loc><![CDATA[http://io9.com/5950033/indiana-jones-bid-for-tenure-is-rejected-hilarity-ensues]]></loc>
+		<news:news>
+			<news:publication>	
+				<news:name><![CDATA[io9]]></news:name>
+				<news:language>en</news:language>
+			</news:publication>
+			<news:publication_date>2012-10-08T15:46:42-07:00</news:publication_date>
+			<news:title><![CDATA[Indiana Jones' Bid for Tenure Has Been Rejected]]></news:title>
+			<news:keywords><![CDATA[Science, afternoon reading, this is awesome, indiana jones, McSweeny's, andy bryan, fb]]></news:keywords>
+		</news:news>
+	</url>
+	<url>
+		<loc><![CDATA[http://io9.com/5949168/how-the-bottle-of-hydrogen-
+4B97
+peroxide-in-your-bathroom-could-have-been-submarine-fuel]]></loc>
+		<news:news>
+			<news:publication>	
+				<news:name><![CDATA[io9]]></news:name>
+				<news:language>en</news:language>
+			</news:publication>
+			<news:publication_date>2012-10-08T15:12:06-07:00</news:publication_date>
+			<news:title><![CDATA[How the Bottle of Hydrogen Peroxide in Your Bathroom Could Have Been Submarine Fuel]]></news:title>
+			<news:keywords><![CDATA[Science, secret history, chemistry, hydrogen peroxide, walter boat, science, sci]]></news:keywords>
+		</news:news>
+	</url>
+	<url>
+		<loc><![CDATA[http://io9.com/5949721/why-are-there-so-many-weird-and-inappropriate-science-fiction-and-fantasy-toys]]></loc>
+		<news:news>
+			<news:publication>	
+				<news:name><![CDATA[io9]]></news:name>
+				<news:language>en</news:language>
+			</news:publication>
+			<news:publication_date>2012-10-08T14:00:00-07:00</news:publication_date>
+			<news:title><![CDATA[Why are there so many weird and inappropriate science fiction and fantasy toys?]]></news:title>
+			<news:keywords><![CDATA[Science, holy crap wtf, toys, action figures, mike mozart, batman, spider-man, wonder woman, spongebob squarepants, tarzan, superheroes, top, fb]]></news:keywords>
+		</news:news>
+	</url>
+	<url>
+		<loc><![CDATA[http://io9.com/5949975/tobacco-smoke-enemas-were-like-dialing-911-before-the-invention-of-the-telephone]]></loc>
+		<news:news>
+			<news:publication>	
+				<news:name><![CDATA[io9]]></news:name>
+				<news:language>en</news:language>
+			</news:publication>
+			<news:publication_date>2012-10-08T13:55:00-07:00</news:publication_date>
+			<news:title><![CDATA[Tobacco smoke enemas were like dialing 911 before the invention of the telephone]]></news:title>
+			<news:keywords><![CDATA[Science, holy crap wtf, medicine, quackery, tobacco, tweet, fb, enemas, secret history]]></news:keywords>
+		</news:news>
+	</url>
+	<url>
+		<loc><![CDATA[http://io9.com/5949959/it-turns-out-spacexs-nominal-rocket-launch-was-anything-but]]></loc>
+		<news:news>
+			<news:publication>	
+				<news:name><![CDATA[io9]]></news:name>
+				<news:language>en</news:language>
+			</news:publication>
+			<news:publication_date>2012-10-08T13:53:36-07:00</news:publication_date>
+			<news:title><![CDATA[The &quot;anomaly&quot; that almost destroyed SpaceX's rocket launch]]></news:title>
+			<news:keywords><![CDATA[Science, spacex, space, science, sci, nasa, dragon, falcon 9, dragon capsule, iss, international space station, astronomy, space taxi, tweet, fb]]></news:keywords>
+		</news:news>
+	</url>
+	<url>
+		<loc><![CDATA[http://io9.com/5949973/looper-director-rian-johnson-is-live-on-io9-and-taking-your-questions]]></loc>
+		<news:news>
+			<news:publication>	
+				<news:name><![CDATA[io9]]></news:name>
+				<news:language>en</news:language>
+			</news:publication>
+			<news:publication_date>2012-10-08T12:36:50-07:00</news:publication_date>
+			<news:title><![CDATA[&lt;em&gt;Looper&lt;/em&gt; Director Rian Johnson is live on io9, and taking your questions!]]></news:title>
+			<news:keywords><![CDATA[Science, Looper, Rian Johnson, movies, time travel, top, fb]]></news:keywords>
+		</news:news>
+	</url>
+	<url>
+		<loc><![CDATA[http://io9.com/5949907/nobel-prize-in-physiology-and-medicine-awarded-to-revolutionary-stem-cell-researchers]]></loc>
+		<news:news>
+			<news:publication>	
+				<news:name><![CDATA[io9]]></news:name>
+				<news:language>en</news:language>
+			</news:publication>
+			<news:publication_date>2012-10-08T11:37:21-07:00</news:publication_date>
+			<news:title><![CDATA[Nobel Prize in Physiology and Medicine Awarded to Revolutionary Stem Cell Researchers]]></news:title>
+			<news:keywords><![CDATA[Science, biology, medicine, nobel prize, induced pluripotent stem cells, ips cells, ips, John Gurdon, shinya yamanaka, tweet, fb]]></news:keywords>
+		</news:news>
+	</url>
+	<url>
+		<loc><![CDATA[http://io9.com/5949872/the-10-creepiest-human+to+animal-transformations-in-order-of-mental-scarring]]></loc>
+		<news:news>
+			<news:publication>	
+				<news:name><![CDATA[io9]]></news:name>
+				<news:language>en</news:language>
+			</news:publication>
+			<news:publication_date>2012-10-08T10:55:00-07:00</news:publication_date>
+			<news:title><![CDATA[The 10 Creepiest Human-To-Animal Transformations, In Order Of Mental Scarring]]></news:title>
+			<news:keywords><![CDATA[Science, superlist, movies, top, fb, the howling, nightmare on elm street, the fly, horror, werewolves, pinocchio, disney, the witches, the curse 2, willow, manimal, an american werewolf in london, the fly 2]]></news:keywords>
+		</news:news>
+	</url>
+	<url>
+		<loc><![CDATA[http://io9.com/5949919/ask-the-playwright-behind-the-future-all-about-science-fiction-theater-and-eternal-youth]]></loc>
+		<news:news>
+			<news:publication>	
+				<news:name><![CDATA[io9]]></news:name>
+				<news:language>en</news:language>
+			</news:publication>
+			<news:publication_date>2012-10-08T10:30:00-07:00</news:publication_date>
+			<news:title><![CDATA[Ask the playwright behind &lt;em&gt;The Future&lt;/em&gt; all about science fiction theater and eternal youth!]]></news:title>
+			<news:keywords><![CDATA[Science, theater, the future, andrew harrison, kinja, drugs, immortality, tweet]]></news:keywords>
+		</news:news>
+	</url>
+	<url>
+		<loc><![CDATA[http://io9.com/5949611/this-weeks-tv-the-greatest-event-in-television-history-plus-7-premieres-including-dog-with-a-blog]]></loc>
+		<news:news>
+			<news:publication>	
+				<news:name><![CDATA[io9]]></news:name>
+				<news:language>en</news:language>
+			</news:publication>
+			<news:publication_date>2012-10-08T09:00:00-07:00</news:publication_date>
+			<news:title><![CDATA[This Week's TV: The Greatest Event in Television History! Plus 7 premieres, including &lt;em&gt;Walking Dead&lt;/em&gt;!]]></news:title>
+			<news:keywords><![CDATA[Science, what to watch, television, tv this week, green arrow, beauty and the beast, walking dead, supernatural, top, fb, transformers prime, transformers, robot chicken, dragons riders of berk, gravity falls, avengers: earth's mightiest heroes, ultimate spider-man, alphas, Warehouse 13, haven, revolution, ben 10: omniverse, green lantern: the animated series, green lantern, Young Justice, fringe, castle, south park, neighbors, last resort, big bang theory, person of interest, elementary, star wars, Star Wars: The Clone Wars, teenage mutant ninja turtles, simpsons, once upon a time, 666 park avenue, superjail, mythbusters, Adventure Time]]></news:keywords>
+		</news:news>
+	</url>
+	<url>
+		<loc><![CDATA[http://io9.com/5949799/have-you-met-the-hexaflexagon-if-not-its-high-time-you-did]]></loc>
+		<news:news>
+			<news:publication>	
+				<news:name><![CDATA[io9]]></news:name>
+				<news:language>en</news:language>
+			</news:publication>
+			<news:publication_date>2012-10-08T08:20:00-07:00</news:publication_date>
+			<news:title><![CDATA[Have you met the hexaflexagon? If not, it's high time you did.]]></news:title>
+			<news:keywords><![CDATA[Science, this is awesome, topology, hexaflexagon, martin gardner, maths, mathematics, vihart, vi hart, top, fb, science, sci, arthur stone, richard feynman, worldwide celebration of mind]]></news:keywords>
+		</news:news>
+	</url>
+	<url>
+		<loc><![CDATA[http://io9.com/5949857/first-look-at-the-angry-birds-star-wars-crossover-behold-the-pig-star]]></loc>
+		<news:news>
+			<news:publication>	
+				<news:name><![CDATA[io9]]></news:name>
+				<news:language>en</news:language>
+			</news:publication>
+			<news:publication_date>2012-10-08T08:10:00-07:00</news:publication_date>
+			<news:title><![CDATA[First look at the &lt;em&gt;Angry Birds&lt;/em&gt; &lt;em&gt;Star Wars&lt;/em&gt; crossover, behold the Pig Star!]]></news:title>
+			<news:keywords><![CDATA[Science, star wars, angry birds, toys, video games, hasbro, tweet]]></news:keywords>
+		</news:news>
+	</url>
+	<url>
+		<loc><![CDATA[http://io9.com/5949829/in-jim-hensons-early-sesame-street-sketches-big-bird-was-a-giant-chicken-and-oscar-the-grouch-was-pink]]></loc>
+		<news:news>
+			<news:publication>	
+				<news:name><![CDATA[io9]]></news:name>
+				<news:language>en</news:language>
+			</news:publication>
+			<news:publication_date>2012-10-08T08:05:00-07:00</news:publication_date>
+			<news:title><![CDATA[In Jim Henson's early &lt;em&gt;Sesame Street&lt;/em&gt; sketches, Big Bird was a giant chicken and Oscar the Grouch was pink]]></news:title>
+			<news:keywords><![CDATA[Science, concept art, top, fb, jim henson, muppets, puppets, television]]></news:keywords>
+		</news:news>
+	</url>
+	<url>
+		<loc><![CDATA[http://io9.com/5949839/tim-burtons-surprising-cameo-as-a-corpse-on-hoffa]]></loc>
+		<news:news>
+			<news:publication>	
+				<news:name><![CDATA[io9]]></news:name>
+				<news:language>en</news:language>
+			</news:publication>
+			<news:publication_date>2012-10-08T07:25:00-07:00</news:publication_date>
+			<news:title><![CDATA[Tim Burton's surprising cameo as a corpse in &lt;em&gt;Hoffa&lt;/em&gt;]]></news:title>
+			<news:keywords><![CDATA[Science, tim burton, movies, hoffa, danny devito]]></news:keywords>
+		</news:news>
+	</url>
+	<url>
+		<loc><![CDATA[http://io9.com/5949755/your-favorite-original-star-trek-episode-is-now-a-fancy-t+shirt]]></loc>
+		<news:news>
+			<news:publication>	
+				<news:name><![CDATA[io9]]></news:name>
+				<news:language>en</news:language>
+			</news:publication>
+			<news:publication_date>2012-10-08T07:00:00-07:00</news:publication_date>
+			<news:title><![CDATA[Your favorite Original &lt;em&gt;Star Trek&lt;/em&gt; episode is now a fancy T-shirt]]></news:title>
+			<news:keywords><![CDATA[Science, sci fashion, star trek, t-shirts, juan ortiz, art, science fiction art]]></news:keywords>
+		</news:news>
+	</url>
+	<url>
+		<loc><![CDATA[http://io9.com/5949765/could-emily-blunt-finally-play-a-marvel-superhero-in-the-avengers-2]]></loc>
+		<news:news>
+			<news:publication>	
+				<news:name><![CDATA[io9]]></news:name>
+				<news:language>en</news:language>
+			</news:publication>
+			<news:publication_date>2012-10-08T06:00:00-07:00</news:publication_date>
+			<news:title><![CDATA[Could Emily Blunt finally play a Marvel superhero in &lt;em&gt;The Avengers 2&lt;/em&gt;?]]></news:title>
+			<news:keywords><![CDATA[Science, morning spoilers, avengers 2, hobbit, godzilla, kick-ass 2, skyfall, Rise of the Guardians, transformers 4, breaking dawn, fringe, Game Of Thrones, once upon a time, revolution, grimm, 666 park avenue, alphas, american horror story, teen wolf, vampire diaries, top, fb]]></news:keywords>
+		</news:news>
+	</url>
+	<url>
+		<loc><![CDATA[http://io9.com/5949474/best-of-the-week-september-29+october-5-2012]]></loc>
+		<news:news>
+			<news:publication>	
+				<news:name><![CDATA[io9]]></news:name>
+				<news:language>en</news:language>
+			</news:publication>
+			<news:publication_date>2012-10-07T19:00:00-07:00</news:publication_date>
+			<news:title><![CDATA[Best of the Week: September 29-October 5, 2012]]></news:title>
+			<news:keywords><![CDATA[Science, best of the week]]></news:keywords>
+		</news:news>
+	</url>
+	<url>
+		<loc><![CDATA[http://io9.com/5949732/scenes-of-an-abandoned-asylum-shot-in-creepy-black-and-white]]></loc>
+		<news:news>
+			<news:publication>	
+				<news:name><![CDATA[io9]]></news:name>
+				<news:language>en</news:language>
+			</news:publication>
+			<news:publication_date>2012-10-07T17:00:00-07:00</news:publication_date>
+			<news:title><![CDATA[Photos of an abandoned asylum shot in black and white, complete with creepy mural]]></news:title>
+			<news:keywords><![CDATA[Science, modern ruins, tuscany, Villa Sbertoli, photography, photos, Romina Margherita A Diaz, tweet, fb]]></news:keywords>
+		</news:news>
+	</url>
+	<url>
+		<loc><![CDATA[http://io9.com/5949712/an-alliterative-alphabet-of-abhorrent-abominations]]></loc>
+		<news:news>
+			<news:publication>	
+				<news:name><![CDATA[io9]]></news:name>
+				<news:language>en</news:language>
+			</news:publication>
+			<news:publication_date>2012-10-07T16:00:00-07:00</news:publication_date>
+			<news:title><![CDATA[An Artistic and Alliterative Alphabet of Abhorrent Abominations]]></news:title>
+			<news:keywords><![CDATA[Science, concept art, Nathan O. Marsh, webcomics, comics, alphabet apocrypha, alphabet, art, tweet, fb]]></news:keywords>
+		</news:news>
+	</url>
+	<url>
+		<loc><![CDATA[http://io9.com/5949702/sick-of-live+action-zombie-survival-games-how-about-an-overnight-werewolf-hunt]]></loc>
+		<news:news>
+			<news:publication>	
+				<news:name><![CDATA[io9]]></news:name>
+				<news:language>en</news:language>
+			</news:publication>
+			<news:publication_date>2012-10-07T15:00:00-07:00</news:publication_date>
+			<news:title><![CDATA[Sick of live-action zombie survival games? Try an overnight werewolf hunt]]></news:title>
+			<news:keywords><![CDATA[Science, werewolves, werewolf, survival horror, horror, events, tweet, fb]]></news:keywords>
+		</news:news>
+	</url>
+	<url>
+		<loc><![CDATA[http://io9.com/5949685/blu+ray-extra-ties-prometheus-to-blade-runner]]></loc>
+		<news:news>
+			<news:publication>	
+				<news:name><![CDATA[io9]]></news:name>
+				<news:language>en</news:language>
+			</news:publication>
+			<news:publication_date>2012-10-07T14:00:00-07:00</news:publication_date>
+			<news:title><![CDATA[Blu-Ray extra ties &lt;em&gt;Prometheus&lt;/em&gt; to &lt;em&gt;Blade Runner&lt;/em&gt;]]></news:title>
+			<news:keywords><![CDATA[Science, prometheus, blade runner, ridley scott, alien, movies, tweet, fb, top]]></news:keywords>
+		</news:news>
+	</url>
+	<url>
+		<loc><![CDATA[http://io9.com/5949682/what-do-you-do-with-the-soil-from-your-canal-project-why-not-build-a-futuristic-island]]></loc>
+		<news:news>
+			<news:publication>	
+				<news:name><![CDATA[io9]]></news:name>
+				<news:language>en</news:language>
+			</news:publication>
+			<news:publication_date>2012-10-07T13:00:00-07:00</news:publication_date>
+			<news:title><![CDATA[What do you do with the soil from your canal project? Why not build a futuristic island?]]></news:title>
+			<news:keywords><![CDATA[Science, mad urbanism, architecture, istanbul, turkey, artificial island, dror benshetrit, island, tweet, fb]]></news:keywords>
+		</news:news>
+	</url>
+	<url>
+		<loc><![CDATA[http://io9.com/5949671/tyrion-plays-jesus-in-the-game-of-thrones-last-supper]]></loc>
+		<news:news>
+			<news:publication>	
+				<news:name><![CDATA[io9]]></news:name>
+				<news:language>en</news:language>
+			</news:publication>
+			<news:publication_date>2012-10-07T12:00:00-07:00</news:publication_date>
+			<news:title><![CDATA[Tyrion plays Jesus in the &lt;em&gt;Game of Thrones&lt;/em&gt; Last Supper]]></news:title>
+			<news:keywords><![CDATA[Science, Game Of Thrones, sheilalala, last supper, concept art, art, tweet, fb]]></news:keywords>
+		</news:news>
+	</url>
+	<url>
+		<loc><![CDATA[http://io9.com/5949666/thanks-to-the-oatmeals-fundraiser-teslas-lab-is-being-purchased]]></loc>
+		<news:news>
+			<news:publication>	
+				<news:name><![CDATA[io9]]></news:name>
+				<news:language>en</news:language>
+			</news:publication>
+			<news:publication_date>2012-10-07T11:30:00-07:00</news:publication_date>
+			<news:title><![CDATA[Thanks to &lt;em&gt;The Oatmeal&lt;/em&gt;'s fundraiser, Tesla's lab is being purchased!]]></news:title>
+			<news:keywords><![CDATA[Science, crowdfunding, nikola tesla, matthew inman, the oatmeal, Wardenclyffe Tower, Tesla Museum, wardenclyffe, tweet, fb]]></news:keywords>
+		</news:news>
+	</url>
+	<url>
+		<loc><![CDATA[http://io9.com/5949654/how-clone-wars-explains-proxy-war-to-children]]></loc>
+		<news:news>
+			<news:publication>	
+				<news:name><![CDATA[io9]]></news:name>
+				<news:language>en</news:language>
+			</news:publication>
+			<news:publication_date>2012-10-07T11:00:00-07:00</news:publication_date>
+			<news:title><![CDATA[How &lt;em&gt;Clone Wars&lt;/em&gt; explains proxy war to children]]></news:title>
+			<news:keywords><![CDATA[Science, tv recap, clone wars, star wars, television, tweet, fb]]></news:keywords>
+		</news:news>
+	</url>
+	<url>
+		<loc><![CDATA[http://io9.com/5949616/is-earths-closest-black-hole-hiding-inside-this-nebula]]></loc>
+		<news:news>
+			<news:publication>	
+				<news:name><![CDATA[io9]]></news:name>
+				<news:language>en</news:language>
+			</news:publication>
+			<news:publication_date>2012-10-07T10:30:00-07:00</news:publication_date>
+			<news:title><![CDATA[Is Earth's closest black hole hiding inside this nebula?]]></news:title>
+			<news:keywords><![CDATA[Science, space porn, black hole, orion nebula, hubble, nasa, astronomy, sci, science, tweet, fb]]></news:keywords>
+		</news:news>
+	</url>
+	<url>
+		<loc><![CDATA[http://io9.com/5949646/hope-larsons-a-wrinkle-in-time-comic-is-a-love-letter-to-the-original]]></loc>
+		<news:news>
+			<news:publication>	
+				<news:name><![CDATA[io9]]></news:name>
+				<news:language>en</news:language>
+			</news:publication>
+			<news:publication_date>2012-10-07T10:00:00-07:00</news:publication_date>
+			<news:title><![CDATA[Hope Larson's &lt;em&gt;A Wrinkle in Time&lt;/em&gt; comic is a love letter to the original]]></news:title>
+			<news:keywords><![CDATA[Science, comics review, a wrinkle in time, madeleine l'engle, hope larson, books, comics, adaptation, tweet, fb]]></news:keywords>
+		</news:news>
+	</url>
+	<url>
+		<loc><![CDATA[http://io9.com/5949615/microscopic-wasps-might--have-clockwork-brains]]></loc>
+		<news:news>
+			<news:publication>	
+				<news:name><![CDATA[io9]]></news:name>
+				<news:language>en</news:language>
+			</news:publication>
+			<news:publication_date>2012-10-07T09:30:00-07:00</news:publication_date>
+			<news:title><![CDATA[Microscopic wasps might  have &quot;clockwork&quot; brains]]></news:title>
+			<news:keywords><![CDATA[Science, neuroscience, brain, wasp, neuron, axon, biology, sci, science, tweet, fb]]></news:keywords>
+		</news:news>
+	</url>
+	<url>
+		<loc><![CDATA[http://io9.com/5949614/this-my-little-pony-music-video-will-make-your-heart-swell-with-fan-convention-love]]></loc>
+		<news:news>
+			<news:publication>	
+				<news:name><![CDATA[io9]]></news:name>
+				<news:language>en</news:language>
+			</news:publication>
+			<news:publication_date>2012-10-07T09:00:00-07:00</news:publication_date>
+			<news:title><![CDATA[My Little Ponies singing about fan conventions is kind of amazing]]></news:title>
+			<news:keywords><![CDATA[Science, cheer up, my little pony, my little pony: friendship is magic, at the gala, conventions, music, video, music video, Jenny Nicholson, tweet, fb]]></news:keywords>
+		</news:news>
+	</url>
+	<url>
+		<loc><![CDATA[http://io9.com/5949610/now-that-everybodys-already-copied-the-x+files-is-chris-carter-creating-a-copy-of-a-copy]]></loc>
+		<news:news>
+			<news:publication>	
+				<news:name><![CDATA[io9]]></news:name>
+				<news:language>en</news:language>
+			</news:publication>
+			<news:publication_date>2012-10-07T08:30:00-07:00</news:publication_date>
+			<news:title><![CDATA[Now that everybody's already copied &lt;em&gt;The X-Files&lt;/em&gt;, is Chris Carter creating a copy of a copy?]]></news:title>
+			<news:keywords><![CDATA[Science, x-files, chris carter, after, the event, flashforward, the x-files, tweet]]></news:keywords>
+		</news:news>
+	</url>
+	<url>
+		<loc><![CDATA[http://io9.com/5949513/why-do-arrows-have-feathers]]></loc>
+		<news:news>
+			<news:publication>	
+				<news:name><![CDATA[io9]]></news:name>
+				<news:language>en</news:language>
+			</news:publication>
+			<news:publication_date>2012-10-07T08:00:00-07:00</news:publication_date>
+			<news:title><![CDATA[Why do arrows have 
+3513
+feathers?]]></news:title>
+			<news:keywords><![CDATA[Science, physics, arrows, fletching, science, sci, tweet, fb]]></news:keywords>
+		</news:news>
+	</url>
+	<url>
+		<loc><![CDATA[http://io9.com/5949613/steampunk-predator-helmet-is-perfect-for-your-victorian-era-trophy-hunt]]></loc>
+		<news:news>
+			<news:publication>	
+				<news:name><![CDATA[io9]]></news:name>
+				<news:language>en</news:language>
+			</news:publication>
+			<news:publication_date>2012-10-07T07:30:00-07:00</news:publication_date>
+			<news:title><![CDATA[Steampunk Predator helmet is perfect for your Victorian era trophy hunt]]></news:title>
+			<news:keywords><![CDATA[Science, sci fashion, predator, steampunk, helmet, cosplay, costume, tweet, fb]]></news:keywords>
+		</news:news>
+	</url>
+	<url>
+		<loc><![CDATA[http://io9.com/5949612/why-cloning-is-a-terrible-way-to-bring-your-pet-dog-back-from-the-dead]]></loc>
+		<news:news>
+			<news:publication>	
+				<news:name><![CDATA[io9]]></news:name>
+				<news:language>en</news:language>
+			</news:publication>
+			<news:publication_date>2012-10-07T07:00:00-07:00</news:publication_date>
+			<news:title><![CDATA[Why cloning is a terrible way to bring your pet dog back from the dead]]></news:title>
+			<news:keywords><![CDATA[Science, bioethics, cloning, frankenweenie, dog cloning, pet cloning, dogs, pets, dog inc, john woestendiek, science, sci, top, fb]]></news:keywords>
+		</news:news>
+	</url>
+	<url>
+		<loc><![CDATA[http://io9.com/5949604/photos-go-behind-the-scenes-at-the-worlds-cryonics-facilities]]></loc>
+		<news:news>
+			<news:publication>	
+				<news:name><![CDATA[io9]]></news:name>
+				<news:language>en</news:language>
+			</news:publication>
+			<news:publication_date>2012-10-06T17:00:00-07:00</news:publication_date>
+			<news:title><![CDATA[Photos go behind the scenes of the world's cryonics facilities]]></news:title>
+			<news:keywords><![CDATA[Science, photography, murray ballard, cryonics, cryogenics, cryopreservation, prospect of immortality, photos, art, tweet, fb]]></news:keywords>
+		</news:news>
+	</url>
+	<url>
+		<loc><![CDATA[http://io9.com/5949594/if-disney-had-made-looper-with-bruce-willis-and-joseph-gordon+levitt-in-1994]]></loc>
+		<news:news>
+			<news:publication>	
+				<news:name><![CDATA[io9]]></news:name>
+				<news:language>en</news:language>
+			</news:publication>
+			<news:publication_date>2012-10-06T16:00:00-07:00</news:publication_date>
+			<news:title><![CDATA[If Disney had made &lt;em&gt;Looper&lt;/em&gt; with Bruce Willis and Joseph Gordon-Levitt in 1994]]></news:title>
+			<news:keywords><![CDATA[Science, goofballery, Looper, bruce willis, joseph gordon-levitt, the kid, angels in the outfield, video, tweet, fb]]></news:keywords>
+		</news:news>
+	</url>
+	<url>
+		<loc><![CDATA[http://io9.com/5949591/this-brilliant-time+lapse-video-captures-star-trails-forming-in-the-night-sky]]></loc>
+		<news:news>
+			<news:publication>	
+				<news:name><![CDATA[io9]]></news:name>
+				<news:language>en</news:language>
+			</news:publication>
+			<news:publication_date>2012-10-06T15:00:00-07:00</news:publication_date>
+			<news:title><![CDATA[This luminous time-lapse video captures star trails forming in the night sky]]></news:title>
+			<news:keywords><![CDATA[Science, space porn, star trails, video, space, stars, daniel lowe, daniel dragon films, tweet, fb]]></news:keywords>
+		</news:news>
+	</url>
+	<url>
+		<loc><![CDATA[http://io9.com/5949585/havens-police-department-misses-its-law--order-svu-moment]]></loc>
+		<news:news>
+			<news:publication>	
+				<news:name><![CDATA[io9]]></news:name>
+				<news:language>en</news:language>
+			</news:publication>
+			<news:publication_date>2012-10-06T14:00:00-07:00</news:publication_date>
+			<news:title><![CDATA[&lt;em&gt;Haven&lt;/em&gt;'s police department misses its &lt;em&gt;Law &amp; Order: SVU&lt;/em&gt; moment]]></news:title>
+			<news:keywords><![CDATA[Science, tv recap, haven, television, tweet, fb]]></news:keywords>
+		</news:news>
+	</url>
+	<url>
+		<loc><![CDATA[http://io9.com/5949575/game-of-thrones-concept-art-gives-us-a-closer-look-at-the-white-walkers]]></loc>
+		<news:news>
+			<news:publication>	
+				<news:name><![CDATA[io9]]></news:name>
+				<news:language>en</news:language>
+			</news:publication>
+			<news:publication_date>2012-10-06T13:00:00-07:00</news:publication_date>
+			<news:title><![CDATA[&lt;em&gt;Game of Thrones&lt;/em&gt; concept art gives us a closer look at the White Walkers]]></news:title>
+			<news:keywords><![CDATA[Science, Game Of Thrones, Martin Rezard, concept art, white walkers, tweet, fb, top]]></news:keywords>
+		</news:news>
+	</url>
+	<url>
+		<loc><![CDATA[http://io9.com/5949569/movie+goer-faints-during-a-screening-of-vhs-again]]></loc>
+		<news:news>
+			<news:publication>	
+				<news:name><![CDATA[io9]]></news:name>
+				<news:language>en</news:language>
+			</news:publication>
+			<news:publication_date>2012-10-06T12:30:00-07:00</news:publication_date>
+			<news:title><![CDATA[Movie-goer faints during a screening of &lt;em&gt;V/H/S&lt;/em&gt;. Again]]></news:title>
+			<news:keywords><![CDATA[Science, v/h/s, movies, horror, fainting, tweet]]></news:keywords>
+		</news:news>
+	</url>
+	<url>
+		<loc><![CDATA[http://io9.com/5949563/concept-art-writing-prompt-the-house-of-green-cats]]></loc>
+		<news:news>
+			<news:publication>	
+				<news:name><![CDATA[io9]]></news:name>
+				<news:language>en</news:language>
+			</news:publication>
+			<news:publication_date>2012-10-06T12:00:00-07:00</news:publication_date>
+			<news:title><![CDATA[Concept Art Writing Prompt: The House of Green Cats]]></news:title>
+			<news:keywords><![CDATA[Science, open channel, concept art writing prompt, concept art, writing prompt, writing, flash fiction, fiction, Sandy Skoglund, tweet, fb]]></news:keywords>
+		</news:news>
+	</url>
+	<url>
+		<loc><![CDATA[http://io9.com/5949552/what-if-a-zombie-plague-broke-out-on-the-titanic]]></loc>
+		<news:news>
+			<news:publication>	
+				<news:name><![CDATA[io9]]></news:name>
+				<news:language>en</news:language>
+			</news:publication>
+			<news:publication_date>2012-10-06T11:30:00-07:00</news:publication_date>
+			<news:title><![CDATA[What if a zombie plague broke out on the Titanic?]]></news:title>
+			<news:keywords><![CDATA[Science, book review, deck z, zombies, titanic, books, chris pauls, matt solomon, tweet, fb]]></news:keywords>
+		</news:news>
+	</url>
+	<url>
+		<loc><![CDATA[http://io9.com/5949540/read-the-last-thing-ray-bradbury-ever-wrote]]></loc>
+		<news:news>
+			<news:publication>	
+				<news:name><![CDATA[io9]]></news:name>
+				<news:language>en</news:language>
+			</news:publication>
+			<news:publication_date>2012-10-06T11:00:00-07:00</news:publication_date>
+			<news:title><![CDATA[Read the last thing Ray Bradbury ever wrote: An Ode to Books]]></news:title>
+			<news:keywords><![CDATA[Science, afternoon reading, ray bradbury, best american non-required reading, books, essay, tweet, fb]]></news:keywords>
+		</news:news>
+	</url>
+	<url>
+		<loc><![CDATA[http://io9.com/5949206/two-simple-illusions-that-you-can-sketch-with-a-checker-board]]></loc>
+		<news:news>
+			<news:publication>	
+				<news:name><![CDATA[io9]]></news:name>
+				<news:language>en</news:language>
+			</news:publication>
+			<news:publication_date>2012-10-06T10:30:00-07:00</news:publication_date>
+			<news:title><![CDATA[Two simple illusions that you can sketch with a checker board]]></news:title>
+			<news:keywords><![CDATA[Science, neuroscience, optical illusions, hermann illusion, scintillating illusion, science, sci, tweet, fb]]></news:keywords>
+		</news:news>
+	</url>
+	<url>
+		<loc><![CDATA[http://io9.com/5949509/neil-gaiman-pitched-sandman-to-george-rr-martin-but-martin-blew-him-off]]></loc>
+		<news:news>
+			<news:publication>	
+				<news:name><![CDATA[io9]]></news:name>
+				<news:language>en</news:language>
+			</news:publication>
+			<news:publication_date>2012-10-06T10:00:00-07:00</news:publication_date>
+			<news:title><![CDATA[Neil Gaiman once pitched Sandman to George R.R. Martin, but Martin blew him off]]></news:title>
+			<news:keywords><![CDATA[Science, sandman, wild cards, neil gaiman, george r.r. martin, comics, books, tweet, fb, top]]></news:keywords>
+		</news:news>
+	</url>
+	<url>
+		<loc><![CDATA[http://io9.com/5949511/the-detective-novel-from-last-weeks-doctor-who-is-now-available-as-an-ebook]]></loc>
+		<news:news>
+			<news:publication>	
+				<news:name><![CDATA[io9]]></news:name>
+				<news:language>en</news:language>
+			</news:publication>
+			<news:publication_date>2012-10-06T09:30:00-07:00</news:publication_date>
+			<news:title><![CDATA[The detective novel from last week's &lt;em&gt;Doctor Who&lt;/em&gt; is now available as an ebook]]></news:title>
+			<news:keywords><![CDATA[Science, doctor who, ebook, books, melody malone, The Angel's Kiss, Justin Richards, tweet]]></news:keywords>
+		</news:news>
+	</url>
+	<url>
+		<loc><![CDATA[http://io9.com/5949517/im-calling-it-now-the-fringe-team-will-beat-the-observers-with-human-decency]]></loc>
+		<news:news>
+			<news:publication>	
+				<news:name><![CDATA[io9]]></news:name>
+				<news:language>en</news:language>
+			</news:publication>
+			<news:publication_date>2012-10-06T09:00:00-07:00</news:publication_date>
+			<news:title><![CDATA[I'm calling it now: The &lt;em&gt;Fringe&lt;/em&gt; team will beat the Observers with human decency]]></news:title>
+			<news:keywords><![CDATA[Science, tv recap, fringe, television, tweet, fb, j.j. abrams, john noble, top]]></news:keywords>
+		</news:news>
+	</url>
+	<url>
+		<loc><![CDATA[http://io9.com/5949473/saturday-webcomic-a-pyromancer-and-a-gunslinging-revenant-wreak-old-west-havoc-in-the-next-town-over]]></loc>
+		<news:news>
+			<news:publication>	
+				<news:name><![CDATA[io9]]></news:name>
+				<news:language>en</news:language>
+			</news:publication>
+			<news:publication_date>2012-10-06T08:30:00-07:00</news:publication_date>
+			<news:title><![CDATA[Saturday Webcomic: A pyromancer and a gunslinging revenant wreak Old West havoc in &lt;em&gt;The Next Town Over&lt;/em&gt;]]></news:title>
+			<news:keywords><![CDATA[Science, comics review, webcomics, Erin Mehlos, the next town over, western, steampunk, comics, tweet, fb]]></news:keywords>
+		</news:news>
+	</url>
+	<url>
+		<loc><![CDATA[http://io9.com/5949504/chart-outlines-all-the-ways-we-use-the-word-shit]]></loc>
+		<news:news>
+			<news:publication>	
+				<news:name><![CDATA[io9]]></news:name>
+				<news:language>en</news:language>
+			</news:publication>
+			<news:publication_date>2012-10-06T08:00:00-07:00</news:publication_date>
+			<news:title><![CDATA[Chart outlines the myriad ways we use the word &quot;Shit&quot;]]></news:title>
+			<news:keywords><![CDATA[Science, chart porn, linguistics, language, shit, profanity, Stephen Wildish, chart, taxonomy of shit, tweet, fb]]></news:keywords>
+		</news:news>
+	</url>
+	<url>
+		<loc><![CDATA[http://io9.com/5949500/meet-the-purple-yoda-the-sea-creature-that-looks-like-a-jedi-master]]></loc>
+		<news:news>
+			<news:publication>	
+				<news:name><![CDATA[io9]]></news:name>
+				<news:language>en</news:language>
+			</news:publication>
+			<news:publication_date>2012-10-06T07:30:00-07:00</news:publication_date>
+			<news:title><![CDATA[Meet the Purple Yoda, the sea creature that looks like a Jedi master]]></news:title>
+			<news:keywords><![CDATA[Science, biology, acorn worm, yoda, Yoda purpurata, purple yoda, science, sci, tweet, fb]]></news:keywords>
+		</news:news>
+	</url>
+	<url>
+		<loc><![CDATA[http://io9.com/5949324/dr-doom-steals-captain-americas-shield-and-finn-and-jake-save-talking-fish-from-getting-real-jobs]]></loc>
+		<news:news>
+			<news:publication>	
+				<news:name><![CDATA[io9]]></news:name>
+				<news:language>en</news:language>
+			</news:publication>
+			<news:publication_date>2012-10-06T07:00:00-07:00</news:publication_date>
+			<news:title><![CDATA[Dr. Doom steals Captain America's Shield and Finn and Jake save talking fish from getting real jobs!]]></news:title>
+			<news:keywords><![CDATA[Science, saturday cartoons, star wars, clone wars, star wars: clone wars, cartoons, ultimate spider-man, spider-man, avengers, avengers: earth's mightiest heroes, transformers: prime, transformers, dc nation, gravity falls, riders of berk, dragons: riders of berk, how to train a dragon, Adventure Time, Regular Show, top, fb]]></news:keywords>
+		</news:news>
+	</url>
+	<url>
+		<loc><![CDATA[http://io9.com/5949480/last-resort-is-asking-the-same-question-as-game-of-thrones-where-does-power-come-from]]></loc>
+		<news:news>
+			<news:publication>	
+				<news:name><![CDATA[io9]]></news:name>
+				<news:language>en</news:language>
+			</news:publication>
+			<news:publication_date>2012-10-05T17:42:46-07:00</news:publication_date>
+			<news:title><![CDATA[&lt;em&gt;Last Resort&lt;/em&gt; is asking the same question as &lt;em&gt;Game of Thrones&lt;/em&gt;: Where does power come from?]]></news:title>
+			<news:keywords><![CDATA[Science, tv recap, last resort, television, terminator, Game Of Thrones, george r.r. martin, tweet]]></news:keywords>
+		</news:news>
+	</url>
+	<url>
+		<loc><![CDATA[http://io9.com/5949397/why-isnt-science-fiction-used-more-often-to-teach-science-in-schools]]></loc>
+		<news:news>
+			<news:publication>	
+				<news:name><![CDATA[io9]]></news:name>
+				<news:language>en</news:language>
+			</news:publication>
+			<news:publication_date>2012-10-05T17:00:00-07:00</news:publication_date>
+			<news:title><![CDATA[Why isn't science fiction used more often to teach science in schools?]]></news:title>
+			<news:keywords><![CDATA[Science, education, science fiction, teachers, teaching, science popularization, science, sci]]></news:keywords>
+		</news:news>
+	</url>
+</urlset>
+
+0
+

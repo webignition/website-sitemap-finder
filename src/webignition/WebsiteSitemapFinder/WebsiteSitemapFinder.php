@@ -2,19 +2,11 @@
 namespace webignition\WebsiteSitemapFinder;
 
 use webignition\NormalisedUrl\NormalisedUrl;
-use webignition\WebsiteSitemapIdentifier\WebsiteSitemapIdentifier;
-use webignition\WebResource\WebResource;
-use webignition\InternetMediaType\InternetMediaType;
+use webignition\WebResource\Sitemap\Sitemap;
+use webignition\WebResource\Sitemap\Configuration as SitemapConfiguration;
+use webignition\WebsiteSitemapRetriever\WebsiteSitemapRetriever;
 
 /**
- * Finds a website's sitemap(.xml|.txt) content given a website's root URL.
- * 
- * Order of preference when searching:
- *   1. Locate robots.txt in domain root (which may not be the root URL) and
- *      example robots.txt for URL of sitemap. Return URL from robots.txt.
- * 
- *   2. Check for {rootUrl}/sitemap.xml
- *   3. Check for {rootUrl}/sitemap.txt
  *  
  */
 class WebsiteSitemapFinder {
@@ -22,7 +14,7 @@ class WebsiteSitemapFinder {
     const ROBOTS_TXT_FILE_NAME = 'robots.txt';
     const DEFAULT_SITEMAP_XML_FILE_NAME = 'sitemap.xml';
     const DEFAULT_SITEMAP_TXT_FILE_NAME = 'sitemap.txt';
-    const DEFAULT_CONTENT_TYPE_KEY = 'xml';
+    const SITEMAP_INDEX_TYPE_NAME = 'sitemaps.org.xml.index';
     
     /**
      *
@@ -40,19 +32,9 @@ class WebsiteSitemapFinder {
     
     /**
      *
-     * @var WebsiteSitemapIdentifier
+     * @var WebsiteSitemapRetriever
      */
-    private $sitemapIdentifier = null;
-    
-    
-    /**
-     * Collection of content types for compressed content
-     * 
-     * @var array
-     */
-    private $compressedContentTypes = array(
-        'application/x-gzip'
-    );
+    private $sitemapRetriever = null;
     
     
     /**
@@ -100,27 +82,24 @@ class WebsiteSitemapFinder {
     
     /**
      *
-     * @return string
+     * @return array
      */
-    public function getSitemapUrl() {
+    public function getSitemaps() {        
         $possibleSitemapUrls = $this->getPossibleSitemapUrls();
+        $sitemaps = array();
         
-        foreach ($possibleSitemapUrls as $possibleSitemapUrl) {
-            $possibleSitemapResource = $this->getSitemapResource($possibleSitemapUrl);
-            if ($possibleSitemapResource instanceof WebResource) {
-                $content = ($this->isCompressedContentType($possibleSitemapResource->getContentType())) 
-                    ? $this->extractGzipContent($possibleSitemapResource)
-                    : $possibleSitemapResource->getContent();             
-                
-                $this->sitemapIdentifier()->setContent($content);
-                
-                if ($this->sitemapIdentifier()->getType() != false) {
-                    return $possibleSitemapUrl;
-                }
-            }
-        }
+        foreach ($possibleSitemapUrls as $possibleSitemapUrl) {                        
+            $sitemap = $this->createSitemap();
+            $sitemap->setUrl($possibleSitemapUrl);
+            
+            $this->getSitemapRetriever()->retrieve($sitemap);
+            
+            if (!is_null($sitemap) && $sitemap->isSitemap()) {
+                $sitemaps[] = $sitemap;
+            } 
+        };
         
-        return false;
+        return $sitemaps;
     }
     
     
@@ -142,15 +121,15 @@ class WebsiteSitemapFinder {
     
     
     private function getPossibleSitemapUrls() {
-       $sitemapUrlFromRobotsTxt = $this->findSitemapUrlFromRobotsTxt();
-       if ($sitemapUrlFromRobotsTxt === false) {
+       $sitemapUrlsFromRobotsTxt = $this->findSitemapUrlsFromRobotsTxt();       
+       if (count($sitemapUrlsFromRobotsTxt) == 0) {
            return array(
                $this->getDefaultSitemapXmlUrl(),
                $this->getDefaultSitemapTxtUrl()
            );
        }
        
-       return array($sitemapUrlFromRobotsTxt);
+       return $sitemapUrlsFromRobotsTxt;
     }
     
     
@@ -184,27 +163,32 @@ class WebsiteSitemapFinder {
     
     /**
      * 
-     * @return boolean|string
+     * @return string
      */
-    private function findSitemapUrlFromRobotsTxt() {        
+    private function findSitemapUrlsFromRobotsTxt() {        
         $robotsTxtParser = new \webignition\RobotsTxt\File\Parser();
         $robotsTxtParser->setSource($this->getRobotsTxtContent());        
         $robotsTxtFile = $robotsTxtParser->getFile();
+        
+        $urls = array();
 
         if ($robotsTxtFile->directiveList()->containsField('sitemap')) {
-            $firstSitemapUrl = (string)$robotsTxtFile->directiveList()->filter(array('field', 'sitemap'))->first()->getValue();
+            $sitemapDirectives = $robotsTxtFile->directiveList()->filter(array('field' => 'sitemap'));
             
-            $url = new \webignition\Url\Url($firstSitemapUrl);
-            
-            if ($url->isRelative()) {
-                $absoluteUrlDeriver = new \webignition\AbsoluteUrlDeriver\AbsoluteUrlDeriver($firstSitemapUrl, $this->getRootUrl());
-                return (string)$absoluteUrlDeriver->getAbsoluteUrl();
-            }
-            
-            return $firstSitemapUrl;     
+            foreach ($sitemapDirectives->get() as $sitemapDirective) {
+                /* @var $sitemapDirective \webignition\RobotsTxt\Directive\Directive */
+                $sitemapUrl = new \webignition\Url\Url((string)$sitemapDirective->getValue());
+                
+                if ($sitemapUrl->isRelative()) {                    
+                    $absoluteUrlDeriver = new \webignition\AbsoluteUrlDeriver\AbsoluteUrlDeriver((string)$sitemapUrl, $this->getRootUrl());
+                    $urls[] = (string)$absoluteUrlDeriver->getAbsoluteUrl();
+                } else {
+                    $urls[] = (string)$sitemapUrl;
+                }              
+            }   
         }
         
-        return false;
+        return $urls;
     }
     
     
@@ -235,99 +219,39 @@ class WebsiteSitemapFinder {
         }
         
         return $response->getBody();
-    }
-    
-    
-    /**
-     *
-     * @return WebsiteSitemapIdentifier
-     */
-    private function sitemapIdentifier() {
-        if (is_null($this->sitemapIdentifier)) {
-            $this->sitemapIdentifier = new WebsiteSitemapIdentifier();    
-            
-            $sitemapsOrgXmlMatcher = new \webignition\WebsiteSitemapIdentifier\SitemapMatcher\SitemapsOrgXml();
-            $sitemapsOrgXmlMatcher->setType('sitemaps.org.xml');            
-            $this->sitemapIdentifier->addMatcher($sitemapsOrgXmlMatcher);
-            
-            $sitemapsOrgTxtMatcher = new \webignition\WebsiteSitemapIdentifier\SitemapMatcher\SitemapsOrgTxt();
-            $sitemapsOrgTxtMatcher->setType('sitemaps.org.txt');            
-            $this->sitemapIdentifier->addMatcher($sitemapsOrgTxtMatcher);            
-            
-            $rssFeedMatcher = new \webignition\WebsiteSitemapIdentifier\SitemapMatcher\RssFeed();
-            $rssFeedMatcher->setType('application/rss+xml');            
-            $this->sitemapIdentifier->addMatcher($rssFeedMatcher);   
-            
-            $atomFeedMatcher = new \webignition\WebsiteSitemapIdentifier\SitemapMatcher\AtomFeed();
-            $atomFeedMatcher->setType('application/atom+xml');                        
-            $this->sitemapIdentifier->addMatcher($atomFeedMatcher);
-        }
-        
-        return $this->sitemapIdentifier;
-    }
+    }   
     
     
     /**
      * 
-     * @param string $possibleSitemapUrl
-     * @return boolean|\webignition\WebResource\WebResource
+     * @return WebsiteSitemapRetriever
      */
-    private function getSitemapResource($possibleSitemapUrl) {
-        $request = new \HttpRequest($possibleSitemapUrl);
-        $request->setOptions(array(
-            'timeout' => 30
+    private function getSitemapRetriever() {
+        if (is_null($this->sitemapRetriever)) {
+            $this->sitemapRetriever = new WebsiteSitemapRetriever();
+            $this->sitemapRetriever->setHttpClient($this->getHttpClient());            
+        }
+        
+        return $this->sitemapRetriever;
+    }
+    
+    /**
+     * 
+     * @return \webignition\WebResource\Sitemap\Sitemap
+     */
+    private function createSitemap() {
+        $configuration = new SitemapConfiguration;
+        $configuration->setTypeToUrlExtractorClassMap(array(
+            'sitemaps.org.xml' => 'webignition\WebResource\Sitemap\UrlExtractor\SitemapsOrgXmlUrlExtractor',
+            'sitemaps.org.txt' => 'webignition\WebResource\Sitemap\UrlExtractor\SitemapsOrgTxtUrlExtractor',
+            'application/atom+xml' => 'webignition\WebResource\Sitemap\UrlExtractor\NewsFeedUrlExtractor',
+            'application/rss+xml' => 'webignition\WebResource\Sitemap\UrlExtractor\NewsFeedUrlExtractor',
+            'sitemaps.org.xml.index' => 'webignition\WebResource\Sitemap\UrlExtractor\SitemapsOrgXmlIndexUrlExtractor',
         ));
-        
-        try {
-            $response = $this->getHttpClient()->getResponse($request);                     
-        } catch (\webignition\Http\Client\Exception $httpClientException) {
-            return false;
-        } catch (\webignition\Http\Client\CurlException $curlException) {
-            return false;
-        }
-        
-        if ($response->getResponseCode() != 200) {
-            return false;
-        }
-        
-        $resource = new WebResource();
-        $resource->setContent($response->getBody());
-        $resource->setContentType($response->getHeader('content-type'));
-        return $resource;
-    }
-    
-    /**
-     * 
-     * @param \webignition\InternetMediaType\InternetMediaType $contentType
-     * @return boolean
-     */
-    private function isCompressedContentType(InternetMediaType $contentType) {
-        return in_array($contentType->getTypeSubtypeString(), $this->compressedContentTypes);
-    }
-    
-    
-    /**
-     * 
-     * @param \webignition\WebResource\WebResource $resource
-     * @return string
-     */
-    private function extractGzipContent(WebResource $resource) {
-        $sourceFilename = sys_get_temp_dir() . '/' . md5(microtime(true));
-        $destinationFilename = $sourceFilename.'.xml';
-        
-        file_put_contents($sourceFilename, $resource->getContent());
-        
-        $sfp = gzopen($sourceFilename, "rb");
-        $fp = fopen($destinationFilename, "w");
 
-        while ($string = gzread($sfp, 4096)) {
-            fwrite($fp, $string, strlen($string));
-        }
-        
-        gzclose($sfp);
-        fclose($fp);
-        
-        return file_get_contents($destinationFilename);
-    }    
+        $sitemap = new Sitemap();
+        $sitemap->setConfiguration($configuration);
+        return $sitemap;
+    }     
     
 }
