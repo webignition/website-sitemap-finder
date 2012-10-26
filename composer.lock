@@ -45,18 +45,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/simplepie/simplepie.git",
-                "reference": "09288e5bc2f630310c8f875fe8f81e8c24b5765b"
+                "reference": "75baa9651ee04c8c7d57702a8d5f1b7b6eb58605"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/simplepie/simplepie/zipball/09288e5bc2f630310c8f875fe8f81e8c24b5765b",
-                "reference": "09288e5bc2f630310c8f875fe8f81e8c24b5765b",
+                "url": "https://github.com/simplepie/simplepie/zipball/75baa9651ee04c8c7d57702a8d5f1b7b6eb58605",
+                "reference": "75baa9651ee04c8c7d57702a8d5f1b7b6eb58605",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.2.0"
             },
-            "time": "1341729612",
+            "time": "1350117523",
             "type": "library",
             "installation-source": "source",
             "autoload": {
@@ -182,12 +182,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/webignition/http-client",
-                "reference": "c99807e0e74559c9ddf77e526ae1f28a7301baf6"
+                "reference": "1.2.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/webignition/http-client/zipball/c99807e0e74559c9ddf77e526ae1f28a7301baf6",
-                "reference": "c99807e0e74559c9ddf77e526ae1f28a7301baf6",
+                "url": "https://github.com/webignition/http-client/zipball/1.2.1",
+                "reference": "1.2.1",
                 "shasum": ""
             },
             "require": {
@@ -196,7 +196,7 @@
                 "webignition/absolute-url-deriver": ">=1.1",
                 "webignition/url": ">1.0"
             },
-            "time": "1348147907",
+            "time": "1350636361",
             "type": "library",
             "installation-source": "source",
             "autoload": {
@@ -477,22 +477,22 @@
         },
         {
             "name": "webignition/url",
-            "version": "1.2.2",
+            "version": "1.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webignition/url",
-                "reference": "1.2.2"
+                "reference": "1.4.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/webignition/url/zipball/1.2.2",
-                "reference": "1.2.2",
+                "url": "https://github.com/webignition/url/zipball/1.4.1",
+                "reference": "1.4.1",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.0"
             },
-            "time": "2012-10-01 21:30:59",
+            "time": "2012-10-19 04:50:16",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -563,12 +563,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/webignition/website-sitemap-retriever.git",
-                "reference": "37d514eb978cb2b6c56090fdd651149fe9f81dfc"
+                "reference": "13e976fef842cc97e62079c88db1774db1ecb566"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/webignition/website-sitemap-retriever/zipball/37d514eb978cb2b6c56090fdd651149fe9f81dfc",
-                "reference": "37d514eb978cb2b6c56090fdd651149fe9f81dfc",
+                "url": "https://github.com/webignition/website-sitemap-retriever/zipball/13e976fef842cc97e62079c88db1774db1ecb566",
+                "reference": "13e976fef842cc97e62079c88db1774db1ecb566",
                 "shasum": ""
             },
             "require": {
@@ -577,7 +577,7 @@
                 "webignition/sitemap-model": "dev-master",
                 "webignition/internet-media-type": ">=0.1,<2.0"
             },
-            "time": "1349815117",
+            "time": "1351241996",
             "type": "library",
             "installation-source": "source",
             "autoload": {
