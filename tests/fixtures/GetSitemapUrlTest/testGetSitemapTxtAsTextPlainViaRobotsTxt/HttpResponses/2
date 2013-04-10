@@ -1,0 +1,12 @@
+HTTP/1.1 200 OK
+Date: Wed, 03 Oct 2012 08:41:16 GMT
+Server: Apache
+Last-Modified: Fri, 20 Jul 2012 05:36:23 GMT
+ETag: "87625c-820-4c53c46c703c0"
+Accept-Ranges: bytes
+Vary: Accept-Encoding,User-Agent
+Content-Type: text/plain
+
+http://webignition.net/
+http://webignition.net/articles/
+http://webignition.net/articles/i-make-the-internet/

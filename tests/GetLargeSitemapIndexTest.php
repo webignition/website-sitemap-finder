@@ -2,9 +2,11 @@
 
 class GetLargeSitemapIndexTest extends BaseTest {
     
+    public function setUp() {
+        $this->setHttpFixtures($this->getHttpFixtures($this->getFixturesDataPath(__CLASS__, $this->getName() . '/HttpResponses')));
+    }    
+    
     public function testGetLargeSitemapIndex() {        
-        $this->setTestFixturePath(__CLASS__, __FUNCTION__);                            
-        
         $this->getSitemapFinder()->setRootUrl('http://io9.com');
 
         $urls = array();
@@ -14,7 +16,7 @@ class GetLargeSitemapIndexTest extends BaseTest {
             $urls = array_merge($urls, $childSitemap->getUrls());
         }
 
-        $this->assertEquals(26120, count($urls));     
+        $this->assertEquals(3539, count($urls));     
     }
     
 }

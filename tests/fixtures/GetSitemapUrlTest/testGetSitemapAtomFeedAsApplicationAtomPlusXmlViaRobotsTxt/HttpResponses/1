@@ -1,0 +1,19 @@
+HTTP/1.1 200 OK
+Content-Type: text/plain; charset=UTF-8
+Expires: Wed, 03 Oct 2012 09:35:18 GMT
+Date: Wed, 03 Oct 2012 09:35:18 GMT
+Cache-Control: private, max-age=86400
+Last-Modified: Sat, 22 Sep 2012 08:42:32 GMT
+ETag: "bba13c8d-4ff9-4611-910d-30d31fe1d694"
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 1; mode=block
+
+
+User-agent: Mediapartners-Google
+Disallow: 
+
+User-agent: *
+Disallow: /search
+Allow: /
+
+Sitemap: http://blogsofnote.blogspot.com/feeds/posts/default?orderby=UPDATED

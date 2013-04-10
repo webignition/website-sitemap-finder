@@ -5,6 +5,7 @@ use webignition\NormalisedUrl\NormalisedUrl;
 use webignition\WebResource\Sitemap\Sitemap;
 use webignition\WebResource\Sitemap\Configuration as SitemapConfiguration;
 use webignition\WebsiteSitemapRetriever\WebsiteSitemapRetriever;
+use Guzzle\Http\Client as HttpClient;
 
 /**
  *  
@@ -18,7 +19,7 @@ class WebsiteSitemapFinder {
     
     /**
      *
-     * @var \webignition\Http\Client\Client
+     * @var \Guzzle\Http\Client
      */
     private $httpClient = null;
     
@@ -59,21 +60,20 @@ class WebsiteSitemapFinder {
     
     /**
      *
-     * @param \webignition\Http\Client\Client $client 
+     * @param \Guzzle\Http\Client $client 
      */
-    public function setHttpClient(\webignition\Http\Client\Client $client) {
+    public function setHttpClient(\Guzzle\Http\Client $client) {
         $this->httpClient = $client;
     }
     
     
     /**
      *
-     * @return \webignition\Http\Client\Client 
+     * @return \Guzzle\Http\Client
      */
     private function getHttpClient() {
         if (is_null($this->httpClient)) {
-            $this->httpClient = new \webignition\Http\Client\Client();
-            $this->httpClient->redirectHandler()->enable();
+            $this->httpClient = new \Guzzle\Http\Client();
         }
         
         return $this->httpClient;
@@ -196,18 +196,17 @@ class WebsiteSitemapFinder {
      *
      * @return string 
      */
-    private function getRobotsTxtContent() {                
-        $request = new \HttpRequest($this->getExpectedRobotsTxtFileUrl());        
+    private function getRobotsTxtContent() {
+        $request = $this->getHttpClient()->get($this->getExpectedRobotsTxtFileUrl());
         
         try {
-            $response = $this->getHttpClient()->getResponse($request); 
-        } catch (\webignition\Http\Client\Exception $httpClientException) {
+            $response = $request->send();
+            //file_put_contents('/home/jon/www/webignition/website-sitemap-finder/'.  microtime(true), $response);           
+        } catch (\Guzzle\Http\Exception\RequestException $e) {
             return '';
-        } catch (\webignition\Http\Client\CurlException $curlException) {
-            return '';
-        } 
+        }
         
-        if (!$response->getResponseCode() == 200) {
+        if (!$response->getStatusCode() == 200) {
             return '';
         }
         
