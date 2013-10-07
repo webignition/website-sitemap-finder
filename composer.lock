@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "a5939f377767df9ca7844d29aa94212a",
+    "hash": "9bd8b16b4088dfb28b2493c967bb65c1",
     "packages": [
         {
             "name": "guzzle/guzzle",
@@ -104,12 +104,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/technosophos/querypath.git",
-                "reference": "c2afa232862c724d09fbe1ce411936a96595374d"
+                "reference": "0f57cee46e736f7192d0057e1a34921460be5636"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/technosophos/querypath/zipball/c2afa232862c724d09fbe1ce411936a96595374d",
-                "reference": "c2afa232862c724d09fbe1ce411936a96595374d",
+                "url": "https://api.github.com/repos/technosophos/querypath/zipball/0f57cee46e736f7192d0057e1a34921460be5636",
+                "reference": "0f57cee46e736f7192d0057e1a34921460be5636",
                 "shasum": ""
             },
             "require": {
@@ -137,7 +137,7 @@
                 "xml",
                 "xslt"
             ],
-            "time": "2013-06-24 18:21:28"
+            "time": "2013-10-03 15:52:13"
         },
         {
             "name": "simplepie/simplepie",
@@ -145,12 +145,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/simplepie/simplepie.git",
-                "reference": "f5436d69a8efa9d4ab3a9abc65d17317eb24b7f4"
+                "reference": "24ab2173bad5346bd280f9c1c36ebc0442f4dcdb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/simplepie/simplepie/zipball/f5436d69a8efa9d4ab3a9abc65d17317eb24b7f4",
-                "reference": "f5436d69a8efa9d4ab3a9abc65d17317eb24b7f4",
+                "url": "https://api.github.com/repos/simplepie/simplepie/zipball/24ab2173bad5346bd280f9c1c36ebc0442f4dcdb",
+                "reference": "24ab2173bad5346bd280f9c1c36ebc0442f4dcdb",
                 "shasum": ""
             },
             "require": {
@@ -191,7 +191,7 @@
                 "feeds",
                 "rss"
             ],
-            "time": "2013-04-29 06:13:26"
+            "time": "2013-09-11 03:42:27"
         },
         {
             "name": "symfony/event-dispatcher",
@@ -200,19 +200,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/EventDispatcher.git",
-                "reference": "4b34aad44d0a2d91f301ee967151ce0980f39930"
+                "reference": "9b4fe5757870682eb2251e283228a66d938265a8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/EventDispatcher/zipball/4b34aad44d0a2d91f301ee967151ce0980f39930",
-                "reference": "4b34aad44d0a2d91f301ee967151ce0980f39930",
+                "url": "https://api.github.com/repos/symfony/EventDispatcher/zipball/9b4fe5757870682eb2251e283228a66d938265a8",
+                "reference": "9b4fe5757870682eb2251e283228a66d938265a8",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
             },
             "require-dev": {
-                "symfony/dependency-injection": ">=2.0,<3.0"
+                "symfony/dependency-injection": "~2.0"
             },
             "suggest": {
                 "symfony/dependency-injection": "",
@@ -245,25 +245,25 @@
             ],
             "description": "Symfony EventDispatcher Component",
             "homepage": "http://symfony.com",
-            "time": "2013-05-16 07:54:39"
+            "time": "2013-09-19 09:47:34"
         },
         {
             "name": "webignition/absolute-url-deriver",
-            "version": "1.3.3",
+            "version": "1.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webignition/absolute-url-deriver.git",
-                "reference": "1.3.3"
+                "reference": "1f0c4eb56d6547096771e8dd90009e16841d6757"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webignition/absolute-url-deriver/zipball/1.3.3",
-                "reference": "1.3.3",
+                "url": "https://api.github.com/repos/webignition/absolute-url-deriver/zipball/1f0c4eb56d6547096771e8dd90009e16841d6757",
+                "reference": "1f0c4eb56d6547096771e8dd90009e16841d6757",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.0",
-                "webignition/url": ">=1.7.2"
+                "webignition/url": ">=1.9.3"
             },
             "type": "library",
             "autoload": {
@@ -287,7 +287,7 @@
                 "absolute",
                 "url"
             ],
-            "time": "2013-04-05 15:59:02"
+            "time": "2013-10-03 13:32:31"
         },
         {
             "name": "webignition/disallowed-character-terminated-string",
@@ -331,16 +331,16 @@
         },
         {
             "name": "webignition/internet-media-type",
-            "version": "0.4.1.1",
+            "version": "0.4.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webignition/internet-media-type.git",
-                "reference": "0.4.1.1"
+                "reference": "de30f77c5e9d3584b8bdfba29dce5517f10c9ab1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webignition/internet-media-type/zipball/0.4.1.1",
-                "reference": "0.4.1.1",
+                "url": "https://api.github.com/repos/webignition/internet-media-type/zipball/de30f77c5e9d3584b8bdfba29dce5517f10c9ab1",
+                "reference": "de30f77c5e9d3584b8bdfba29dce5517f10c9ab1",
                 "shasum": ""
             },
             "require": {
@@ -373,7 +373,7 @@
                 "media type",
                 "media-type"
             ],
-            "time": "2013-03-18 14:58:48"
+            "time": "2013-09-05 16:34:19"
         },
         {
             "name": "webignition/quoted-string",
@@ -462,12 +462,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/webignition/robots-txt-parser.git",
-                "reference": "1.0.1"
+                "reference": "ac3fbb4cc1b4a09048fb23b8717f5962608350cc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webignition/robots-txt-parser/zipball/1.0.1",
-                "reference": "1.0.1",
+                "url": "https://api.github.com/repos/webignition/robots-txt-parser/zipball/ac3fbb4cc1b4a09048fb23b8717f5962608350cc",
+                "reference": "ac3fbb4cc1b4a09048fb23b8717f5962608350cc",
                 "shasum": ""
             },
             "require": {
@@ -584,16 +584,16 @@
         },
         {
             "name": "webignition/url",
-            "version": "1.7.2",
+            "version": "1.9.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webignition/url.git",
-                "reference": "1.7.2"
+                "reference": "c93cae6c5d5fc8fe4834877a697bc9764c365045"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webignition/url/zipball/1.7.2",
-                "reference": "1.7.2",
+                "url": "https://api.github.com/repos/webignition/url/zipball/c93cae6c5d5fc8fe4834877a697bc9764c365045",
+                "reference": "c93cae6c5d5fc8fe4834877a697bc9764c365045",
                 "shasum": ""
             },
             "require": {
@@ -621,7 +621,7 @@
             "keywords": [
                 "url"
             ],
-            "time": "2013-04-05 15:56:13"
+            "time": "2013-10-03 10:01:18"
         },
         {
             "name": "webignition/web-resource-model",
