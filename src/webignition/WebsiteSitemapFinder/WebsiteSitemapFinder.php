@@ -225,7 +225,7 @@ class WebsiteSitemapFinder {
      * 
      * @return WebsiteSitemapRetriever
      */
-    private function getSitemapRetriever() {
+    public function getSitemapRetriever() {
         if (is_null($this->sitemapRetriever)) {
             $this->sitemapRetriever = new WebsiteSitemapRetriever();
             $this->sitemapRetriever->setHttpClient($this->getHttpClient());            
