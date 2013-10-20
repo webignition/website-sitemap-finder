@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "9bd8b16b4088dfb28b2493c967bb65c1",
+    "hash": "54fe92547e89a455f709220a1283902d",
     "packages": [
         {
             "name": "guzzle/guzzle",
@@ -666,20 +666,20 @@
         },
         {
             "name": "webignition/website-sitemap-retriever",
-            "version": "0.2",
+            "version": "0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webignition/website-sitemap-retriever.git",
-                "reference": "0.2"
+                "reference": "a39d0f388ab86d510984a38dd81a5a9acb192e22"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webignition/website-sitemap-retriever/zipball/0.2",
-                "reference": "0.2",
+                "url": "https://api.github.com/repos/webignition/website-sitemap-retriever/zipball/a39d0f388ab86d510984a38dd81a5a9acb192e22",
+                "reference": "a39d0f388ab86d510984a38dd81a5a9acb192e22",
                 "shasum": ""
             },
             "require": {
-                "guzzle/guzzle": "3.3.1",
+                "guzzle/guzzle": ">=3.3.1",
                 "php": ">=5.3.0",
                 "querypath/querypath": ">=3.0.0",
                 "webignition/internet-media-type": ">=0.1,<2.0",
@@ -706,7 +706,7 @@
             "keywords": [
                 "Sitemap"
             ],
-            "time": "2013-04-09 19:28:34"
+            "time": "2013-10-20 15:10:28"
         }
     ],
     "packages-dev": [
