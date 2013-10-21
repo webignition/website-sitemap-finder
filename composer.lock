@@ -3,25 +3,25 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "38b13293c456fcc4e2ca447452615809",
+    "hash": "8826119952d3bee25e17a6a988fe7d87",
     "packages": [
         {
             "name": "guzzle/guzzle",
-            "version": "v3.3.1",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "v3.3.1"
+                "reference": "e62f205c834a23e3a8c5933b1748f3336721bcc1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/v3.3.1",
-                "reference": "v3.3.1",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/e62f205c834a23e3a8c5933b1748f3336721bcc1",
+                "reference": "e62f205c834a23e3a8c5933b1748f3336721bcc1",
                 "shasum": ""
             },
             "require": {
                 "ext-curl": "*",
-                "php": ">=5.3.2",
+                "php": ">=5.3.3",
                 "symfony/event-dispatcher": ">=2.1"
             },
             "replace": {
@@ -52,16 +52,15 @@
                 "doctrine/cache": "*",
                 "monolog/monolog": "1.*",
                 "phpunit/phpunit": "3.7.*",
+                "psr/log": "1.0.*",
                 "symfony/class-loader": "*",
-                "zend/zend-cache1": "1.12",
-                "zend/zend-log1": "1.12",
                 "zendframework/zend-cache": "2.0.*",
                 "zendframework/zend-log": "2.0.*"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.3-dev"
+                    "dev-master": "3.7-dev"
                 }
             },
             "autoload": {
@@ -96,7 +95,7 @@
                 "rest",
                 "web service"
             ],
-            "time": "2013-03-10 23:05:38"
+            "time": "2013-10-16 00:14:18"
         },
         {
             "name": "hobnob/xml-stream-reader",
@@ -141,47 +140,6 @@
                 "xml"
             ],
             "time": "2013-07-04 08:07:40"
-        },
-        {
-            "name": "querypath/querypath",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/technosophos/querypath.git",
-                "reference": "0f57cee46e736f7192d0057e1a34921460be5636"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/technosophos/querypath/zipball/0f57cee46e736f7192d0057e1a34921460be5636",
-                "reference": "0f57cee46e736f7192d0057e1a34921460be5636",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "QueryPath": "src/"
-                },
-                "files": [
-                    "src/qp_functions.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "HTML/XML querying (CSS 4 or XPath) and processing (like jQuery)",
-            "homepage": "https://github.com/technosophos/querypath",
-            "keywords": [
-                "css",
-                "html",
-                "jquery",
-                "xml",
-                "xslt"
-            ],
-            "time": "2013-10-03 15:52:13"
         },
         {
             "name": "simplepie/simplepie",
@@ -244,12 +202,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/EventDispatcher.git",
-                "reference": "9b4fe5757870682eb2251e283228a66d938265a8"
+                "reference": "d51d78b34c1d9dcc384ba48155105fe99284dd67"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/EventDispatcher/zipball/9b4fe5757870682eb2251e283228a66d938265a8",
-                "reference": "9b4fe5757870682eb2251e283228a66d938265a8",
+                "url": "https://api.github.com/repos/symfony/EventDispatcher/zipball/d51d78b34c1d9dcc384ba48155105fe99284dd67",
+                "reference": "d51d78b34c1d9dcc384ba48155105fe99284dd67",
                 "shasum": ""
             },
             "require": {
@@ -289,20 +247,20 @@
             ],
             "description": "Symfony EventDispatcher Component",
             "homepage": "http://symfony.com",
-            "time": "2013-09-19 09:47:34"
+            "time": "2013-10-17 11:48:11"
         },
         {
             "name": "webignition/absolute-url-deriver",
-            "version": "1.4",
+            "version": "1.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webignition/absolute-url-deriver.git",
-                "reference": "1f0c4eb56d6547096771e8dd90009e16841d6757"
+                "reference": "41e20da72e2e8e33c91c44403a20e486baa36692"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webignition/absolute-url-deriver/zipball/1f0c4eb56d6547096771e8dd90009e16841d6757",
-                "reference": "1f0c4eb56d6547096771e8dd90009e16841d6757",
+                "url": "https://api.github.com/repos/webignition/absolute-url-deriver/zipball/41e20da72e2e8e33c91c44403a20e486baa36692",
+                "reference": "41e20da72e2e8e33c91c44403a20e486baa36692",
                 "shasum": ""
             },
             "require": {
@@ -331,7 +289,7 @@
                 "absolute",
                 "url"
             ],
-            "time": "2013-10-03 13:32:31"
+            "time": "2013-10-21 10:18:54"
         },
         {
             "name": "webignition/disallowed-character-terminated-string",
@@ -629,16 +587,16 @@
         },
         {
             "name": "webignition/url",
-            "version": "1.9.3",
+            "version": "1.9.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webignition/url.git",
-                "reference": "c93cae6c5d5fc8fe4834877a697bc9764c365045"
+                "reference": "6e45fa1cd17a1304a99d2386d6bf0ce5b9fcd177"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webignition/url/zipball/c93cae6c5d5fc8fe4834877a697bc9764c365045",
-                "reference": "c93cae6c5d5fc8fe4834877a697bc9764c365045",
+                "url": "https://api.github.com/repos/webignition/url/zipball/6e45fa1cd17a1304a99d2386d6bf0ce5b9fcd177",
+                "reference": "6e45fa1cd17a1304a99d2386d6bf0ce5b9fcd177",
                 "shasum": ""
             },
             "require": {
@@ -666,7 +624,7 @@
             "keywords": [
                 "url"
             ],
-            "time": "2013-10-03 10:01:18"
+            "time": "2013-10-21 09:41:33"
         },
         {
             "name": "webignition/web-resource-model",
@@ -711,24 +669,23 @@
         },
         {
             "name": "webignition/website-sitemap-retriever",
-            "version": "0.3.1",
+            "version": "0.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webignition/website-sitemap-retriever.git",
-                "reference": "2821723d36015d8f2abbc534bd92f4b5e6834673"
+                "reference": "253c52424c7540a3b5d4b580e011ea3be7a42dff"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webignition/website-sitemap-retriever/zipball/2821723d36015d8f2abbc534bd92f4b5e6834673",
-                "reference": "2821723d36015d8f2abbc534bd92f4b5e6834673",
+                "url": "https://api.github.com/repos/webignition/website-sitemap-retriever/zipball/253c52424c7540a3b5d4b580e011ea3be7a42dff",
+                "reference": "253c52424c7540a3b5d4b580e011ea3be7a42dff",
                 "shasum": ""
             },
             "require": {
                 "guzzle/guzzle": ">=3.3.1",
                 "php": ">=5.3.0",
-                "querypath/querypath": ">=3.0.0",
                 "webignition/internet-media-type": ">=0.1,<2.0",
-                "webignition/sitemap-model": "dev-master"
+                "webignition/sitemap-model": ">=0.1"
             },
             "type": "library",
             "autoload": {
@@ -751,7 +708,7 @@
             "keywords": [
                 "Sitemap"
             ],
-            "time": "2013-10-21 15:16:18"
+            "time": "2013-10-21 15:27:59"
         }
     ],
     "packages-dev": [
@@ -762,8 +719,7 @@
     ],
     "minimum-stability": "dev",
     "stability-flags": {
-        "webignition/robots-txt-parser": 20,
-        "webignition/sitemap-model": 20
+        "webignition/robots-txt-parser": 20
     },
     "platform": {
         "php": ">=5.3.0"
