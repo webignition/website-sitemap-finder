@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "54fe92547e89a455f709220a1283902d",
+    "hash": "38b13293c456fcc4e2ca447452615809",
     "packages": [
         {
             "name": "guzzle/guzzle",
@@ -97,6 +97,50 @@
                 "web service"
             ],
             "time": "2013-03-10 23:05:38"
+        },
+        {
+            "name": "hobnob/xml-stream-reader",
+            "version": "1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/hobnob/xmlStreamReader.git",
+                "reference": "3f130f937c94accb6b7c6e30de3d736ff7d1b0ce"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/hobnob/xmlStreamReader/zipball/3f130f937c94accb6b7c6e30de3d736ff7d1b0ce",
+                "reference": "3f130f937c94accb6b7c6e30de3d736ff7d1b0ce",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.7.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Hobnob\\XmlStreamReader": "/classes/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "David North",
+                    "role": "Developer"
+                }
+            ],
+            "description": "PHP SAX XML Stream Reader",
+            "homepage": "https://github.com/hobnob/xmlStreamReader",
+            "keywords": [
+                "stream",
+                "xml"
+            ],
+            "time": "2013-07-04 08:07:40"
         },
         {
             "name": "querypath/querypath",
@@ -504,17 +548,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/webignition/sitemap-model.git",
-                "reference": "7d1fbb7e775843908ced710206679a2eefb5f50c"
+                "reference": "a10055a161ca654c269bd38b809e6e2cc1da75af"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/webignition/sitemap-model/zipball/7d1fbb7e775843908ced710206679a2eefb5f50c",
-                "reference": "7d1fbb7e775843908ced710206679a2eefb5f50c",
+                "url": "https://api.github.com/repos/webignition/sitemap-model/zipball/a10055a161ca654c269bd38b809e6e2cc1da75af",
+                "reference": "a10055a161ca654c269bd38b809e6e2cc1da75af",
                 "shasum": ""
             },
             "require": {
+                "hobnob/xml-stream-reader": "1.0.3",
                 "php": ">=5.3.0",
-                "querypath/querypath": ">=3.0.0",
                 "simplepie/simplepie": "*",
                 "webignition/url": ">=0.1,<2.0",
                 "webignition/web-resource-model": ">=0.1,<2.0"
@@ -525,6 +569,7 @@
                     "": "src/"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -539,7 +584,7 @@
             "keywords": [
                 "Sitemap"
             ],
-            "time": "2012-10-09 19:10:42"
+            "time": "2013-10-21 15:14:23"
         },
         {
             "name": "webignition/string-parser",
@@ -666,16 +711,16 @@
         },
         {
             "name": "webignition/website-sitemap-retriever",
-            "version": "0.3",
+            "version": "0.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webignition/website-sitemap-retriever.git",
-                "reference": "a39d0f388ab86d510984a38dd81a5a9acb192e22"
+                "reference": "2821723d36015d8f2abbc534bd92f4b5e6834673"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webignition/website-sitemap-retriever/zipball/a39d0f388ab86d510984a38dd81a5a9acb192e22",
-                "reference": "a39d0f388ab86d510984a38dd81a5a9acb192e22",
+                "url": "https://api.github.com/repos/webignition/website-sitemap-retriever/zipball/2821723d36015d8f2abbc534bd92f4b5e6834673",
+                "reference": "2821723d36015d8f2abbc534bd92f4b5e6834673",
                 "shasum": ""
             },
             "require": {
@@ -706,7 +751,7 @@
             "keywords": [
                 "Sitemap"
             ],
-            "time": "2013-10-20 15:10:28"
+            "time": "2013-10-21 15:16:18"
         }
     ],
     "packages-dev": [
