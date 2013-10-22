@@ -5,7 +5,10 @@ use webignition\NormalisedUrl\NormalisedUrl;
 use webignition\WebResource\Sitemap\Sitemap;
 use webignition\WebResource\Sitemap\Configuration as SitemapConfiguration;
 use webignition\WebsiteSitemapRetriever\WebsiteSitemapRetriever;
-use Guzzle\Http\Client as HttpClient;
+use Symfony\Component\EventDispatcher\EventDispatcher;  
+
+use webignition\WebsiteSitemapFinder\Events;
+use webignition\WebsiteSitemapFinder\Event\SitemapAddedEvent;
 
 /**
  *  
@@ -36,6 +39,57 @@ class WebsiteSitemapFinder {
      * @var WebsiteSitemapRetriever
      */
     private $sitemapRetriever = null;
+    
+    
+    /**
+     *
+     * @var \Symfony\Component\EventDispatcher\EventDispatcher 
+     */
+    private $dispatcher = null;
+    
+    
+    /**
+     *
+     * @var \webignition\WebsiteSitemapFinder\Listener\SitemapAddedUrlLimitListener
+     */
+    private $urlLimitListener = null;
+    
+    
+    /**
+     *
+     * @var boolean
+     */
+    private $shouldHalt = false;
+    
+    
+    public function __construct() {
+        $this->dispatcher = new EventDispatcher();
+        $this->dispatcher->addListener(Events::SITEMAP_ADDED, array($this->getUrlLimitListener(), 'onSitemapAddedAction'));
+    }
+    
+    
+    /**
+     * 
+     * @return \webignition\WebsiteSitemapFinder\Listener\SitemapAddedUrlLimitListener
+     */
+    public function getUrlLimitListener() {
+        if (is_null($this->urlLimitListener)) {
+            $this->urlLimitListener = new Listener\SitemapAddedUrlLimitListener();
+        }
+        
+        return $this->urlLimitListener;
+    }
+    
+
+
+    public function enableShouldHalt() {
+        $this->shouldHalt = true;
+    }
+    
+    
+    public function disableShouldHalt() {
+        $this->shouldHalt = false;
+    }
     
     
     /**
@@ -89,6 +143,10 @@ class WebsiteSitemapFinder {
         $sitemaps = array();
         
         foreach ($possibleSitemapUrls as $possibleSitemapUrl) {                        
+            if ($this->shouldHalt) {
+                continue;
+            }            
+            
             $sitemap = $this->createSitemap();
             $sitemap->setUrl($possibleSitemapUrl);
             
@@ -96,8 +154,11 @@ class WebsiteSitemapFinder {
             
             if (!is_null($sitemap) && $sitemap->isSitemap()) {
                 $sitemaps[] = $sitemap;
-            } 
-        };
+                
+                $event = new SitemapAddedEvent($this, $sitemaps);
+                $this->dispatcher->dispatch(Events::SITEMAP_ADDED, $event);
+            }
+        };      
         
         return $sitemaps;
     }
