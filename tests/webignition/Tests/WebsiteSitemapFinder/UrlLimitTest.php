@@ -1,5 +1,7 @@
 <?php
 
+namespace webignition\Tests\WebsiteSitemapFinder;
+
 class UrlLimitTest extends BaseTest {
     
     public function setUp() {

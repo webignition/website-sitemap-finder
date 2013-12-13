@@ -1,8 +1,10 @@
 <?php
 
+namespace webignition\Tests\WebsiteSitemapFinder;
+
 class GetLargeSitemapIndexTest extends BaseTest {
     
-    public function setUp() {
+    public function setUp() {        
         $this->setHttpFixtures($this->getHttpFixtures($this->getFixturesDataPath(__CLASS__, $this->getName() . '/HttpResponses')));
     }    
     
@@ -18,5 +20,5 @@ class GetLargeSitemapIndexTest extends BaseTest {
 
         $this->assertEquals(3539, count($urls));     
     }
-    
+//    
 }

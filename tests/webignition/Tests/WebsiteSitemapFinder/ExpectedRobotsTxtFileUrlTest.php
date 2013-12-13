@@ -1,9 +1,12 @@
 <?php
-class ExpectedRobotsTxtFileTest extends PHPUnit_Framework_TestCase {
+
+namespace webignition\Tests\WebsiteSitemapFinder;
+
+class ExpectedRobotsTxtFileTest extends \PHPUnit_Framework_TestCase {
 
     public function testGetExpectedRobotsTxtFileUrlTest() {
         
-        $finder = new webignition\WebsiteSitemapFinder\WebsiteSitemapFinder();        
+        $finder = new \webignition\WebsiteSitemapFinder\WebsiteSitemapFinder();        
         
         $finder->setRootUrl('http://example.com/');        
         $this->assertEquals('http://example.com/robots.txt', $finder->getExpectedRobotsTxtFileUrl());
