@@ -102,4 +102,21 @@ class GetSitemapUrlTest extends BaseTest {
         $this->assertEquals('http://blogsofnote.blogspot.com/feeds/posts/default?orderby=UPDATED', $sitemaps[0]->getUrl());          
     }
     
+    
+    /**
+     * Test finding XML sitemap via robots.txt for site protected with http auth
+     * 
+     */
+    public function testForHttpAuthProtectedSite() {        
+        $this->getSitemapFinder()->setRootUrl('http://example.com/');
+        $this->getSitemapFinder()->setHttpAuthenticationUser('example');
+        $this->getSitemapFinder()->setHttpAuthenticationPassword('password');
+        $sitemaps = $this->getSitemapFinder()->getSitemaps();
+        
+        $this->assertEquals(1, count($sitemaps));
+        $this->assertEquals(array(
+            'http://example.com/index.html'
+        ), $sitemaps[0]->getUrls());
+    }      
+    
 }
