@@ -20,21 +20,11 @@ class WebsiteSitemapFinder {
     const DEFAULT_SITEMAP_TXT_FILE_NAME = 'sitemap.txt';
     const SITEMAP_INDEX_TYPE_NAME = 'sitemaps.org.xml.index';
     
-    const HTTP_AUTH_BASIC_NAME = 'Basic';
-    const HTTP_AUTH_DIGEST_NAME = 'Digest';
-    
-    
-    private $httpAuthNameToCurlAuthScheme = array(
-        self::HTTP_AUTH_BASIC_NAME => CURLAUTH_BASIC,
-        self::HTTP_AUTH_DIGEST_NAME => CURLAUTH_DIGEST
-    );    
-    
-    
     /**
      *
-     * @var \Guzzle\Http\Client
+     * @var \Guzzle\Http\Message\Request
      */
-    private $httpClient = null;
+    private $baseRequest = null;
     
     
     /**
@@ -69,62 +59,13 @@ class WebsiteSitemapFinder {
      *
      * @var boolean
      */
-    private $shouldHalt = false;
-    
-    
-    /**
-     *
-     * @var string
-     */
-    private $httpAuthenticationUser = '';
-    
-    /**
-     *
-     * @var string
-     */
-    private $httpAuthenticationPassword = '';    
+    private $shouldHalt = false; 
     
     
     public function __construct() {
         $this->dispatcher = new EventDispatcher();
         $this->dispatcher->addListener(Events::SITEMAP_ADDED, array($this->getUrlLimitListener(), 'onSitemapAddedAction'));
     }
-    
-    
-    /**
-     * 
-     * @param string $user
-     */
-    public function setHttpAuthenticationUser($user) {
-        $this->httpAuthenticationUser = $user;
-    }
-    
-    
-    /**
-     * 
-     * @param string $password
-     */
-    public function setHttpAuthenticationPassword($password) {
-        $this->httpAuthenticationPassword = $password;
-    }
-    
-    
-    /**
-     * 
-     * @return string
-     */
-    public function getHttpAuthenticationUser() {
-        return $this->httpAuthenticationUser;
-    }
-    
-    
-    /**
-     * 
-     * @return string
-     */
-    public function getHttpAuthenticationPassword() {
-        return $this->httpAuthenticationPassword;
-    }    
     
     
     /**
@@ -172,45 +113,45 @@ class WebsiteSitemapFinder {
     
     
     /**
-     *
-     * @param \Guzzle\Http\Client $client 
+     * 
+     * @param \Guzzle\Http\Message\Request $request
      */
-    public function setHttpClient(\Guzzle\Http\Client $client) {
-        $this->httpClient = $client;
+    public function setBaseRequest(\Guzzle\Http\Message\Request $request) {
+        $this->baseRequest = $request;
     }
+    
     
     
     /**
-     *
-     * @return \Guzzle\Http\Client
+     * 
+     * @return \Guzzle\Http\Message\Request $request
      */
-    private function getHttpClient() {
-        if (is_null($this->httpClient)) {
-            $this->httpClient = new \Guzzle\Http\Client();
+    public function getBaseRequest() {
+        if (is_null($this->baseRequest)) {
+            $client = new \Guzzle\Http\Client;            
+            $this->baseRequest = $client->get();
         }
         
-        return $this->httpClient;
-    }
-
+        return $this->baseRequest;
+    }    
+    
     
     /**
      *
      * @return array
      */
     public function getSitemaps() {        
-        $possibleSitemapUrls = $this->getPossibleSitemapUrls();
+        $possibleSitemapUrls = $this->getPossibleSitemapUrls();        
         $sitemaps = array();
         
         foreach ($possibleSitemapUrls as $possibleSitemapUrl) {                                    
             if ($this->shouldHalt) {
                 continue;
-            }            
+            }
             
             $sitemap = $this->createSitemap();
             $sitemap->setUrl($possibleSitemapUrl);
-            
-            $this->getSitemapRetriever()->setHttpAuthenticationUser($this->getHttpAuthenticationUser());
-            $this->getSitemapRetriever()->setHttpAuthenticationPassword($this->getHttpAuthenticationPassword());
+
             $this->getSitemapRetriever()->retrieve($sitemap);
             
             if (!is_null($sitemap) && $sitemap->isSitemap()) {
@@ -319,10 +260,11 @@ class WebsiteSitemapFinder {
      * @return string 
      */
     private function getRobotsTxtContent() {
-        $request = $this->getHttpClient()->get($this->getExpectedRobotsTxtFileUrl());
+        $request = clone $this->getBaseRequest();
+        $request->setUrl($this->getExpectedRobotsTxtFileUrl());
         
         try {
-            $response = $this->getRobotsTxtResourceResponse($request);   
+            $response = $request->send();   
         } catch (\Guzzle\Http\Exception\RequestException $e) {
             return '';
         }      
@@ -339,46 +281,7 @@ class WebsiteSitemapFinder {
         }
         
         return $response->getBody();
-    }  
-    
-    
-    private function getRobotsTxtResourceResponse(\Guzzle\Http\Message\Request $request, $failOnAuthenticationFailure = false) {
-        try {
-            return $request->send();     
-        } catch (\Guzzle\Http\Exception\ClientErrorResponseException $clientErrorResponseException) {            
-            /* @var $response \Guzzle\Http\Message\Response */
-            $response = $clientErrorResponseException->getResponse();                        
-            $authenticationScheme = $this->getWwwAuthenticateSchemeFromResponse($response);                        
-            
-            if (is_null($authenticationScheme) || $failOnAuthenticationFailure) {
-                throw $clientErrorResponseException;
-            }            
-
-            $request->setAuth($this->getHttpAuthenticationUser(), $this->getHttpAuthenticationPassword(), $this->getWwwAuthenticateSchemeFromResponse($response));
-            return $this->getRobotsTxtResourceResponse($request, true);
-        }        
-    }   
-    
-    
-    /**
-     * 
-     * @param \Guzzle\Http\Message\Response $response
-     * @return int|null
-     */
-    private function getWwwAuthenticateSchemeFromResponse(\Guzzle\Http\Message\Response $response) {
-        if ($response->getStatusCode() !== 401) {
-            return null;
-        }
-        
-        if (!$response->hasHeader('www-authenticate')) {
-            return null;
-        }        
-              
-        $wwwAuthenticateHeaderValues = $response->getHeader('www-authenticate')->toArray();
-        $firstLineParts = explode(' ', $wwwAuthenticateHeaderValues[0]);
-
-        return (isset($this->httpAuthNameToCurlAuthScheme[$firstLineParts[0]])) ? $this->httpAuthNameToCurlAuthScheme[$firstLineParts[0]] : null;    
-    }    
+    }
     
     
     /**
@@ -388,7 +291,7 @@ class WebsiteSitemapFinder {
     public function getSitemapRetriever() {
         if (is_null($this->sitemapRetriever)) {
             $this->sitemapRetriever = new WebsiteSitemapRetriever();
-            $this->sitemapRetriever->setHttpClient($this->getHttpClient());            
+            $this->sitemapRetriever->setBaseRequest($this->getBaseRequest());
         }
         
         return $this->sitemapRetriever;

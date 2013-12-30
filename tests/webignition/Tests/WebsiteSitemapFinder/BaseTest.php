@@ -40,7 +40,7 @@ abstract class BaseTest extends \PHPUnit_Framework_TestCase {
     protected function getSitemapFinder() {
         if (is_null($this->sitemapFinder)) {
             $this->sitemapFinder = new WebsiteSitemapFinder();
-            $this->sitemapFinder->setHttpClient($this->getHttpClient());
+            $this->sitemapFinder->setBaseRequest($this->getHttpClient()->get());
         }
         
         return $this->sitemapFinder;
