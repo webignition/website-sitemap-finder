@@ -24,6 +24,13 @@ class Configuration {
      * @var boolean
      */
     private $shouldHalt = false;     
+    
+    
+    /**
+     *
+     * @var array
+     */
+    private $cookies = array();       
 
 
     /**
@@ -100,5 +107,25 @@ class Configuration {
         
         return $this->baseRequest;
     }    
+    
+    
+    /**
+     * 
+     * @param array $cookies
+     * @return \webignition\CssValidatorWrapper\Configuration\Configuration
+     */
+    public function setCookies($cookies) {
+        $this->cookies = $cookies;
+        return $this;
+    }
+    
+    
+    /**
+     * 
+     * @return array
+     */
+    public function getCookies() {
+        return $this->cookies;
+    }     
     
 }
