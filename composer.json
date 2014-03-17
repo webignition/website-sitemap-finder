@@ -12,7 +12,10 @@
         }
     ],
     "autoload": {
-        "psr-0": { "": "src/" }
+        "psr-0": {
+            "webignition\\Tests": "tests/",
+            "": "src/"
+        }
     },    
     "require": {
         "php": ">=5.3.0",
