@@ -3,20 +3,20 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "b5b1ba6c310471c29e60af548f384bc8",
+    "hash": "76abd3b003303174f6633f4fcbdb2601",
     "packages": [
         {
             "name": "etechnika/idna-convert",
-            "version": "1.0.1",
+            "version": "1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/etechnika/idna-convert.git",
-                "reference": "450db86f2fa58dffa81534fa9826136bcb03d692"
+                "reference": "85e488474269b19630ca4e711061e4aa61ac879a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/etechnika/idna-convert/zipball/450db86f2fa58dffa81534fa9826136bcb03d692",
-                "reference": "450db86f2fa58dffa81534fa9826136bcb03d692",
+                "url": "https://api.github.com/repos/etechnika/idna-convert/zipball/85e488474269b19630ca4e711061e4aa61ac879a",
+                "reference": "85e488474269b19630ca4e711061e4aa61ac879a",
                 "shasum": ""
             },
             "require": {
@@ -57,20 +57,20 @@
             "keywords": [
                 "lib"
             ],
-            "time": "2013-12-05 21:37:00"
+            "time": "2014-02-15 12:42:32"
         },
         {
             "name": "guzzle/guzzle",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "e0df12243ee08a4d6fca3241142212428dfd632e"
+                "url": "https://github.com/guzzle/guzzle3.git",
+                "reference": "8a0a8d72cbff0c58752af0badd6820f5f87c9c84"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/e0df12243ee08a4d6fca3241142212428dfd632e",
-                "reference": "e0df12243ee08a4d6fca3241142212428dfd632e",
+                "url": "https://api.github.com/repos/guzzle/guzzle3/zipball/8a0a8d72cbff0c58752af0badd6820f5f87c9c84",
+                "reference": "8a0a8d72cbff0c58752af0badd6820f5f87c9c84",
                 "shasum": ""
             },
             "require": {
@@ -108,8 +108,8 @@
                 "phpunit/phpunit": "3.7.*",
                 "psr/log": "1.0.*",
                 "symfony/class-loader": "*",
-                "zendframework/zend-cache": "2.0.*",
-                "zendframework/zend-log": "2.0.*"
+                "zendframework/zend-cache": "<2.3",
+                "zendframework/zend-log": "<2.3"
             },
             "type": "library",
             "extra": {
@@ -149,7 +149,7 @@
                 "rest",
                 "web service"
             ],
-            "time": "2013-12-22 22:25:34"
+            "time": "2014-03-15 23:37:34"
         },
         {
             "name": "hobnob/xml-stream-reader",
@@ -256,12 +256,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/EventDispatcher.git",
-                "reference": "6a86e7e768e64c85f9d2b76fa895e47d8b3162b3"
+                "reference": "8b345992d9e850798f46a6c68804ac9e4965e91a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/EventDispatcher/zipball/6a86e7e768e64c85f9d2b76fa895e47d8b3162b3",
-                "reference": "6a86e7e768e64c85f9d2b76fa895e47d8b3162b3",
+                "url": "https://api.github.com/repos/symfony/EventDispatcher/zipball/8b345992d9e850798f46a6c68804ac9e4965e91a",
+                "reference": "8b345992d9e850798f46a6c68804ac9e4965e91a",
                 "shasum": ""
             },
             "require": {
@@ -294,7 +294,9 @@
             "authors": [
                 {
                     "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
+                    "email": "fabien@symfony.com",
+                    "homepage": "http://fabien.potencier.org",
+                    "role": "Lead Developer"
                 },
                 {
                     "name": "Symfony Community",
@@ -303,25 +305,25 @@
             ],
             "description": "Symfony EventDispatcher Component",
             "homepage": "http://symfony.com",
-            "time": "2013-12-28 21:40:48"
+            "time": "2014-02-11 13:52:21"
         },
         {
             "name": "webignition/absolute-url-deriver",
-            "version": "1.4.1",
+            "version": "1.4.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webignition/absolute-url-deriver.git",
-                "reference": "41e20da72e2e8e33c91c44403a20e486baa36692"
+                "reference": "a4095e6a6f72206041baf29db33083d88d78108a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webignition/absolute-url-deriver/zipball/41e20da72e2e8e33c91c44403a20e486baa36692",
-                "reference": "41e20da72e2e8e33c91c44403a20e486baa36692",
+                "url": "https://api.github.com/repos/webignition/absolute-url-deriver/zipball/a4095e6a6f72206041baf29db33083d88d78108a",
+                "reference": "a4095e6a6f72206041baf29db33083d88d78108a",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.0",
-                "webignition/url": ">=1.9.3"
+                "webignition/url": ">=1.9.8"
             },
             "type": "library",
             "autoload": {
@@ -345,7 +347,151 @@
                 "absolute",
                 "url"
             ],
-            "time": "2013-10-21 10:18:54"
+            "time": "2014-01-13 18:13:07"
+        },
+        {
+            "name": "webignition/cookie-domain-matcher",
+            "version": "0.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/webignition/cookie-domain-matcher.git",
+                "reference": "fceaa47ad3bb4f66a6e27d69b78e23dded5e6e84"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/webignition/cookie-domain-matcher/zipball/fceaa47ad3bb4f66a6e27d69b78e23dded5e6e84",
+                "reference": "fceaa47ad3bb4f66a6e27d69b78e23dded5e6e84",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.7.*",
+                "symfony/class-loader": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "webignition\\Tests": "tests/",
+                    "": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jon Cram",
+                    "email": "jon@webignition.net"
+                }
+            ],
+            "description": "Implementation of cookie domain matching specified in RFC6265",
+            "homepage": "https://github.com/webignition/cookie-domain-matcher",
+            "keywords": [
+                "cookie",
+                "domain",
+                "hostname"
+            ],
+            "time": "2014-03-14 13:26:13"
+        },
+        {
+            "name": "webignition/cookie-path-matcher",
+            "version": "0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/webignition/cookie-path-matcher.git",
+                "reference": "f045714ca5c6c7d9603e25d2ae153db696caf52c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/webignition/cookie-path-matcher/zipball/f045714ca5c6c7d9603e25d2ae153db696caf52c",
+                "reference": "f045714ca5c6c7d9603e25d2ae153db696caf52c",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.7.*",
+                "symfony/class-loader": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "webignition\\Tests": "tests/",
+                    "": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jon Cram",
+                    "email": "jon@webignition.net"
+                }
+            ],
+            "description": "Implementation of cookie path matching specified in RFC6265",
+            "homepage": "https://github.com/webignition/cookie-path-matcher",
+            "keywords": [
+                "cookie",
+                "matcher",
+                "path"
+            ],
+            "time": "2014-03-14 12:33:11"
+        },
+        {
+            "name": "webignition/cookie-url-matcher",
+            "version": "0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/webignition/cookie-url-matcher.git",
+                "reference": "87b01ccb0264e49b5e53fdd5a546c44f2edc7978"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/webignition/cookie-url-matcher/zipball/87b01ccb0264e49b5e53fdd5a546c44f2edc7978",
+                "reference": "87b01ccb0264e49b5e53fdd5a546c44f2edc7978",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0",
+                "webignition/cookie-domain-matcher": ">=0.1.1,<1",
+                "webignition/cookie-path-matcher": ">=0.1,<1",
+                "webignition/url": ">=1.9.9,<2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.7.*",
+                "symfony/class-loader": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "webignition\\Tests": "tests/",
+                    "": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jon Cram",
+                    "email": "jon@webignition.net"
+                }
+            ],
+            "description": "For cookie domain and url comparisons",
+            "homepage": "https://github.com/webignition/cookie-url-matcher",
+            "keywords": [
+                "cookie",
+                "matcher",
+                "url"
+            ],
+            "time": "2014-03-14 14:04:40"
         },
         {
             "name": "webignition/disallowed-character-terminated-string",
@@ -643,16 +789,16 @@
         },
         {
             "name": "webignition/url",
-            "version": "1.9.6",
+            "version": "1.9.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webignition/url.git",
-                "reference": "9cf53198c2d148b4069a373da65d3ff933580eb3"
+                "reference": "cc8c3d9a9d90edf735f0a70f690cca6124ee1136"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webignition/url/zipball/9cf53198c2d148b4069a373da65d3ff933580eb3",
-                "reference": "9cf53198c2d148b4069a373da65d3ff933580eb3",
+                "url": "https://api.github.com/repos/webignition/url/zipball/cc8c3d9a9d90edf735f0a70f690cca6124ee1136",
+                "reference": "cc8c3d9a9d90edf735f0a70f690cca6124ee1136",
                 "shasum": ""
             },
             "require": {
@@ -681,7 +827,7 @@
             "keywords": [
                 "url"
             ],
-            "time": "2013-12-20 13:32:17"
+            "time": "2014-03-07 13:33:36"
         },
         {
             "name": "webignition/web-resource-model",
@@ -726,28 +872,30 @@
         },
         {
             "name": "webignition/website-sitemap-retriever",
-            "version": "0.6",
+            "version": "0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webignition/website-sitemap-retriever.git",
-                "reference": "1bf64173bc4151e80e729ef14aaa681c64f23cfa"
+                "reference": "14a8935f27198290acaac493834a6b0f1d0377f5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webignition/website-sitemap-retriever/zipball/1bf64173bc4151e80e729ef14aaa681c64f23cfa",
-                "reference": "1bf64173bc4151e80e729ef14aaa681c64f23cfa",
+                "url": "https://api.github.com/repos/webignition/website-sitemap-retriever/zipball/14a8935f27198290acaac493834a6b0f1d0377f5",
+                "reference": "14a8935f27198290acaac493834a6b0f1d0377f5",
                 "shasum": ""
             },
             "require": {
                 "guzzle/guzzle": ">=3.3.1",
                 "php": ">=5.3.0",
                 "symfony/event-dispatcher": ">=2.1",
+                "webignition/cookie-url-matcher": ">=0.1,<1.0",
                 "webignition/internet-media-type": ">=0.1,<2.0",
                 "webignition/sitemap-model": ">=0.1"
             },
             "type": "library",
             "autoload": {
                 "psr-0": {
+                    "webignition\\Tests": "tests/",
                     "": "src/"
                 }
             },
@@ -766,7 +914,7 @@
             "keywords": [
                 "Sitemap"
             ],
-            "time": "2013-12-30 15:00:06"
+            "time": "2014-03-17 16:44:53"
         },
         {
             "name": "xrstf/ip-utils",
