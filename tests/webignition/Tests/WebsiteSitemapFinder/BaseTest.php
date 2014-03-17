@@ -28,10 +28,29 @@ abstract class BaseTest extends \PHPUnit_Framework_TestCase {
     protected function getHttpClient() {
         if (is_null($this->httpClient)) {
             $this->httpClient = new HttpClient();
+            $this->httpClient->addSubscriber(new \Guzzle\Plugin\History\HistoryPlugin());
         }
         
         return $this->httpClient;
-    }  
+    }
+    
+    
+    /**
+     * 
+     * @return \Guzzle\Plugin\History\HistoryPlugin|null
+     */
+    protected function getHttpHistory() {
+        $listenerCollections = $this->getHttpClient()->getEventDispatcher()->getListeners('request.sent');
+        
+        foreach ($listenerCollections as $listener) {
+            if ($listener[0] instanceof \Guzzle\Plugin\History\HistoryPlugin) {
+                return $listener[0];
+            }
+        }
+        
+        return null;     
+    }     
+    
     
     /**
      * 
@@ -84,8 +103,13 @@ abstract class BaseTest extends \PHPUnit_Framework_TestCase {
      * @param string $testName
      * @return string
      */
-    protected function getFixturesDataPath($className, $testName) {        
-        return __DIR__ . '/../../../fixtures/' . str_replace('\\', DIRECTORY_SEPARATOR, $className) . '/' . $testName;
+    protected function getFixturesDataPath($className, $testName = null) {        
+        $path = __DIR__ . '/../../../fixtures/' . str_replace('\\', DIRECTORY_SEPARATOR, $className);
+        if (!is_null($testName)) {
+            $path .= '/' . $testName;
+        }
+        
+        return $path;
     }    
     
     

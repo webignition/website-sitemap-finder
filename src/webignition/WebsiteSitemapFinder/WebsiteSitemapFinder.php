@@ -208,6 +208,8 @@ class WebsiteSitemapFinder {
         $request = clone $this->getConfiguration()->getBaseRequest();
         $request->setUrl($this->getExpectedRobotsTxtFileUrl());
         
+        $this->setRequestCookies($request);
+        
         try {
             $response = $request->send();   
         } catch (\Guzzle\Http\Exception\RequestException $e) {
@@ -229,6 +231,23 @@ class WebsiteSitemapFinder {
     }
     
     
+    private function setRequestCookies(\Guzzle\Http\Message\Request $request) {
+        if (!is_null($request->getCookies())) {
+            foreach ($request->getCookies() as $name => $value) {
+                $request->removeCookie($name);
+            }
+        }        
+        
+        $cookieUrlMatcher = new \webignition\Cookie\UrlMatcher\UrlMatcher();
+        
+        foreach ($this->getConfiguration()->getCookies() as $cookie) {
+            if ($cookieUrlMatcher->isMatch($cookie, $request->getUrl())) {
+                $request->addCookie($cookie['name'], $cookie['value']);
+            }
+        } 
+    }     
+    
+    
     /**
      * 
      * @return WebsiteSitemapRetriever
@@ -237,6 +256,7 @@ class WebsiteSitemapFinder {
         if (is_null($this->sitemapRetriever)) {
             $this->sitemapRetriever = new WebsiteSitemapRetriever();
             $this->sitemapRetriever->getConfiguration()->setBaseRequest($this->getConfiguration()->getBaseRequest());
+            $this->sitemapRetriever->getConfiguration()->setCookies($this->getConfiguration()->getCookies());
         }
         
         return $this->sitemapRetriever;
