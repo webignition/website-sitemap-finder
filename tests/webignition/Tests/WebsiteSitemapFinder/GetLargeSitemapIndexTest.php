@@ -9,7 +9,7 @@ class GetLargeSitemapIndexTest extends BaseTest {
     }    
     
     public function testGetLargeSitemapIndex() {        
-        $this->getSitemapFinder()->setRootUrl('http://io9.com');
+        $this->getSitemapFinder()->getConfiguration()->setRootUrl('http://io9.com');
 
         $urls = array();
         $sitemaps = $this->getSitemapFinder()->getSitemaps();

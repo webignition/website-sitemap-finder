@@ -9,7 +9,7 @@ class UrlLimitTest extends BaseTest {
     }
     
     public function testUrlLimitDuringRetrievalOfManySitemaps() {
-        $this->getSitemapFinder()->setRootUrl('http://example.com/');
+        $this->getSitemapFinder()->getConfiguration()->setRootUrl('http://example.com/');
         $this->getSitemapFinder()->getUrlLimitListener()->setSoftLimit(10);
         
         $this->assertEquals(2, count($this->getSitemapFinder()->getSitemaps()));    

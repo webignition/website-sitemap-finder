@@ -20,19 +20,6 @@ class WebsiteSitemapFinder {
     const DEFAULT_SITEMAP_TXT_FILE_NAME = 'sitemap.txt';
     const SITEMAP_INDEX_TYPE_NAME = 'sitemaps.org.xml.index';
     
-    /**
-     *
-     * @var \Guzzle\Http\Message\Request
-     */
-    private $baseRequest = null;
-    
-    
-    /**
-     *
-     * @var \webignition\NormalisedUrl\NormalisedUrl 
-     */
-    private $rootUrl = null;
-    
     
     /**
      *
@@ -57,14 +44,27 @@ class WebsiteSitemapFinder {
     
     /**
      *
-     * @var boolean
+     * @var \webignition\WebsiteSitemapFinder\Configuration\Configuration
      */
-    private $shouldHalt = false; 
+    private $configuration = null;
     
     
     public function __construct() {
         $this->dispatcher = new EventDispatcher();
         $this->dispatcher->addListener(Events::SITEMAP_ADDED, array($this->getUrlLimitListener(), 'onSitemapAddedAction'));
+    }
+    
+    
+    /**
+     * 
+     * @return \webignition\WebsiteSitemapFinder\Configuration\Configuration
+     */
+    public function getConfiguration() {
+        if (is_null($this->configuration)) {
+            $this->configuration = new \webignition\WebsiteSitemapFinder\Configuration\Configuration();
+        }
+        
+        return $this->configuration;
     }
     
     
@@ -78,62 +78,7 @@ class WebsiteSitemapFinder {
         }
         
         return $this->urlLimitListener;
-    }
-    
-
-
-    public function enableShouldHalt() {
-        $this->shouldHalt = true;
-    }
-    
-    
-    public function disableShouldHalt() {
-        $this->shouldHalt = false;
-    }
-    
-    
-    /**
-     *
-     * @param string $rootUrl
-     * @return \webignition\WebsiteSitemapFinder\WebsiteSitemapFinder 
-     */
-    public function setRootUrl($rootUrl) {        
-        $this->rootUrl = new NormalisedUrl($rootUrl);
-        return $this;
-    }
-    
-    
-    /**
-     *
-     * @return string
-     */
-    public function getRootUrl() {
-        return (is_null($this->rootUrl)) ? '' : (string)$this->rootUrl;
-    }
-    
-    
-    /**
-     * 
-     * @param \Guzzle\Http\Message\Request $request
-     */
-    public function setBaseRequest(\Guzzle\Http\Message\Request $request) {
-        $this->baseRequest = $request;
-    }
-    
-    
-    
-    /**
-     * 
-     * @return \Guzzle\Http\Message\Request $request
-     */
-    public function getBaseRequest() {
-        if (is_null($this->baseRequest)) {
-            $client = new \Guzzle\Http\Client;            
-            $this->baseRequest = $client->get();
-        }
-        
-        return $this->baseRequest;
-    }    
+    }   
     
     
     /**
@@ -145,7 +90,7 @@ class WebsiteSitemapFinder {
         $sitemaps = array();
         
         foreach ($possibleSitemapUrls as $possibleSitemapUrl) {                                    
-            if ($this->shouldHalt) {
+            if ($this->getConfiguration()->getShouldHalt()) {
                 continue;
             }
             
@@ -172,11 +117,11 @@ class WebsiteSitemapFinder {
      * @return string
      */
     public function getExpectedRobotsTxtFileUrl() {
-        if ($this->rootUrl->getRoot() == '') {            
+        if ($this->getConfiguration()->getRootUrl()->getRoot() == '') {            
             return (string)$this->rootUrl . self::DEFAULT_SITEMAP_TXT_FILE_NAME;
         }
         
-        $rootUrl = new NormalisedUrl($this->rootUrl->getRoot());        
+        $rootUrl = new NormalisedUrl($this->getConfiguration()->getRootUrl()->getRoot());        
         $rootUrl->setPath('/'.self::ROBOTS_TXT_FILE_NAME);
         
         return (string)$rootUrl;
@@ -203,7 +148,7 @@ class WebsiteSitemapFinder {
     private function getDefaultSitemapXmlUrl() {
         $absoluteUrlDeriver = new \webignition\AbsoluteUrlDeriver\AbsoluteUrlDeriver(
                '/' . self::DEFAULT_SITEMAP_XML_FILE_NAME,
-               $this->getRootUrl()
+               $this->getConfiguration()->getRootUrl()
         );
         
         return (string)$absoluteUrlDeriver->getAbsoluteUrl();
@@ -217,7 +162,7 @@ class WebsiteSitemapFinder {
     private function getDefaultSitemapTxtUrl() {
         $absoluteUrlDeriver = new \webignition\AbsoluteUrlDeriver\AbsoluteUrlDeriver(
                '/' . self::DEFAULT_SITEMAP_TXT_FILE_NAME,
-               $this->getRootUrl()
+               $this->getConfiguration()->getRootUrl()
         );
         
         return (string)$absoluteUrlDeriver->getAbsoluteUrl();
@@ -260,7 +205,7 @@ class WebsiteSitemapFinder {
      * @return string 
      */
     private function getRobotsTxtContent() {
-        $request = clone $this->getBaseRequest();
+        $request = clone $this->getConfiguration()->getBaseRequest();
         $request->setUrl($this->getExpectedRobotsTxtFileUrl());
         
         try {
@@ -291,7 +236,7 @@ class WebsiteSitemapFinder {
     public function getSitemapRetriever() {
         if (is_null($this->sitemapRetriever)) {
             $this->sitemapRetriever = new WebsiteSitemapRetriever();
-            $this->sitemapRetriever->setBaseRequest($this->getBaseRequest());
+            $this->sitemapRetriever->getConfiguration()->setBaseRequest($this->getConfiguration()->getBaseRequest());
         }
         
         return $this->sitemapRetriever;

@@ -68,10 +68,10 @@ class Configuration {
     
     /**
      *
-     * @return string
+     * @return \webignition\NormalisedUrl\NormalisedUrl 
      */
     public function getRootUrl() {
-        return (is_null($this->rootUrl)) ? '' : (string)$this->rootUrl;
+        return $this->rootUrl;
     }
     
     

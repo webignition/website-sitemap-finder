@@ -60,7 +60,7 @@ class SitemapAddedUrlLimitListener {
         }
         
         if ($urlCount > $this->getSoftLimit()) {
-            $event->getFinder()->enableShouldHalt();
+            $event->getFinder()->getConfiguration()->enableShouldHalt();
         }
         
         return true;
