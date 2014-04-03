@@ -3,8 +3,76 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "e7ce1c13dfc765cf1748c69c4e51aa2b",
+    "hash": "5e9c5b4e25adb17f65e380963c021b93",
     "packages": [
+        {
+            "name": "doctrine/collections",
+            "version": "v1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/doctrine/collections.git",
+                "reference": "b99c5c46c87126201899afe88ec490a25eedd6a2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/doctrine/collections/zipball/b99c5c46c87126201899afe88ec490a25eedd6a2",
+                "reference": "b99c5c46c87126201899afe88ec490a25eedd6a2",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.2.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Doctrine\\Common\\Collections\\": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jonathan Wage",
+                    "email": "jonwage@gmail.com",
+                    "homepage": "http://www.jwage.com/",
+                    "role": "Creator"
+                },
+                {
+                    "name": "Guilherme Blanco",
+                    "email": "guilhermeblanco@gmail.com",
+                    "homepage": "http://www.instaclick.com"
+                },
+                {
+                    "name": "Roman Borschel",
+                    "email": "roman@code-factory.org"
+                },
+                {
+                    "name": "Benjamin Eberlei",
+                    "email": "kontakt@beberlei.de"
+                },
+                {
+                    "name": "Johannes Schmitt",
+                    "email": "schmittjoh@gmail.com",
+                    "homepage": "http://jmsyst.com",
+                    "role": "Developer of wrapped JMSSerializerBundle"
+                }
+            ],
+            "description": "Collections Abstraction library",
+            "homepage": "http://www.doctrine-project.org",
+            "keywords": [
+                "array",
+                "collections",
+                "iterator"
+            ],
+            "time": "2014-02-03 23:07:43"
+        },
         {
             "name": "etechnika/idna-convert",
             "version": "1.0.3",
@@ -61,16 +129,16 @@
         },
         {
             "name": "guzzle/guzzle",
-            "version": "dev-master",
+            "version": "v3.8.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/guzzle/guzzle3.git",
-                "reference": "8a0a8d72cbff0c58752af0badd6820f5f87c9c84"
+                "url": "https://github.com/guzzle/guzzle.git",
+                "reference": "4de0618a01b34aa1c8c33a3f13f396dcd3882eba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle3/zipball/8a0a8d72cbff0c58752af0badd6820f5f87c9c84",
-                "reference": "8a0a8d72cbff0c58752af0badd6820f5f87c9c84",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/4de0618a01b34aa1c8c33a3f13f396dcd3882eba",
+                "reference": "4de0618a01b34aa1c8c33a3f13f396dcd3882eba",
                 "shasum": ""
             },
             "require": {
@@ -149,7 +217,7 @@
                 "rest",
                 "web service"
             ],
-            "time": "2014-03-15 23:37:34"
+            "time": "2014-01-28 22:29:15"
         },
         {
             "name": "hobnob/xml-stream-reader",
@@ -197,16 +265,16 @@
         },
         {
             "name": "simplepie/simplepie",
-            "version": "dev-master",
+            "version": "1.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/simplepie/simplepie.git",
-                "reference": "5f00e77b5feb96605cbcea4dcfb555e87c2fed24"
+                "reference": "ce53709778bc1e2e4deda1651b66e5081398d5cc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/simplepie/simplepie/zipball/5f00e77b5feb96605cbcea4dcfb555e87c2fed24",
-                "reference": "5f00e77b5feb96605cbcea4dcfb555e87c2fed24",
+                "url": "https://api.github.com/repos/simplepie/simplepie/zipball/ce53709778bc1e2e4deda1651b66e5081398d5cc",
+                "reference": "ce53709778bc1e2e4deda1651b66e5081398d5cc",
                 "shasum": ""
             },
             "require": {
@@ -247,30 +315,28 @@
                 "feeds",
                 "rss"
             ],
-            "time": "2013-10-24 06:37:55"
+            "time": "2012-10-30 17:54:03"
         },
         {
             "name": "symfony/event-dispatcher",
-            "version": "dev-master",
+            "version": "v2.4.2",
             "target-dir": "Symfony/Component/EventDispatcher",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/EventDispatcher.git",
-                "reference": "8b345992d9e850798f46a6c68804ac9e4965e91a"
+                "reference": "4708b8cd41984a5ba29fe7dd40716f7f761ac501"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/EventDispatcher/zipball/8b345992d9e850798f46a6c68804ac9e4965e91a",
-                "reference": "8b345992d9e850798f46a6c68804ac9e4965e91a",
+                "url": "https://api.github.com/repos/symfony/EventDispatcher/zipball/4708b8cd41984a5ba29fe7dd40716f7f761ac501",
+                "reference": "4708b8cd41984a5ba29fe7dd40716f7f761ac501",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
             },
             "require-dev": {
-                "psr/log": "~1.0",
-                "symfony/dependency-injection": "~2.0",
-                "symfony/stopwatch": "~2.2"
+                "symfony/dependency-injection": "~2.0"
             },
             "suggest": {
                 "symfony/dependency-injection": "",
@@ -279,7 +345,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.5-dev"
+                    "dev-master": "2.4-dev"
                 }
             },
             "autoload": {
@@ -305,7 +371,7 @@
             ],
             "description": "Symfony EventDispatcher Component",
             "homepage": "http://symfony.com",
-            "time": "2014-02-11 13:52:21"
+            "time": "2014-02-11 13:52:09"
         },
         {
             "name": "webignition/absolute-url-deriver",
@@ -495,16 +561,16 @@
         },
         {
             "name": "webignition/disallowed-character-terminated-string",
-            "version": "dev-master",
+            "version": "1.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/webignition/disallowed-character-terminated-string",
-                "reference": "b147af621f872a7c24156d5353454ff71fe650d3"
+                "url": "https://github.com/webignition/disallowed-character-terminated-string.git",
+                "reference": "25d12868c82b56bc0d04278e31594385ba4dddc4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/webignition/disallowed-character-terminated-string/zipball/b147af621f872a7c24156d5353454ff71fe650d3",
-                "reference": "b147af621f872a7c24156d5353454ff71fe650d3",
+                "url": "https://api.github.com/repos/webignition/disallowed-character-terminated-string/zipball/25d12868c82b56bc0d04278e31594385ba4dddc4",
+                "reference": "25d12868c82b56bc0d04278e31594385ba4dddc4",
                 "shasum": ""
             },
             "require": {
@@ -516,6 +582,7 @@
                     "": "src/"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -531,7 +598,7 @@
                 "string",
                 "terminated"
             ],
-            "time": "2012-07-18 12:32:46"
+            "time": "2012-07-16 21:29:50"
         },
         {
             "name": "webignition/internet-media-type",
@@ -585,12 +652,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/webignition/quoted-string.git",
-                "reference": "0.1"
+                "reference": "43fa25f8c81eaa5aef4c2376703fe90d1449fdf8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/webignition/quoted-string/zipball/0.1",
-                "reference": "0.1",
+                "url": "https://api.github.com/repos/webignition/quoted-string/zipball/43fa25f8c81eaa5aef4c2376703fe90d1449fdf8",
+                "reference": "43fa25f8c81eaa5aef4c2376703fe90d1449fdf8",
                 "shasum": ""
             },
             "require": {
@@ -618,19 +685,19 @@
                 "parser",
                 "quoted-string"
             ],
-            "time": "2012-08-15 09:52:06"
+            "time": "2012-08-15 16:52:06"
         },
         {
             "name": "webignition/robots-txt-file",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/webignition/robots-txt-file",
+                "url": "https://github.com/webignition/robots-txt-file.git",
                 "reference": "e9ee53ac735cca38cd7855234194ba3aeaea6e87"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/webignition/robots-txt-file/zipball/e9ee53ac735cca38cd7855234194ba3aeaea6e87",
+                "url": "https://api.github.com/repos/webignition/robots-txt-file/zipball/e9ee53ac735cca38cd7855234194ba3aeaea6e87",
                 "reference": "e9ee53ac735cca38cd7855234194ba3aeaea6e87",
                 "shasum": ""
             },
@@ -644,6 +711,7 @@
                     "": "src/"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -656,7 +724,8 @@
             "description": "Models a robots.txt file",
             "homepage": "https://github.com/webignition/robots-txt-file",
             "keywords": [
-                "parser"
+                "parser",
+                "robots.txt"
             ],
             "time": "2012-10-04 12:32:59"
         },
@@ -704,28 +773,34 @@
         },
         {
             "name": "webignition/sitemap-model",
-            "version": "dev-master",
+            "version": "1.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webignition/sitemap-model.git",
-                "reference": "a10055a161ca654c269bd38b809e6e2cc1da75af"
+                "reference": "9f0d6fce621703cdccef7e0037e81d9612392240"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webignition/sitemap-model/zipball/a10055a161ca654c269bd38b809e6e2cc1da75af",
-                "reference": "a10055a161ca654c269bd38b809e6e2cc1da75af",
+                "url": "https://api.github.com/repos/webignition/sitemap-model/zipball/9f0d6fce621703cdccef7e0037e81d9612392240",
+                "reference": "9f0d6fce621703cdccef7e0037e81d9612392240",
                 "shasum": ""
             },
             "require": {
                 "hobnob/xml-stream-reader": "1.0.3",
-                "php": ">=5.3.0",
+                "php": ">=5.4.0",
                 "simplepie/simplepie": "*",
                 "webignition/url": ">=0.1,<2.0",
-                "webignition/web-resource-model": ">=0.1,<2.0"
+                "webignition/web-resource-model": ">=1.1.7,<2.0"
+            },
+            "require-dev": {
+                "guzzle/guzzle": ">=3.8.1,<4",
+                "phpunit/phpunit": "3.7.*",
+                "symfony/class-loader": "*"
             },
             "type": "library",
             "autoload": {
                 "psr-0": {
+                    "webignition\\Tests": "tests/",
                     "": "src/"
                 }
             },
@@ -740,11 +815,11 @@
                 }
             ],
             "description": "Models a website sitemap",
-            "homepage": "https://github.com/webignition/website-sitemap-model",
+            "homepage": "https://github.com/webignition/sitemap-model",
             "keywords": [
                 "Sitemap"
             ],
-            "time": "2013-10-21 15:14:23"
+            "time": "2014-04-03 07:15:43"
         },
         {
             "name": "webignition/string-parser",
@@ -752,12 +827,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/webignition/string-parser.git",
-                "reference": "0.2.1"
+                "reference": "a37b2b7d49da4ef6a806ad77b609033b9133bd5d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webignition/string-parser/zipball/0.2.1",
-                "reference": "0.2.1",
+                "url": "https://api.github.com/repos/webignition/string-parser/zipball/a37b2b7d49da4ef6a806ad77b609033b9133bd5d",
+                "reference": "a37b2b7d49da4ef6a806ad77b609033b9133bd5d",
                 "shasum": ""
             },
             "require": {
@@ -789,16 +864,16 @@
         },
         {
             "name": "webignition/url",
-            "version": "1.9.9",
+            "version": "1.9.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webignition/url.git",
-                "reference": "cc8c3d9a9d90edf735f0a70f690cca6124ee1136"
+                "reference": "7df6141958c65957d3c692791eb8e07ace0cf147"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webignition/url/zipball/cc8c3d9a9d90edf735f0a70f690cca6124ee1136",
-                "reference": "cc8c3d9a9d90edf735f0a70f690cca6124ee1136",
+                "url": "https://api.github.com/repos/webignition/url/zipball/7df6141958c65957d3c692791eb8e07ace0cf147",
+                "reference": "7df6141958c65957d3c692791eb8e07ace0cf147",
                 "shasum": ""
             },
             "require": {
@@ -827,32 +902,40 @@
             "keywords": [
                 "url"
             ],
-            "time": "2014-03-07 13:33:36"
+            "time": "2014-03-25 09:43:12"
         },
         {
             "name": "webignition/web-resource-model",
-            "version": "0.4",
+            "version": "1.1.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webignition/web-resource-model.git",
-                "reference": "0.4"
+                "reference": "72d6dce1468f9003e97cee9d3323723e3c634142"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/webignition/web-resource-model/zipball/0.4",
-                "reference": "0.4",
+                "url": "https://api.github.com/repos/webignition/web-resource-model/zipball/72d6dce1468f9003e97cee9d3323723e3c634142",
+                "reference": "72d6dce1468f9003e97cee9d3323723e3c634142",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.0",
+                "doctrine/collections": "~1.0",
+                "guzzle/guzzle": ">=3.8.1,<4",
+                "php": ">=5.4.0",
                 "webignition/internet-media-type": ">=0.1,<2.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.7.*",
+                "symfony/class-loader": "*"
             },
             "type": "library",
             "autoload": {
                 "psr-0": {
+                    "webignition\\Tests": "tests/",
                     "": "src/"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -868,29 +951,29 @@
                 "modem",
                 "web"
             ],
-            "time": "2012-08-16 15:16:06"
+            "time": "2014-04-02 23:23:58"
         },
         {
             "name": "webignition/website-sitemap-retriever",
-            "version": "0.7",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webignition/website-sitemap-retriever.git",
-                "reference": "14a8935f27198290acaac493834a6b0f1d0377f5"
+                "reference": "b4e948f6ac456bf0278babd5c88c2d35df7ff732"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webignition/website-sitemap-retriever/zipball/14a8935f27198290acaac493834a6b0f1d0377f5",
-                "reference": "14a8935f27198290acaac493834a6b0f1d0377f5",
+                "url": "https://api.github.com/repos/webignition/website-sitemap-retriever/zipball/b4e948f6ac456bf0278babd5c88c2d35df7ff732",
+                "reference": "b4e948f6ac456bf0278babd5c88c2d35df7ff732",
                 "shasum": ""
             },
             "require": {
-                "guzzle/guzzle": ">=3.3.1",
-                "php": ">=5.3.0",
+                "guzzle/guzzle": ">=3.8.1",
+                "php": ">=5.4.0",
                 "symfony/event-dispatcher": ">=2.1",
                 "webignition/cookie-url-matcher": ">=0.1,<1.0",
                 "webignition/internet-media-type": ">=0.1,<2.0",
-                "webignition/sitemap-model": ">=0.1"
+                "webignition/sitemap-model": ">=1.0.4,<2.0"
             },
             "type": "library",
             "autoload": {
@@ -914,7 +997,7 @@
             "keywords": [
                 "Sitemap"
             ],
-            "time": "2014-03-17 16:44:53"
+            "time": "2014-04-03 07:29:42"
         },
         {
             "name": "xrstf/ip-utils",
@@ -976,7 +1059,7 @@
         "webignition/robots-txt-parser": 20
     },
     "platform": {
-        "php": ">=5.3.0"
+        "php": ">=5.4.0"
     },
     "platform-dev": [
 
