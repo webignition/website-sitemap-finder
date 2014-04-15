@@ -22,6 +22,14 @@ class GetSitemapUrlTest extends BaseTest {
     }
     
     
+    public function testGetSitemapXmlAsApplicationXmlFromRelativeUrlViaRobotsTxt() {
+        $this->getSitemapFinder()->getConfiguration()->setRootUrl('http://webignition.net');
+        
+        $sitemaps = $this->getSitemapFinder()->getSitemaps();
+        $this->assertEquals('http://webignition.net/sitemap.xml', $sitemaps[0]->getUrl());   
+    }
+    
+    
     /**
      * Test finding the sitemap.xml URL via the sitemap URL being referenced
      * in robots.txt and served as text/xml

@@ -188,7 +188,7 @@ class WebsiteSitemapFinder {
                 $sitemapUrl = new \webignition\Url\Url((string)$sitemapDirective->getValue());
                 
                 if ($sitemapUrl->isRelative()) {                    
-                    $absoluteUrlDeriver = new \webignition\AbsoluteUrlDeriver\AbsoluteUrlDeriver((string)$sitemapUrl, $this->getRootUrl());
+                    $absoluteUrlDeriver = new \webignition\AbsoluteUrlDeriver\AbsoluteUrlDeriver((string)$sitemapUrl, $this->getConfiguration()->getRootUrl());
                     $urls[] = (string)$absoluteUrlDeriver->getAbsoluteUrl();
                 } else {
                     $urls[] = (string)$sitemapUrl;
