@@ -6,7 +6,7 @@ use webignition\WebsiteSitemapFinder\Configuration\Configuration;
 use webignition\Tests\WebsiteSitemapFinder\BaseTest;
 
 
-class ConfigurationTest extends BaseTest {
+abstract class ConfigurationTest extends BaseTest {
 
     /**
      *
