@@ -4,8 +4,8 @@ Website Sitemap Finder [![Build Status](https://secure.travis-ci.org/webignition
 Overview
 ---------
 
-Finds the sitemap content for a given site, first by checking what is referenced in robots.txt and then checking
-the site root for sitemap.(xml|txt).
+Find the URLs for sitemaps for a given site. URLs are extracted from robots.txt. If none are present, 
+sitemap.xml and sitemap.txt are assumed.
 
 Usage
 -----
@@ -14,12 +14,21 @@ Usage
 
 ```php
 <?php
-$finder = new webignition\WebsiteSitemapFinder\WebsiteSitemapFinder();        
-$finder->setRootUrl('http://webignition.net');
-$sitemapUrl = $finder->getSitemapUrl();
+use webignition\WebsiteSitemapFinder\Configuration;
+use webignition\WebsiteSitemapFinder\WebsiteSitemapFinder;
 
-$this->assertEquals($sitemapUrl, 'http://webignition.net/sitemap.xml');
-);
+$configuration = new Configuration([
+    Configuration::KEY_ROOT_URL => 'http://google.com/',
+]);
+
+$finder = new WebsiteSitemapFinder($configuration);        
+$sitemapUrls = $finder->findSitemapUrls();
+
+$this->assertEquals($sitemapUrls, [
+    'http://www.gstatic.com/culturalinstitute/sitemaps/www_google_com_culturalinstitute/sitemap-index.xml',
+    'http://www.gstatic.com/s2/sitemaps/profiles-sitemap.xml',
+    'https://www.google.com/sitemap.xml',
+]);
 ```
 
 Building
@@ -54,14 +63,7 @@ Have look at the [project on travis][4] for the latest build status, or give the
 a go yourself.
 
     cd ~/website-sitemap-finder
-    phpunit tests
-
-An instance of `WebsiteSitemapFinder` can be passed an HTTP client with which
-to retrieve the content of the specified sitemap URL.
-
-Examine the existing unit tests to see how you can pass in a mock HTTP client to
-enable testing without the need to perform actual HTTP requests.
-
+    composer.phar test
 
 [3]: http://getcomposer.org
 [4]: http://travis-ci.org/webignition/website-sitemap-finder/builds

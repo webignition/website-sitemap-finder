@@ -1,8 +1,0 @@
-HTTP/1.1 200 OK
-Content-Type: text/plain
-
-# www.robotstxt.org/
-# www.google.com/support/webmasters/bin/answer.py?hl=en&answer=156449
-
-User-agent: *
-Sitemap: http://example.com/sitemap.xml
