@@ -47,7 +47,7 @@ class WebsiteSitemapFinderTest extends \PHPUnit_Framework_TestCase
      * @param array $httpFixtures
      * @param string[] $expectedSitemapUrls
      */
-    public function testFindSitemapUrlsFoo($httpFixtures, $expectedSitemapUrls)
+    public function testFindSitemapUrls($httpFixtures, $expectedSitemapUrls)
     {
         $this->setHttpFixtures($httpFixtures);
         $baseRequest = $this->httpClient->createRequest();
@@ -89,6 +89,23 @@ class WebsiteSitemapFinderTest extends \PHPUnit_Framework_TestCase
                 ],
                 'expectedSitemapUrls' => [
                     'http://example.com/sitemap.xml',
+                ],
+            ],
+            'non-absolute sitemap urls in robots.txt' => [
+                'httpFixtures' => [
+                    HttpFixtureFactory::createSuccessResponse(
+                        'text/plain',
+                        RobotsTxtContentFactory::create([
+                            '/sitemap1.xml',
+                            'sitemap2.xml',
+                            '//example.com/sitemap3.xml'
+                        ])
+                    ),
+                ],
+                'expectedSitemapUrls' => [
+                    'http://example.com/sitemap1.xml',
+                    'http://example.com/sitemap2.xml',
+                    'http://example.com/sitemap3.xml',
                 ],
             ],
             'robots txt has multiple sitemap urls' => [
