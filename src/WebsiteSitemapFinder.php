@@ -113,8 +113,12 @@ class WebsiteSitemapFinder
 
         $sitemapDirectives = $robotsTxtFile->getNonGroupDirectives()->getByField('sitemap');
 
+        $absoluteUrlDeriver = new AbsoluteUrlDeriver();
+
         foreach ($sitemapDirectives->getDirectives() as $sitemapDirective) {
-            $sitemapUrl = $sitemapDirective->getValue()->get();
+            $sitemapUrlValue = $sitemapDirective->getValue()->get();
+            $absoluteUrlDeriver->init($sitemapUrlValue, $this->configuration->getRootUrl());
+            $sitemapUrl = (string)$absoluteUrlDeriver->getAbsoluteUrl();
 
             if (!in_array($sitemapUrl, $sitemapUrls)) {
                 $sitemapUrls[] = $sitemapUrl;
