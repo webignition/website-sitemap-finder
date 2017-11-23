@@ -35,14 +35,6 @@ class WebsiteSitemapFinder
     }
 
     /**
-     * @return WebResourceService
-     */
-    public function getWebResourceService()
-    {
-        return $this->webResourceService;
-    }
-
-    /**
      * @return string[]
      */
     public function findSitemapUrls()

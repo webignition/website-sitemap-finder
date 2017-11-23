@@ -7,7 +7,6 @@ use Guzzle\Http\Exception\CurlException;
 use Guzzle\Plugin\Mock\MockPlugin;
 use webignition\Tests\WebsiteSitemapFinder\Factory\HttpFixtureFactory;
 use webignition\Tests\WebsiteSitemapFinder\Factory\RobotsTxtContentFactory;
-use webignition\WebResource\Service\Service;
 use webignition\WebsiteSitemapFinder\Configuration;
 use webignition\WebsiteSitemapFinder\WebsiteSitemapFinder;
 
@@ -126,13 +125,6 @@ class WebsiteSitemapFinderTest extends \PHPUnit_Framework_TestCase
                 ],
             ],
         ];
-    }
-
-    public function testGetWebResourceService()
-    {
-        $websiteSitemapFinder = new WebsiteSitemapFinder(new Configuration());
-
-        $this->assertInstanceOf(Service::class, $websiteSitemapFinder->getWebResourceService());
     }
 
     /**
