@@ -1,19 +1,18 @@
 <?php
 namespace webignition\WebsiteSitemapFinder;
 
-use Guzzle\Http\Client as HttpClient;
-use Guzzle\Http\Message\Request as HttpRequest;
+use GuzzleHttp\Client as HttpClient;
 use webignition\NormalisedUrl\NormalisedUrl;
 
 class Configuration
 {
-    const KEY_BASE_REQUEST = 'base-request';
+    const KEY_HTTP_CLIENT = 'http-client';
     const KEY_ROOT_URL = 'root-url';
 
     /**
-     * @var HttpRequest
+     * @var HttpClient
      */
-    private $baseRequest = null;
+    private $httpClient;
 
     /**
      * @var NormalisedUrl
@@ -25,12 +24,11 @@ class Configuration
      */
     public function __construct($configurationValues = [])
     {
-        if (!isset($configurationValues[self::KEY_BASE_REQUEST])) {
-            $client = new HttpClient;
-            $configurationValues[self::KEY_BASE_REQUEST] = $client->createRequest('GET');
+        if (!isset($configurationValues[self::KEY_HTTP_CLIENT])) {
+            $configurationValues[self::KEY_HTTP_CLIENT] = new HttpClient();
         }
 
-        $this->baseRequest = $configurationValues[self::KEY_BASE_REQUEST];
+        $this->httpClient = $configurationValues[self::KEY_HTTP_CLIENT];
 
         if (isset($configurationValues[self::KEY_ROOT_URL])) {
             $this->rootUrl = new NormalisedUrl($configurationValues[self::KEY_ROOT_URL]);
@@ -47,10 +45,10 @@ class Configuration
 
     /**
      *
-     * @return HttpRequest $request
+     * @return HttpClient $request
      */
-    public function getBaseRequest()
+    public function getHttpClient()
     {
-        return $this->baseRequest;
+        return $this->httpClient;
     }
 }

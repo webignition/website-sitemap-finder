@@ -35,14 +35,6 @@ class WebsiteSitemapFinder
     }
 
     /**
-     * @return WebResourceService
-     */
-    public function getWebResourceService()
-    {
-        return $this->webResourceService;
-    }
-
-    /**
      * @return string[]
      */
     public function findSitemapUrls()
@@ -133,8 +125,8 @@ class WebsiteSitemapFinder
      */
     private function getRobotsTxtContent()
     {
-        $request = clone $this->configuration->getBaseRequest();
-        $request->setUrl($this->getExpectedRobotsTxtFileUrl());
+        $httpClient = $this->configuration->getHttpClient();
+        $request = $httpClient->createRequest('GET', $this->getExpectedRobotsTxtFileUrl());
 
         try {
             return $this->webResourceService->get($request)->getContent();
