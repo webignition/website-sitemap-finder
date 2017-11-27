@@ -2,13 +2,12 @@
 
 namespace webignition\Tests\WebsiteSitemapFinder;
 
-use Guzzle\Http\Client as HttpClient;
-use Guzzle\Http\Exception\CurlException;
-use Guzzle\Plugin\Mock\MockPlugin;
+use GuzzleHttp\Client as HttpClient;
 use webignition\Tests\WebsiteSitemapFinder\Factory\HttpFixtureFactory;
 use webignition\Tests\WebsiteSitemapFinder\Factory\RobotsTxtContentFactory;
 use webignition\WebsiteSitemapFinder\Configuration;
 use webignition\WebsiteSitemapFinder\WebsiteSitemapFinder;
+use GuzzleHttp\Subscriber\Mock as HttpMockSubscriber;
 
 class WebsiteSitemapFinderTest extends \PHPUnit_Framework_TestCase
 {
@@ -49,11 +48,10 @@ class WebsiteSitemapFinderTest extends \PHPUnit_Framework_TestCase
     public function testFindSitemapUrls($httpFixtures, $expectedSitemapUrls)
     {
         $this->setHttpFixtures($httpFixtures);
-        $baseRequest = $this->httpClient->createRequest();
 
         $configuration = new Configuration([
             Configuration::KEY_ROOT_URL => 'http://example.com/',
-            Configuration::KEY_BASE_REQUEST => $baseRequest,
+            Configuration::KEY_HTTP_CLIENT => $this->httpClient,
         ]);
 
         $websiteSitemapFinder = new WebsiteSitemapFinder($configuration);
@@ -132,16 +130,8 @@ class WebsiteSitemapFinderTest extends \PHPUnit_Framework_TestCase
      */
     private function setHttpFixtures($fixtures)
     {
-        $mockPlugin = new MockPlugin();
+        $httpMockSubscriber = new HttpMockSubscriber($fixtures);
 
-        foreach ($fixtures as $fixture) {
-            if ($fixture instanceof CurlException) {
-                $mockPlugin->addException($fixture);
-            } else {
-                $mockPlugin->addResponse($fixture);
-            }
-        }
-
-        $this->httpClient->addSubscriber($mockPlugin);
+        $this->httpClient->getEmitter()->attach($httpMockSubscriber);
     }
 }

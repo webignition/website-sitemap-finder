@@ -2,17 +2,13 @@
 
 namespace webignition\Tests\WebsiteSitemapFinder\Factory;
 
-use Guzzle\Http\Client as HttpClient;
-use Guzzle\Http\Exception\CurlException;
-use Guzzle\Plugin\Mock\MockPlugin;
-use Guzzle\Http\Message\Response as GuzzleResponse;
+use GuzzleHttp\Message\MessageFactory;
+use GuzzleHttp\Message\Response as GuzzleResponse;
 
 class HttpFixtureFactory
 {
     /**
      * @param int $statusCode
-     * @param string $statusMessage
-     * @param array $headerLines
      * @param string $contentType
      * @param string $body
      *
@@ -20,33 +16,20 @@ class HttpFixtureFactory
      */
     public static function createResponse(
         $statusCode,
-        $statusMessage,
-        $headerLines = [],
         $contentType = null,
         $body = ''
     ) {
-        $headerLines = array_merge(
-            [
-                sprintf(
-                    'HTTP/1.1 %s %s',
-                    $statusCode,
-                    $statusMessage
-                ),
-            ],
-            $headerLines
-        );
+        $headers = [];
 
         if (!empty($contentType)) {
-            $headerLines[] = 'Content-type: ' . $contentType;
+            $headers = [
+                'content-type' => $contentType,
+            ];
         }
 
-        $message = implode("\n", $headerLines);
+        $messageFactory = new MessageFactory();
 
-        if (!empty($body)) {
-            $message .= "\n\n" . $body;
-        }
-
-        return GuzzleResponse::fromMessage($message);
+        return $messageFactory->createResponse($statusCode, $headers, $body);
     }
 
     /**
@@ -54,7 +37,7 @@ class HttpFixtureFactory
      */
     public static function createNotFoundResponse()
     {
-        return static::createResponse(404, 'Not Found');
+        return static::createResponse(404);
     }
 
     /**
@@ -65,6 +48,6 @@ class HttpFixtureFactory
      */
     public static function createSuccessResponse($contentType = null, $body = '')
     {
-        return static::createResponse(200, 'OK', [], $contentType, $body);
+        return static::createResponse(200, $contentType, $body);
     }
 }

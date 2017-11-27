@@ -2,15 +2,15 @@
 
 namespace webignition\Tests\WebsiteSitemapFinder;
 
-use Guzzle\Http\Message\Request as HttpRequest;
+use GuzzleHttp\Client as HttpClient;
 use webignition\WebsiteSitemapFinder\Configuration;
 
 class ConfigurationTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @var HttpRequest
+     * @var HttpClient
      */
-    private $baseRequest;
+    private $httpClient;
 
     /**
      * {@inheritdoc}
@@ -18,7 +18,7 @@ class ConfigurationTest extends \PHPUnit_Framework_TestCase
     protected function setUp()
     {
         parent::setUp();
-        $this->baseRequest = \Mockery::mock(HttpRequest::class);
+        $this->httpClient = new HttpClient();
     }
 
     public function testCreateNoValues()
@@ -26,7 +26,11 @@ class ConfigurationTest extends \PHPUnit_Framework_TestCase
         $configuration = new Configuration();
 
         $this->assertEquals(null, $configuration->getRootUrl());
-        $this->assertNotEquals($this->baseRequest, $configuration->getBaseRequest());
+
+        $this->assertNotEquals(
+            spl_object_hash($this->httpClient),
+            spl_object_hash($configuration->getHttpClient())
+        );
     }
 
     public function testCreateRootUrlOnly()
@@ -36,17 +40,25 @@ class ConfigurationTest extends \PHPUnit_Framework_TestCase
         ]);
 
         $this->assertEquals('http://example.com/', $configuration->getRootUrl());
-        $this->assertNotEquals($this->baseRequest, $configuration->getBaseRequest());
+
+        $this->assertNotEquals(
+            spl_object_hash($this->httpClient),
+            spl_object_hash($configuration->getHttpClient())
+        );
     }
 
-    public function testCreateWithBaseRequest()
+    public function testCreateWithHttpClient()
     {
         $configuration = new Configuration([
-            Configuration::KEY_BASE_REQUEST => $this->baseRequest,
+            Configuration::KEY_HTTP_CLIENT => $this->httpClient,
             Configuration::KEY_ROOT_URL => 'http://example.com/',
         ]);
 
         $this->assertEquals('http://example.com/', $configuration->getRootUrl());
-        $this->assertEquals($this->baseRequest, $configuration->getBaseRequest());
+
+        $this->assertEquals(
+            spl_object_hash($this->httpClient),
+            spl_object_hash($configuration->getHttpClient())
+        );
     }
 }
