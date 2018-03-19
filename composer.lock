@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "a335d1c3862756624f2b587e72955ca5",
+    "content-hash": "8f34c7fbe1a3e4fb0c6eb3bcf11b955a",
     "packages": [
         {
             "name": "doctrine/collections",
@@ -436,31 +436,30 @@
         },
         {
             "name": "webignition/absolute-url-deriver",
-            "version": "1.5.1",
+            "version": "1.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webignition/absolute-url-deriver.git",
-                "reference": "b7dace7091da38b6a311d44d68a4a2d8c07f3394"
+                "reference": "9c1f23ee5b609b32eefc836904254d0d481caa29"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webignition/absolute-url-deriver/zipball/b7dace7091da38b6a311d44d68a4a2d8c07f3394",
-                "reference": "b7dace7091da38b6a311d44d68a4a2d8c07f3394",
+                "url": "https://api.github.com/repos/webignition/absolute-url-deriver/zipball/9c1f23ee5b609b32eefc836904254d0d481caa29",
+                "reference": "9c1f23ee5b609b32eefc836904254d0d481caa29",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.4.0",
+                "php": ">=5.6.0",
                 "webignition/url": ">=1.9.8"
             },
             "require-dev": {
-                "phpunit/phpunit": "3.7.*",
-                "symfony/class-loader": "*"
+                "phpunit/phpunit": "~5.0",
+                "squizlabs/php_codesniffer": "3.*"
             },
             "type": "library",
             "autoload": {
-                "psr-0": {
-                    "webignition\\Tests": "tests/",
-                    "": "src/"
+                "psr-4": {
+                    "webignition\\AbsoluteUrlDeriver\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -479,7 +478,7 @@
                 "absolute",
                 "url"
             ],
-            "time": "2014-10-20T06:50:04+00:00"
+            "time": "2018-03-12T16:05:22+00:00"
         },
         {
             "name": "webignition/character-set-list",
@@ -571,31 +570,32 @@
         },
         {
             "name": "webignition/internet-media-type",
-            "version": "0.4.7",
+            "version": "0.4.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webignition/internet-media-type.git",
-                "reference": "968b95796bc682c7f554c2ec671b6a97a9d5a5b0"
+                "reference": "1a5bbe38033b00b23acd5e1dd10489bb07eed77c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webignition/internet-media-type/zipball/968b95796bc682c7f554c2ec671b6a97a9d5a5b0",
-                "reference": "968b95796bc682c7f554c2ec671b6a97a9d5a5b0",
+                "url": "https://api.github.com/repos/webignition/internet-media-type/zipball/1a5bbe38033b00b23acd5e1dd10489bb07eed77c",
+                "reference": "1a5bbe38033b00b23acd5e1dd10489bb07eed77c",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.0",
-                "webignition/quoted-string": ">=0.1,<1.0",
-                "webignition/string-parser": ">=0.2.2,<1.0"
+                "php": ">=5.6.0",
+                "webignition/quoted-string": ">=0.2.1,<1.0",
+                "webignition/string-parser": ">=0.2.3,<1.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "~4.0"
+                "phpunit/phpunit": "~5.0",
+                "squizlabs/php_codesniffer": "3.*"
             },
             "type": "library",
             "autoload": {
-                "psr-0": {
-                    "webignition\\Tests": "tests/",
-                    "": "src/"
+                "psr-4": {
+                    "webignition\\InternetMediaType\\": "src/",
+                    "webignition\\Tests\\InternetMediaType\\": "tests/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -617,7 +617,7 @@
                 "media type",
                 "media-type"
             ],
-            "time": "2015-02-20T16:52:30+00:00"
+            "time": "2018-03-12T14:54:00+00:00"
         },
         {
             "name": "webignition/quoted-string",
@@ -668,24 +668,24 @@
         },
         {
             "name": "webignition/robots-txt-file",
-            "version": "2.0",
+            "version": "2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webignition/robots-txt-file.git",
-                "reference": "2ad8f7cde005a5d5c3c31e7b858dbb3e2a2ac397"
+                "reference": "906d4e330db47b98ea6177df2e99ec96bb98e71e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webignition/robots-txt-file/zipball/2ad8f7cde005a5d5c3c31e7b858dbb3e2a2ac397",
-                "reference": "2ad8f7cde005a5d5c3c31e7b858dbb3e2a2ac397",
+                "url": "https://api.github.com/repos/webignition/robots-txt-file/zipball/906d4e330db47b98ea6177df2e99ec96bb98e71e",
+                "reference": "906d4e330db47b98ea6177df2e99ec96bb98e71e",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.5.0",
+                "php": ">=5.6.0",
                 "webignition/disallowed-character-terminated-string": ">=1.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "~4.0",
+                "phpunit/phpunit": "~5.0",
                 "squizlabs/php_codesniffer": "3.*"
             },
             "type": "library",
@@ -711,7 +711,7 @@
                 "parser",
                 "robots.txt"
             ],
-            "time": "2017-05-09T16:52:05+00:00"
+            "time": "2018-03-19T11:16:44+00:00"
         },
         {
             "name": "webignition/string-parser",
@@ -762,30 +762,34 @@
         },
         {
             "name": "webignition/url",
-            "version": "1.9.14",
+            "version": "1.9.20",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webignition/url.git",
-                "reference": "b651aed2781260d8b25a086e766f528d1b9a675e"
+                "reference": "a4e6044bc6786a59b37d2508e87b540b5074b09a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webignition/url/zipball/b651aed2781260d8b25a086e766f528d1b9a675e",
-                "reference": "b651aed2781260d8b25a086e766f528d1b9a675e",
+                "url": "https://api.github.com/repos/webignition/url/zipball/a4e6044bc6786a59b37d2508e87b540b5074b09a",
+                "reference": "a4e6044bc6786a59b37d2508e87b540b5074b09a",
                 "shasum": ""
             },
             "require": {
                 "etechnika/idna-convert": "1.0.*",
-                "php": ">=5.3.0",
+                "php": ">=5.6.0",
                 "xrstf/ip-utils": "v1.0.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "~4.0"
+                "mockery/mockery": "~0.9",
+                "php-mock/php-mock-mockery": "1.1.0",
+                "phpunit/phpunit": "~5.0",
+                "squizlabs/php_codesniffer": "3.*"
             },
             "type": "library",
             "autoload": {
-                "psr-0": {
-                    "": "src/"
+                "psr-4": {
+                    "webignition\\Url\\": "src/Url",
+                    "webignition\\NormalisedUrl\\": "src/NormalisedUrl"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -803,7 +807,7 @@
             "keywords": [
                 "url"
             ],
-            "time": "2015-02-13T11:52:39+00:00"
+            "time": "2018-03-14T17:25:14+00:00"
         },
         {
             "name": "webignition/web-json-model",
@@ -2315,7 +2319,7 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v3.4.5",
+            "version": "v3.4.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
