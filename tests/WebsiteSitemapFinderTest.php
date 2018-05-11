@@ -5,7 +5,6 @@ namespace webignition\Tests\WebsiteSitemapFinder;
 use GuzzleHttp\Client as HttpClient;
 use webignition\Tests\WebsiteSitemapFinder\Factory\HttpFixtureFactory;
 use webignition\Tests\WebsiteSitemapFinder\Factory\RobotsTxtContentFactory;
-use webignition\WebsiteSitemapFinder\Configuration;
 use webignition\WebsiteSitemapFinder\WebsiteSitemapFinder;
 use GuzzleHttp\Subscriber\Mock as HttpMockSubscriber;
 
@@ -27,15 +26,11 @@ class WebsiteSitemapFinderTest extends \PHPUnit_Framework_TestCase
 
     public function testFindSitemapUrlsEmptyRootUrl()
     {
-        $this->setExpectedException(
-            \RuntimeException::class,
-            WebsiteSitemapFinder::EXCEPTION_CONFIGURATION_INVALID_MESSAGE,
-            WebsiteSitemapFinder::EXCEPTION_CONFIGURATION_INVALID_CODE
-        );
+        $this->expectException(\RuntimeException::class);
+        $this->expectExceptionMessage(WebsiteSitemapFinder::EXCEPTION_MESSAGE_ROOT_URL_EMPTY);
+        $this->expectExceptionCode(WebsiteSitemapFinder::EXCEPTION_CODE_ROOT_URL_EMPTY);
 
-        $configuration = new Configuration();
-
-        $websiteSitemapFinder = new WebsiteSitemapFinder($configuration);
+        $websiteSitemapFinder = new WebsiteSitemapFinder($this->httpClient);
         $websiteSitemapFinder->findSitemapUrls();
     }
 
@@ -49,12 +44,8 @@ class WebsiteSitemapFinderTest extends \PHPUnit_Framework_TestCase
     {
         $this->setHttpFixtures($httpFixtures);
 
-        $configuration = new Configuration([
-            Configuration::KEY_ROOT_URL => 'http://example.com/',
-            Configuration::KEY_HTTP_CLIENT => $this->httpClient,
-        ]);
-
-        $websiteSitemapFinder = new WebsiteSitemapFinder($configuration);
+        $websiteSitemapFinder = new WebsiteSitemapFinder($this->httpClient);
+        $websiteSitemapFinder->setRootUrl('http://example.com/');
         $sitemapUrls = $websiteSitemapFinder->findSitemapUrls();
 
         $this->assertEquals($expectedSitemapUrls, $sitemapUrls);

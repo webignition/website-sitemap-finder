@@ -1,6 +1,8 @@
 <?php
+
 namespace webignition\WebsiteSitemapFinder;
 
+use GuzzleHttp\Client as HttpClient;
 use webignition\AbsoluteUrlDeriver\AbsoluteUrlDeriver;
 use webignition\NormalisedUrl\NormalisedUrl;
 use webignition\RobotsTxt\File\Parser as RobotsTxtFileParser;
@@ -8,17 +10,22 @@ use webignition\WebResource\Service\Service as WebResourceService;
 
 class WebsiteSitemapFinder
 {
-    const EXCEPTION_CONFIGURATION_INVALID_CODE = 1;
-    const EXCEPTION_CONFIGURATION_INVALID_MESSAGE = 'Configuration is not valid';
+    const EXCEPTION_CODE_ROOT_URL_EMPTY = 1;
+    const EXCEPTION_MESSAGE_ROOT_URL_EMPTY = 'Root URL not set';
 
     const ROBOTS_TXT_FILE_NAME = 'robots.txt';
     const DEFAULT_SITEMAP_XML_FILE_NAME = 'sitemap.xml';
     const DEFAULT_SITEMAP_TXT_FILE_NAME = 'sitemap.txt';
 
     /**
-     * @var Configuration
+     * @var HttpClient
      */
-    private $configuration;
+    private $httpClient;
+
+    /**
+     * @var NormalisedUrl
+     */
+    private $rootUrl = null;
 
     /**
      * @var WebResourceService
@@ -26,12 +33,20 @@ class WebsiteSitemapFinder
     private $webResourceService;
 
     /**
-     * @param Configuration $configuration
+     * @param HttpClient $httpClient
      */
-    public function __construct(Configuration $configuration)
+    public function __construct(HttpClient $httpClient)
     {
-        $this->configuration = $configuration;
+        $this->httpClient = $httpClient;
         $this->webResourceService = new WebResourceService();
+    }
+
+    /**
+     * @param string $rootUrl
+     */
+    public function setRootUrl($rootUrl)
+    {
+        $this->rootUrl = new NormalisedUrl($rootUrl);
     }
 
     /**
@@ -39,10 +54,10 @@ class WebsiteSitemapFinder
      */
     public function findSitemapUrls()
     {
-        if (empty($this->configuration->getRootUrl())) {
+        if (empty($this->rootUrl)) {
             throw new \RuntimeException(
-                self::EXCEPTION_CONFIGURATION_INVALID_MESSAGE,
-                self::EXCEPTION_CONFIGURATION_INVALID_CODE
+                self::EXCEPTION_MESSAGE_ROOT_URL_EMPTY,
+                self::EXCEPTION_CODE_ROOT_URL_EMPTY
             );
         }
 
@@ -65,10 +80,10 @@ class WebsiteSitemapFinder
      */
     public function getExpectedRobotsTxtFileUrl()
     {
-        $rootUrl = new NormalisedUrl($this->configuration->getRootUrl());
-        $rootUrl->setPath('/'.self::ROBOTS_TXT_FILE_NAME);
+        $expectedRobotsTxtFileUrl = new NormalisedUrl($this->rootUrl);
+        $expectedRobotsTxtFileUrl->setPath('/'.self::ROBOTS_TXT_FILE_NAME);
 
-        return (string)$rootUrl;
+        return (string)$expectedRobotsTxtFileUrl;
     }
 
     /**
@@ -80,7 +95,7 @@ class WebsiteSitemapFinder
     {
         $absoluteUrlDeriver = new AbsoluteUrlDeriver(
             $path,
-            $this->configuration->getRootUrl()
+            $this->rootUrl
         );
 
         return (string)$absoluteUrlDeriver->getAbsoluteUrl();
@@ -109,7 +124,7 @@ class WebsiteSitemapFinder
 
         foreach ($sitemapDirectives->getDirectives() as $sitemapDirective) {
             $sitemapUrlValue = $sitemapDirective->getValue()->get();
-            $absoluteUrlDeriver->init($sitemapUrlValue, $this->configuration->getRootUrl());
+            $absoluteUrlDeriver->init($sitemapUrlValue, $this->rootUrl);
             $sitemapUrl = (string)$absoluteUrlDeriver->getAbsoluteUrl();
 
             if (!in_array($sitemapUrl, $sitemapUrls)) {
@@ -125,8 +140,7 @@ class WebsiteSitemapFinder
      */
     private function getRobotsTxtContent()
     {
-        $httpClient = $this->configuration->getHttpClient();
-        $request = $httpClient->createRequest('GET', $this->getExpectedRobotsTxtFileUrl());
+        $request = $this->httpClient->createRequest('GET', $this->getExpectedRobotsTxtFileUrl());
 
         try {
             return $this->webResourceService->get($request)->getContent();
