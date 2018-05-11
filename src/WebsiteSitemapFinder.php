@@ -50,16 +50,15 @@ class WebsiteSitemapFinder
             );
         }
 
-        $sitemapUrlsFromRobotsTxt = $this->findSitemapUrlsFromRobotsTxt($rootUrl);
-
-        if (empty($sitemapUrlsFromRobotsTxt)) {
-            return [
+        $sitemapUrls = $this->findSitemapUrlsFromRobotsTxt($rootUrl);
+        if (empty($sitemapUrls)) {
+            $sitemapUrls = [
                 $this->createDefaultSitemapUrl('/' . self::DEFAULT_SITEMAP_XML_FILE_NAME, $rootUrl),
                 $this->createDefaultSitemapUrl('/' . self::DEFAULT_SITEMAP_TXT_FILE_NAME, $rootUrl),
             ];
         }
 
-        return $sitemapUrlsFromRobotsTxt;
+        return $sitemapUrls;
     }
 
     /**
