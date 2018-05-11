@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0281174e8bacbe17c9fb265aa203c593",
+    "content-hash": "3758ac0226132194d7505f7b68d0837d",
     "packages": [
         {
             "name": "etechnika/idna-convert",
@@ -817,16 +817,16 @@
         },
         {
             "name": "webignition/url",
-            "version": "1.9.20",
+            "version": "2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webignition/url.git",
-                "reference": "a4e6044bc6786a59b37d2508e87b540b5074b09a"
+                "reference": "7c0bf4da8c419b615c07737546507f6f5acfaeda"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webignition/url/zipball/a4e6044bc6786a59b37d2508e87b540b5074b09a",
-                "reference": "a4e6044bc6786a59b37d2508e87b540b5074b09a",
+                "url": "https://api.github.com/repos/webignition/url/zipball/7c0bf4da8c419b615c07737546507f6f5acfaeda",
+                "reference": "7c0bf4da8c419b615c07737546507f6f5acfaeda",
                 "shasum": ""
             },
             "require": {
@@ -862,7 +862,7 @@
             "keywords": [
                 "url"
             ],
-            "time": "2018-03-14T17:25:14+00:00"
+            "time": "2018-05-10T10:28:18+00:00"
         },
         {
             "name": "webignition/web-json-model",
