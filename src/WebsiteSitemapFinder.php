@@ -23,11 +23,6 @@ class WebsiteSitemapFinder
     private $httpClient;
 
     /**
-     * @var NormalisedUrl
-     */
-    private $rootUrl = null;
-
-    /**
      * @var WebResourceService
      */
     private $webResourceService;
@@ -43,30 +38,24 @@ class WebsiteSitemapFinder
 
     /**
      * @param string $rootUrl
-     */
-    public function setRootUrl($rootUrl)
-    {
-        $this->rootUrl = new NormalisedUrl($rootUrl);
-    }
-
-    /**
+     *
      * @return string[]
      */
-    public function findSitemapUrls()
+    public function findSitemapUrls($rootUrl)
     {
-        if (empty($this->rootUrl)) {
+        if (empty($rootUrl)) {
             throw new \RuntimeException(
                 self::EXCEPTION_MESSAGE_ROOT_URL_EMPTY,
                 self::EXCEPTION_CODE_ROOT_URL_EMPTY
             );
         }
 
-        $sitemapUrlsFromRobotsTxt = $this->findSitemapUrlsFromRobotsTxt();
+        $sitemapUrlsFromRobotsTxt = $this->findSitemapUrlsFromRobotsTxt($rootUrl);
 
         if (empty($sitemapUrlsFromRobotsTxt)) {
             return [
-                $this->createDefaultSitemapUrl('/' . self::DEFAULT_SITEMAP_XML_FILE_NAME),
-                $this->createDefaultSitemapUrl('/' . self::DEFAULT_SITEMAP_TXT_FILE_NAME),
+                $this->createDefaultSitemapUrl('/' . self::DEFAULT_SITEMAP_XML_FILE_NAME, $rootUrl),
+                $this->createDefaultSitemapUrl('/' . self::DEFAULT_SITEMAP_TXT_FILE_NAME, $rootUrl),
             ];
         }
 
@@ -76,11 +65,13 @@ class WebsiteSitemapFinder
     /**
      * Get the URL where we expect to find the robots.txt file
      *
+     * @param string $rootUrl
+     *
      * @return string
      */
-    public function getExpectedRobotsTxtFileUrl()
+    public function getExpectedRobotsTxtFileUrl($rootUrl)
     {
-        $expectedRobotsTxtFileUrl = new NormalisedUrl($this->rootUrl);
+        $expectedRobotsTxtFileUrl = new NormalisedUrl($rootUrl);
         $expectedRobotsTxtFileUrl->setPath('/'.self::ROBOTS_TXT_FILE_NAME);
 
         return (string)$expectedRobotsTxtFileUrl;
@@ -88,26 +79,29 @@ class WebsiteSitemapFinder
 
     /**
      * @param string $path
+     * @param string $rootUrl
      *
      * @return string
      */
-    private function createDefaultSitemapUrl($path)
+    private function createDefaultSitemapUrl($path, $rootUrl)
     {
         $absoluteUrlDeriver = new AbsoluteUrlDeriver(
             $path,
-            $this->rootUrl
+            $rootUrl
         );
 
         return (string)$absoluteUrlDeriver->getAbsoluteUrl();
     }
 
     /**
+     * @param string $rootUrl
+     *
      * @return string[]
      */
-    private function findSitemapUrlsFromRobotsTxt()
+    private function findSitemapUrlsFromRobotsTxt($rootUrl)
     {
         $sitemapUrls = [];
-        $robotsTxtContent = $this->getRobotsTxtContent();
+        $robotsTxtContent = $this->getRobotsTxtContent($rootUrl);
 
         if (empty($robotsTxtContent)) {
             return $sitemapUrls;
@@ -124,7 +118,7 @@ class WebsiteSitemapFinder
 
         foreach ($sitemapDirectives->getDirectives() as $sitemapDirective) {
             $sitemapUrlValue = $sitemapDirective->getValue()->get();
-            $absoluteUrlDeriver->init($sitemapUrlValue, $this->rootUrl);
+            $absoluteUrlDeriver->init($sitemapUrlValue, $rootUrl);
             $sitemapUrl = (string)$absoluteUrlDeriver->getAbsoluteUrl();
 
             if (!in_array($sitemapUrl, $sitemapUrls)) {
@@ -136,11 +130,13 @@ class WebsiteSitemapFinder
     }
 
     /**
+     * @param string $rootUrl
+     *
      * @return string
      */
-    private function getRobotsTxtContent()
+    private function getRobotsTxtContent($rootUrl)
     {
-        $request = $this->httpClient->createRequest('GET', $this->getExpectedRobotsTxtFileUrl());
+        $request = $this->httpClient->createRequest('GET', $this->getExpectedRobotsTxtFileUrl($rootUrl));
 
         try {
             return $this->webResourceService->get($request)->getContent();

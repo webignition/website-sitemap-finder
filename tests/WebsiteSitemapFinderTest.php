@@ -31,7 +31,7 @@ class WebsiteSitemapFinderTest extends \PHPUnit_Framework_TestCase
         $this->expectExceptionCode(WebsiteSitemapFinder::EXCEPTION_CODE_ROOT_URL_EMPTY);
 
         $websiteSitemapFinder = new WebsiteSitemapFinder($this->httpClient);
-        $websiteSitemapFinder->findSitemapUrls();
+        $websiteSitemapFinder->findSitemapUrls(null);
     }
 
     /**
@@ -45,8 +45,7 @@ class WebsiteSitemapFinderTest extends \PHPUnit_Framework_TestCase
         $this->setHttpFixtures($httpFixtures);
 
         $websiteSitemapFinder = new WebsiteSitemapFinder($this->httpClient);
-        $websiteSitemapFinder->setRootUrl('http://example.com/');
-        $sitemapUrls = $websiteSitemapFinder->findSitemapUrls();
+        $sitemapUrls = $websiteSitemapFinder->findSitemapUrls('http://example.com/');
 
         $this->assertEquals($expectedSitemapUrls, $sitemapUrls);
     }
