@@ -3,18 +3,23 @@
 namespace webignition\Tests\WebsiteSitemapFinder;
 
 use GuzzleHttp\Client as HttpClient;
-use webignition\Tests\WebsiteSitemapFinder\Factory\HttpFixtureFactory;
+use GuzzleHttp\Handler\MockHandler;
+use GuzzleHttp\HandlerStack;
+use GuzzleHttp\Psr7\Response;
 use webignition\Tests\WebsiteSitemapFinder\Factory\RobotsTxtContentFactory;
-use webignition\WebsiteSitemapFinder\Configuration;
 use webignition\WebsiteSitemapFinder\WebsiteSitemapFinder;
-use GuzzleHttp\Subscriber\Mock as HttpMockSubscriber;
 
 class WebsiteSitemapFinderTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @var HttpClient
+     * @var MockHandler
      */
-    private $httpClient;
+    private $mockHandler;
+
+    /**
+     * @var WebsiteSitemapFinder
+     */
+    private $websiteSitemapFinder;
 
     /**
      * {@inheritdoc}
@@ -22,21 +27,24 @@ class WebsiteSitemapFinderTest extends \PHPUnit_Framework_TestCase
     protected function setUp()
     {
         parent::setUp();
-        $this->httpClient = new HttpClient();
+
+        $this->mockHandler = new MockHandler();
+        $handlerStack = HandlerStack::create($this->mockHandler);
+
+        $httpClient = new HttpClient([
+            'handler' => $handlerStack,
+        ]);
+
+        $this->websiteSitemapFinder = new WebsiteSitemapFinder($httpClient);
     }
 
     public function testFindSitemapUrlsEmptyRootUrl()
     {
-        $this->setExpectedException(
-            \RuntimeException::class,
-            WebsiteSitemapFinder::EXCEPTION_CONFIGURATION_INVALID_MESSAGE,
-            WebsiteSitemapFinder::EXCEPTION_CONFIGURATION_INVALID_CODE
-        );
+        $this->expectException(\RuntimeException::class);
+        $this->expectExceptionMessage(WebsiteSitemapFinder::EXCEPTION_MESSAGE_ROOT_URL_EMPTY);
+        $this->expectExceptionCode(WebsiteSitemapFinder::EXCEPTION_CODE_ROOT_URL_EMPTY);
 
-        $configuration = new Configuration();
-
-        $websiteSitemapFinder = new WebsiteSitemapFinder($configuration);
-        $websiteSitemapFinder->findSitemapUrls();
+        $this->websiteSitemapFinder->findSitemapUrls(null);
     }
 
     /**
@@ -45,19 +53,16 @@ class WebsiteSitemapFinderTest extends \PHPUnit_Framework_TestCase
      * @param array $httpFixtures
      * @param string[] $expectedSitemapUrls
      */
-    public function testFindSitemapUrls($httpFixtures, $expectedSitemapUrls)
+    public function testFindSitemapUrlsSuccess($httpFixtures, $expectedSitemapUrls)
     {
-        $this->setHttpFixtures($httpFixtures);
+        foreach ($httpFixtures as $httpFixture) {
+            $this->mockHandler->append($httpFixture);
+        }
 
-        $configuration = new Configuration([
-            Configuration::KEY_ROOT_URL => 'http://example.com/',
-            Configuration::KEY_HTTP_CLIENT => $this->httpClient,
-        ]);
-
-        $websiteSitemapFinder = new WebsiteSitemapFinder($configuration);
-        $sitemapUrls = $websiteSitemapFinder->findSitemapUrls();
-
-        $this->assertEquals($expectedSitemapUrls, $sitemapUrls);
+        $this->assertEquals(
+            $expectedSitemapUrls,
+            $this->websiteSitemapFinder->findSitemapUrls('http://example.com/')
+        );
     }
 
     /**
@@ -68,7 +73,7 @@ class WebsiteSitemapFinderTest extends \PHPUnit_Framework_TestCase
         return [
             'http exception on robots.txt; foo' => [
                 'httpFixtures' => [
-                    HttpFixtureFactory::createNotFoundResponse(),
+                    new Response(404),
                 ],
                 'expectedSitemapUrls' => [
                     'http://example.com/sitemap.xml',
@@ -77,12 +82,9 @@ class WebsiteSitemapFinderTest extends \PHPUnit_Framework_TestCase
             ],
             'robots txt has single sitemap url' => [
                 'httpFixtures' => [
-                    HttpFixtureFactory::createSuccessResponse(
-                        'text/plain',
-                        RobotsTxtContentFactory::create([
-                            'http://example.com/sitemap.xml',
-                        ])
-                    ),
+                    new Response(200, ['content-type' => 'text/plain'], RobotsTxtContentFactory::create([
+                        'http://example.com/sitemap.xml',
+                    ])),
                 ],
                 'expectedSitemapUrls' => [
                     'http://example.com/sitemap.xml',
@@ -90,14 +92,11 @@ class WebsiteSitemapFinderTest extends \PHPUnit_Framework_TestCase
             ],
             'non-absolute sitemap urls in robots.txt' => [
                 'httpFixtures' => [
-                    HttpFixtureFactory::createSuccessResponse(
-                        'text/plain',
-                        RobotsTxtContentFactory::create([
-                            '/sitemap1.xml',
-                            'sitemap2.xml',
-                            '//example.com/sitemap3.xml'
-                        ])
-                    ),
+                    new Response(200, ['content-type' => 'text/plain'], RobotsTxtContentFactory::create([
+                        '/sitemap1.xml',
+                        'sitemap2.xml',
+                        '//example.com/sitemap3.xml'
+                    ])),
                 ],
                 'expectedSitemapUrls' => [
                     'http://example.com/sitemap1.xml',
@@ -107,14 +106,11 @@ class WebsiteSitemapFinderTest extends \PHPUnit_Framework_TestCase
             ],
             'robots txt has multiple sitemap urls' => [
                 'httpFixtures' => [
-                    HttpFixtureFactory::createSuccessResponse(
-                        'text/plain',
-                        RobotsTxtContentFactory::create([
-                            'http://example.com/sitemap1.xml',
-                            'http://example.com/sitemap2.xml',
-                            'http://example.com/sitemap3.xml',
-                        ])
-                    ),
+                    new Response(200, ['content-type' => 'text/plain'], RobotsTxtContentFactory::create([
+                        'http://example.com/sitemap1.xml',
+                        'http://example.com/sitemap2.xml',
+                        'http://example.com/sitemap3.xml',
+                    ])),
                 ],
                 'expectedSitemapUrls' => [
                     'http://example.com/sitemap1.xml',
@@ -123,15 +119,5 @@ class WebsiteSitemapFinderTest extends \PHPUnit_Framework_TestCase
                 ],
             ],
         ];
-    }
-
-    /**
-     * @param array $fixtures
-     */
-    private function setHttpFixtures($fixtures)
-    {
-        $httpMockSubscriber = new HttpMockSubscriber($fixtures);
-
-        $this->httpClient->getEmitter()->attach($httpMockSubscriber);
     }
 }

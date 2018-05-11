@@ -1,98 +1,87 @@
 <?php
+
 namespace webignition\WebsiteSitemapFinder;
 
+use GuzzleHttp\Client as HttpClient;
+use GuzzleHttp\Exception\GuzzleException;
+use GuzzleHttp\Psr7\Request;
 use webignition\AbsoluteUrlDeriver\AbsoluteUrlDeriver;
 use webignition\NormalisedUrl\NormalisedUrl;
 use webignition\RobotsTxt\File\Parser as RobotsTxtFileParser;
-use webignition\WebResource\Service\Service as WebResourceService;
+use webignition\WebResource\Retriever as WebResourceRetriever;
 
 class WebsiteSitemapFinder
 {
-    const EXCEPTION_CONFIGURATION_INVALID_CODE = 1;
-    const EXCEPTION_CONFIGURATION_INVALID_MESSAGE = 'Configuration is not valid';
+    const EXCEPTION_CODE_ROOT_URL_EMPTY = 1;
+    const EXCEPTION_MESSAGE_ROOT_URL_EMPTY = 'Root URL not set';
 
     const ROBOTS_TXT_FILE_NAME = 'robots.txt';
     const DEFAULT_SITEMAP_XML_FILE_NAME = 'sitemap.xml';
     const DEFAULT_SITEMAP_TXT_FILE_NAME = 'sitemap.txt';
 
     /**
-     * @var Configuration
+     * @var WebResourceRetriever
      */
-    private $configuration;
+    private $webResourceRetriever;
 
     /**
-     * @var WebResourceService
+     * @param HttpClient $httpClient
      */
-    private $webResourceService;
-
-    /**
-     * @param Configuration $configuration
-     */
-    public function __construct(Configuration $configuration)
+    public function __construct(HttpClient $httpClient)
     {
-        $this->configuration = $configuration;
-        $this->webResourceService = new WebResourceService();
+        $this->webResourceRetriever = new WebResourceRetriever($httpClient);
     }
 
     /**
+     * @param string $rootUrl
+     *
      * @return string[]
      */
-    public function findSitemapUrls()
+    public function findSitemapUrls($rootUrl)
     {
-        if (empty($this->configuration->getRootUrl())) {
+        if (empty($rootUrl)) {
             throw new \RuntimeException(
-                self::EXCEPTION_CONFIGURATION_INVALID_MESSAGE,
-                self::EXCEPTION_CONFIGURATION_INVALID_CODE
+                self::EXCEPTION_MESSAGE_ROOT_URL_EMPTY,
+                self::EXCEPTION_CODE_ROOT_URL_EMPTY
             );
         }
 
-        $sitemapUrlsFromRobotsTxt = $this->findSitemapUrlsFromRobotsTxt();
-
-        if (empty($sitemapUrlsFromRobotsTxt)) {
-            return [
-                $this->createDefaultSitemapUrl('/' . self::DEFAULT_SITEMAP_XML_FILE_NAME),
-                $this->createDefaultSitemapUrl('/' . self::DEFAULT_SITEMAP_TXT_FILE_NAME),
+        $sitemapUrls = $this->findSitemapUrlsFromRobotsTxt($rootUrl);
+        if (empty($sitemapUrls)) {
+            $sitemapUrls = [
+                $this->createDefaultSitemapUrl('/' . self::DEFAULT_SITEMAP_XML_FILE_NAME, $rootUrl),
+                $this->createDefaultSitemapUrl('/' . self::DEFAULT_SITEMAP_TXT_FILE_NAME, $rootUrl),
             ];
         }
 
-        return $sitemapUrlsFromRobotsTxt;
-    }
-
-    /**
-     * Get the URL where we expect to find the robots.txt file
-     *
-     * @return string
-     */
-    public function getExpectedRobotsTxtFileUrl()
-    {
-        $rootUrl = new NormalisedUrl($this->configuration->getRootUrl());
-        $rootUrl->setPath('/'.self::ROBOTS_TXT_FILE_NAME);
-
-        return (string)$rootUrl;
+        return $sitemapUrls;
     }
 
     /**
      * @param string $path
+     * @param string $rootUrl
      *
      * @return string
      */
-    private function createDefaultSitemapUrl($path)
+    private function createDefaultSitemapUrl($path, $rootUrl)
     {
         $absoluteUrlDeriver = new AbsoluteUrlDeriver(
             $path,
-            $this->configuration->getRootUrl()
+            $rootUrl
         );
 
         return (string)$absoluteUrlDeriver->getAbsoluteUrl();
     }
 
     /**
+     * @param string $rootUrl
+     *
      * @return string[]
      */
-    private function findSitemapUrlsFromRobotsTxt()
+    private function findSitemapUrlsFromRobotsTxt($rootUrl)
     {
         $sitemapUrls = [];
-        $robotsTxtContent = $this->getRobotsTxtContent();
+        $robotsTxtContent = $this->retrieveRobotsTxtContent($rootUrl);
 
         if (empty($robotsTxtContent)) {
             return $sitemapUrls;
@@ -109,7 +98,7 @@ class WebsiteSitemapFinder
 
         foreach ($sitemapDirectives->getDirectives() as $sitemapDirective) {
             $sitemapUrlValue = $sitemapDirective->getValue()->get();
-            $absoluteUrlDeriver->init($sitemapUrlValue, $this->configuration->getRootUrl());
+            $absoluteUrlDeriver->init($sitemapUrlValue, $rootUrl);
             $sitemapUrl = (string)$absoluteUrlDeriver->getAbsoluteUrl();
 
             if (!in_array($sitemapUrl, $sitemapUrls)) {
@@ -121,16 +110,22 @@ class WebsiteSitemapFinder
     }
 
     /**
+     * @param string $rootUrl
+     *
      * @return string
      */
-    private function getRobotsTxtContent()
+    private function retrieveRobotsTxtContent($rootUrl)
     {
-        $httpClient = $this->configuration->getHttpClient();
-        $request = $httpClient->createRequest('GET', $this->getExpectedRobotsTxtFileUrl());
+        $expectedRobotsTxtFileUrl = new NormalisedUrl($rootUrl);
+        $expectedRobotsTxtFileUrl->setPath('/'.self::ROBOTS_TXT_FILE_NAME);
+
+        $request = new Request('GET', (string)$expectedRobotsTxtFileUrl);
 
         try {
-            return $this->webResourceService->get($request)->getContent();
+            return $this->webResourceRetriever->retrieve($request)->getContent();
         } catch (\Exception $exception) {
+            return null;
+        } catch (GuzzleException $guzzleException) {
             return null;
         }
     }
