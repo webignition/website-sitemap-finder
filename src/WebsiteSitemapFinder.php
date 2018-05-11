@@ -3,10 +3,12 @@
 namespace webignition\WebsiteSitemapFinder;
 
 use GuzzleHttp\Client as HttpClient;
+use GuzzleHttp\Exception\GuzzleException;
+use GuzzleHttp\Psr7\Request;
 use webignition\AbsoluteUrlDeriver\AbsoluteUrlDeriver;
 use webignition\NormalisedUrl\NormalisedUrl;
 use webignition\RobotsTxt\File\Parser as RobotsTxtFileParser;
-use webignition\WebResource\Service\Service as WebResourceService;
+use webignition\WebResource\Retriever as WebResourceRetriever;
 
 class WebsiteSitemapFinder
 {
@@ -18,22 +20,16 @@ class WebsiteSitemapFinder
     const DEFAULT_SITEMAP_TXT_FILE_NAME = 'sitemap.txt';
 
     /**
-     * @var HttpClient
+     * @var WebResourceRetriever
      */
-    private $httpClient;
-
-    /**
-     * @var WebResourceService
-     */
-    private $webResourceService;
+    private $webResourceRetriever;
 
     /**
      * @param HttpClient $httpClient
      */
     public function __construct(HttpClient $httpClient)
     {
-        $this->httpClient = $httpClient;
-        $this->webResourceService = new WebResourceService();
+        $this->webResourceRetriever = new WebResourceRetriever($httpClient);
     }
 
     /**
@@ -62,21 +58,6 @@ class WebsiteSitemapFinder
     }
 
     /**
-     * Get the URL where we expect to find the robots.txt file
-     *
-     * @param string $rootUrl
-     *
-     * @return string
-     */
-    public function getExpectedRobotsTxtFileUrl($rootUrl)
-    {
-        $expectedRobotsTxtFileUrl = new NormalisedUrl($rootUrl);
-        $expectedRobotsTxtFileUrl->setPath('/'.self::ROBOTS_TXT_FILE_NAME);
-
-        return (string)$expectedRobotsTxtFileUrl;
-    }
-
-    /**
      * @param string $path
      * @param string $rootUrl
      *
@@ -100,7 +81,7 @@ class WebsiteSitemapFinder
     private function findSitemapUrlsFromRobotsTxt($rootUrl)
     {
         $sitemapUrls = [];
-        $robotsTxtContent = $this->getRobotsTxtContent($rootUrl);
+        $robotsTxtContent = $this->retrieveRobotsTxtContent($rootUrl);
 
         if (empty($robotsTxtContent)) {
             return $sitemapUrls;
@@ -133,13 +114,18 @@ class WebsiteSitemapFinder
      *
      * @return string
      */
-    private function getRobotsTxtContent($rootUrl)
+    private function retrieveRobotsTxtContent($rootUrl)
     {
-        $request = $this->httpClient->createRequest('GET', $this->getExpectedRobotsTxtFileUrl($rootUrl));
+        $expectedRobotsTxtFileUrl = new NormalisedUrl($rootUrl);
+        $expectedRobotsTxtFileUrl->setPath('/'.self::ROBOTS_TXT_FILE_NAME);
+
+        $request = new Request('GET', (string)$expectedRobotsTxtFileUrl);
 
         try {
-            return $this->webResourceService->get($request)->getContent();
+            return $this->webResourceRetriever->retrieve($request)->getContent();
         } catch (\Exception $exception) {
+            return null;
+        } catch (GuzzleException $guzzleException) {
             return null;
         }
     }
