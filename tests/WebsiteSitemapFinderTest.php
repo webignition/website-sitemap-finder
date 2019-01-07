@@ -1,4 +1,5 @@
 <?php
+/** @noinspection PhpDocSignatureInspection */
 
 namespace webignition\Tests\WebsiteSitemapFinder;
 
@@ -9,7 +10,7 @@ use GuzzleHttp\Psr7\Response;
 use webignition\Tests\WebsiteSitemapFinder\Factory\RobotsTxtContentFactory;
 use webignition\WebsiteSitemapFinder\WebsiteSitemapFinder;
 
-class WebsiteSitemapFinderTest extends \PHPUnit_Framework_TestCase
+class WebsiteSitemapFinderTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @var MockHandler
@@ -38,22 +39,10 @@ class WebsiteSitemapFinderTest extends \PHPUnit_Framework_TestCase
         $this->websiteSitemapFinder = new WebsiteSitemapFinder($httpClient);
     }
 
-    public function testFindSitemapUrlsEmptyRootUrl()
-    {
-        $this->expectException(\RuntimeException::class);
-        $this->expectExceptionMessage(WebsiteSitemapFinder::EXCEPTION_MESSAGE_ROOT_URL_EMPTY);
-        $this->expectExceptionCode(WebsiteSitemapFinder::EXCEPTION_CODE_ROOT_URL_EMPTY);
-
-        $this->websiteSitemapFinder->findSitemapUrls(null);
-    }
-
     /**
      * @dataProvider findSitemapUrlsDataProvider
-     *
-     * @param array $httpFixtures
-     * @param string[] $expectedSitemapUrls
      */
-    public function testFindSitemapUrlsSuccess($httpFixtures, $expectedSitemapUrls)
+    public function testFindSitemapUrlsSuccess(array $httpFixtures, array $expectedSitemapUrls)
     {
         foreach ($httpFixtures as $httpFixture) {
             $this->mockHandler->append($httpFixture);
@@ -65,10 +54,7 @@ class WebsiteSitemapFinderTest extends \PHPUnit_Framework_TestCase
         );
     }
 
-    /**
-     * @return array
-     */
-    public function findSitemapUrlsDataProvider()
+    public function findSitemapUrlsDataProvider(): array
     {
         return [
             'http exception on robots.txt; foo' => [
