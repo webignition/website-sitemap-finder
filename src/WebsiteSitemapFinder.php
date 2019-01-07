@@ -3,7 +3,6 @@
 namespace webignition\WebsiteSitemapFinder;
 
 use GuzzleHttp\Client as HttpClient;
-use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Psr7\Request;
 use webignition\AbsoluteUrlDeriver\AbsoluteUrlDeriver;
 use webignition\NormalisedUrl\NormalisedUrl;
@@ -110,8 +109,6 @@ class WebsiteSitemapFinder
         try {
             return $this->webResourceRetriever->retrieve($request)->getContent();
         } catch (\Exception $exception) {
-            return null;
-        } catch (GuzzleException $guzzleException) {
             return null;
         }
     }
