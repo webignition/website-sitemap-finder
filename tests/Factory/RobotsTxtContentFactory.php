@@ -1,6 +1,6 @@
 <?php
 
-namespace webignition\Tests\WebsiteSitemapFinder\Factory;
+namespace webignition\WebsiteSitemapFinder\Tests\Factory;
 
 class RobotsTxtContentFactory
 {

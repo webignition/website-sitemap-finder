@@ -1,13 +1,13 @@
 <?php
 /** @noinspection PhpDocSignatureInspection */
 
-namespace webignition\Tests\WebsiteSitemapFinder;
+namespace webignition\WebsiteSitemapFinder\Tests;
 
 use GuzzleHttp\Client as HttpClient;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Response;
-use webignition\Tests\WebsiteSitemapFinder\Factory\RobotsTxtContentFactory;
+use webignition\WebsiteSitemapFinder\Tests\Factory\RobotsTxtContentFactory;
 use webignition\WebsiteSitemapFinder\WebsiteSitemapFinder;
 
 class WebsiteSitemapFinderTest extends \PHPUnit\Framework\TestCase
