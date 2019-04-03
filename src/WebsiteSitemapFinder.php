@@ -4,9 +4,11 @@ namespace webignition\WebsiteSitemapFinder;
 
 use GuzzleHttp\Client as HttpClient;
 use GuzzleHttp\Psr7\Request;
+use Psr\Http\Message\UriInterface;
 use webignition\AbsoluteUrlDeriver\AbsoluteUrlDeriver;
-use webignition\NormalisedUrl\NormalisedUrl;
 use webignition\RobotsTxt\File\Parser as RobotsTxtFileParser;
+use webignition\Uri\Normalizer;
+use webignition\Uri\Uri;
 use webignition\WebResource\Retriever as WebResourceRetriever;
 
 class WebsiteSitemapFinder
@@ -29,52 +31,35 @@ class WebsiteSitemapFinder
     }
 
     /**
-     * @param string $rootUrl
+     * @param UriInterface $uri
      *
-     * @return string[]
+     * @return UriInterface[]
      */
-    public function findSitemapUrls(string $rootUrl): array
+    public function findSitemapUrls(UriInterface $uri): array
     {
-        if (empty($rootUrl)) {
-            throw new \RuntimeException(
-                self::EXCEPTION_MESSAGE_ROOT_URL_EMPTY,
-                self::EXCEPTION_CODE_ROOT_URL_EMPTY
-            );
-        }
-
-        $sitemapUrls = $this->findSitemapUrlsFromRobotsTxt($rootUrl);
+        $sitemapUrls = $this->findSitemapUrlsFromRobotsTxt($uri);
         if (empty($sitemapUrls)) {
             $sitemapUrls = [
-                $this->createDefaultSitemapUrl('/' . self::DEFAULT_SITEMAP_XML_FILE_NAME, $rootUrl),
-                $this->createDefaultSitemapUrl('/' . self::DEFAULT_SITEMAP_TXT_FILE_NAME, $rootUrl),
+                AbsoluteUrlDeriver::derive(new Uri($uri), new Uri('/' . self::DEFAULT_SITEMAP_XML_FILE_NAME)),
+                AbsoluteUrlDeriver::derive(new Uri($uri), new Uri('/' . self::DEFAULT_SITEMAP_TXT_FILE_NAME)),
             ];
         }
 
         return $sitemapUrls;
     }
 
-    private function createDefaultSitemapUrl(string $path, string $rootUrl): string
-    {
-        $absoluteUrlDeriver = new AbsoluteUrlDeriver(
-            $path,
-            $rootUrl
-        );
-
-        return (string)$absoluteUrlDeriver->getAbsoluteUrl();
-    }
-
     /**
-     * @param string $rootUrl
+     * @param UriInterface $uri
      *
-     * @return string[]
+     * @return UriInterface[]
      */
-    private function findSitemapUrlsFromRobotsTxt(string $rootUrl): array
+    private function findSitemapUrlsFromRobotsTxt(UriInterface $uri): array
     {
-        $sitemapUrls = [];
-        $robotsTxtContent = $this->retrieveRobotsTxtContent($rootUrl);
+        $sitemapUris = [];
+        $robotsTxtContent = $this->retrieveRobotsTxtContent($uri);
 
         if (empty($robotsTxtContent)) {
-            return $sitemapUrls;
+            return $sitemapUris;
         }
 
         $robotsTxtFileParser = new RobotsTxtFileParser();
@@ -84,27 +69,24 @@ class WebsiteSitemapFinder
 
         $sitemapDirectives = $robotsTxtFile->getNonGroupDirectives()->getByField('sitemap');
 
-        $absoluteUrlDeriver = new AbsoluteUrlDeriver();
-
         foreach ($sitemapDirectives->getDirectives() as $sitemapDirective) {
             $sitemapUrlValue = $sitemapDirective->getValue()->get();
-            $absoluteUrlDeriver->init($sitemapUrlValue, $rootUrl);
-            $sitemapUrl = (string)$absoluteUrlDeriver->getAbsoluteUrl();
 
-            if (!in_array($sitemapUrl, $sitemapUrls)) {
-                $sitemapUrls[] = $sitemapUrl;
-            }
+            $sitemapUri = AbsoluteUrlDeriver::derive($uri, new Uri($sitemapUrlValue));
+            $sitemapUri = Normalizer::normalize($sitemapUri);
+
+            $sitemapUris[(string) $sitemapUri] = $sitemapUri;
         }
 
-        return $sitemapUrls;
+        return array_values($sitemapUris);
     }
 
-    private function retrieveRobotsTxtContent(string $rootUrl): ?string
+    private function retrieveRobotsTxtContent(UriInterface $uri): ?string
     {
-        $expectedRobotsTxtFileUrl = new NormalisedUrl($rootUrl);
-        $expectedRobotsTxtFileUrl->setPath('/'.self::ROBOTS_TXT_FILE_NAME);
+        $expectedRobotsTxtFileUri = Normalizer::normalize($uri);
+        $expectedRobotsTxtFileUri = $expectedRobotsTxtFileUri->withPath('/'.self::ROBOTS_TXT_FILE_NAME);
 
-        $request = new Request('GET', (string)$expectedRobotsTxtFileUrl);
+        $request = new Request('GET', $expectedRobotsTxtFileUri);
 
         try {
             return $this->webResourceRetriever->retrieve($request)->getContent();
