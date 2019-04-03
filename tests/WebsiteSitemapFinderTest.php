@@ -7,6 +7,7 @@ use GuzzleHttp\Client as HttpClient;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Response;
+use webignition\Uri\Uri;
 use webignition\WebsiteSitemapFinder\Tests\Factory\RobotsTxtContentFactory;
 use webignition\WebsiteSitemapFinder\WebsiteSitemapFinder;
 
@@ -50,7 +51,7 @@ class WebsiteSitemapFinderTest extends \PHPUnit\Framework\TestCase
 
         $this->assertEquals(
             $expectedSitemapUrls,
-            $this->websiteSitemapFinder->findSitemapUrls('http://example.com/')
+            $this->websiteSitemapFinder->findSitemapUrls(new Uri('http://example.com/'))
         );
     }
 
