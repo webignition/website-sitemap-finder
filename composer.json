@@ -18,7 +18,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "webignition\\Tests\\WebsiteSitemapFinder\\": "tests/"
+            "webignition\\WebsiteSitemapFinder\\Tests\\": "tests/"
         }
     },
     "scripts": {
